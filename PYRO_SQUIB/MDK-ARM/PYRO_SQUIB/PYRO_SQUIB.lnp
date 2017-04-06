@@ -4,6 +4,7 @@
 "pyro_squib\stm32f1xx_hal_msp.o"
 "pyro_squib\freertos.o"
 "pyro_squib\mbinit.o"
+"pyro_squib\adc.o"
 "pyro_squib\mbcrc.o"
 "pyro_squib\mbrtu.o"
 "pyro_squib\mbfunccoils.o"

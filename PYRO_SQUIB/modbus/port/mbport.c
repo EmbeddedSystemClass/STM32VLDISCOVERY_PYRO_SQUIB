@@ -1,4 +1,7 @@
 #include "mb.h"
+#include "adc.h"
+#include "string.h"
+#include "main.h"
 void ENTER_CRITICAL_SECTION(void)
 {
 	//__set_PRIMASK(1);
@@ -12,13 +15,13 @@ void EXIT_CRITICAL_SECTION(void)
 	__ASM volatile ("cpsie i");
 }
 
-
+extern volatile float ADC_voltage[ADC_CHN_NUM];
 
 #define REG_INPUT_START     1001
-#define REG_INPUT_NREGS     15
+#define REG_INPUT_NREGS     16
 
 #define REG_HOLDING_START   2001
-#define REG_HOLDING_NREGS   4
+#define REG_HOLDING_NREGS   8
 
 #define REG_ADC_0						0
 #define REG_ADC_1						2
@@ -46,6 +49,8 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
          ( usAddress + usNRegs <= REG_INPUT_START + REG_INPUT_NREGS ) )
     {
         iRegIndex = (int) ( usAddress - usRegInputStart );
+			
+				memcpy((void*)usRegInputBuf,(const void*)ADC_voltage,sizeof(float)*ADC_CHN_NUM);
         while ( usNRegs > 0 )
         {
             *pucRegBuffer++ = (unsigned char) ( usRegInputBuf[ iRegIndex ] >> 8 );
@@ -84,6 +89,15 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
         switch ( eMode )
         {
         case MB_REG_READ:
+						usRegHoldingBuf[REG_PIR_EN1]=HAL_GPIO_ReadPin(PIR_EN1_GPIO_Port,PIR_EN1_Pin);
+						usRegHoldingBuf[REG_PIR_EN2]=HAL_GPIO_ReadPin(PIR_EN2_GPIO_Port,PIR_EN2_Pin);
+						usRegHoldingBuf[REG_PIR_EN3]=HAL_GPIO_ReadPin(PIR_EN3_GPIO_Port,PIR_EN3_Pin);
+						usRegHoldingBuf[REG_PIR_EN4]=HAL_GPIO_ReadPin(PIR_EN4_GPIO_Port,PIR_EN4_Pin);
+						usRegHoldingBuf[REG_PIR_EN5]=HAL_GPIO_ReadPin(PIR_EN5_GPIO_Port,PIR_EN5_Pin);
+						usRegHoldingBuf[REG_PIR_EN6]=HAL_GPIO_ReadPin(PIR_EN6_GPIO_Port,PIR_EN6_Pin);
+						usRegHoldingBuf[REG_PIR_EN7]=HAL_GPIO_ReadPin(PIR_EN7_GPIO_Port,PIR_EN7_Pin);
+						usRegHoldingBuf[REG_PIR_EN8]=HAL_GPIO_ReadPin(PIR_EN8_GPIO_Port,PIR_EN8_Pin);
+				
             while( usNRegs > 0 )
             {
                 *pucRegBuffer++ = ( UCHAR ) ( usRegHoldingBuf[iRegIndex] >> 8 );
@@ -93,12 +107,53 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
             }
             break;
         case MB_REG_WRITE:
+					
             while( usNRegs > 0 )
             {
                 usRegHoldingBuf[iRegIndex] = *pucRegBuffer++ << 8;
                 usRegHoldingBuf[iRegIndex] |= *pucRegBuffer++;
                 iRegIndex++;
                 usNRegs--;
+								
+								switch(iRegIndex)
+								{
+										case REG_PIR_EN1:
+										{
+							
+											//	HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,);
+										}
+										break;
+										
+										case REG_PIR_EN2:
+										{
+										}
+										break;	
+
+										case REG_PIR_EN3:
+										{
+										}
+										break;	
+
+										case REG_PIR_EN4:
+										{
+										}
+										break;
+										
+										case REG_PIR_EN5:
+										{
+										}
+										break;
+
+										case REG_PIR_EN6:
+										{
+										}
+										break;
+										
+										case REG_PIR_EN7:
+										{
+										}
+										break;										
+								}
             }
             break;
         }

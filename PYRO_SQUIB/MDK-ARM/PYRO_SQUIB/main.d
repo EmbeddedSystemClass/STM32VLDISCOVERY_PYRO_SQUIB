@@ -46,3 +46,4 @@ pyro_squib\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 pyro_squib\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 pyro_squib\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\main.o: ../Inc/mbinit.h
+pyro_squib\main.o: ../Inc/adc.h

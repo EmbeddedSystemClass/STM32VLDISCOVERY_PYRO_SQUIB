@@ -1,10 +1,10 @@
 Dependencies for Project 'PYRO_SQUIB', Target 'PYRO_SQUIB': (DO NOT MODIFY !)
-F (../Src/main.c)(0x58E4A665)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\main.o --omf_browse pyro_squib\main.crf --depend pyro_squib\main.d)
-I (../Inc/main.h)(0x58E39106)
+F (../Src/main.c)(0x58E642AB)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\main.o --omf_browse pyro_squib\main.crf --depend pyro_squib\main.d)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -32,7 +32,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -45,12 +45,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
 I (../Inc/mbinit.h)(0x58E39F46)
-F (../Src/stm32f1xx_it.c)(0x58E4C4E9)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_it.o --omf_browse pyro_squib\stm32f1xx_it.crf --depend pyro_squib\stm32f1xx_it.d)
+I (../Inc/adc.h)(0x58E646A2)
+F (../Src/stm32f1xx_it.c)(0x58E6337F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_it.o --omf_browse pyro_squib\stm32f1xx_it.crf --depend pyro_squib\stm32f1xx_it.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -75,11 +76,11 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-I (../Inc/stm32f1xx_it.h)(0x58E39106)
+I (../Inc/stm32f1xx_it.h)(0x58E6337F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -92,12 +93,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
 I (..\modbus\include\mbport.h)(0x58E396CF)
-F (../Src/stm32f1xx_hal_msp.c)(0x58E39106)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_msp.o --omf_browse pyro_squib\stm32f1xx_hal_msp.crf --depend pyro_squib\stm32f1xx_hal_msp.d)
+I (../Inc/adc.h)(0x58E646A2)
+F (../Src/stm32f1xx_hal_msp.c)(0x58E6337F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_msp.o --omf_browse pyro_squib\stm32f1xx_hal_msp.crf --depend pyro_squib\stm32f1xx_hal_msp.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -122,12 +124,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Src/freertos.c)(0x58E39106)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\freertos.o --omf_browse pyro_squib\freertos.crf --depend pyro_squib\freertos.d)
+F (../Src/freertos.c)(0x58E6337F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\freertos.o --omf_browse pyro_squib\freertos.crf --depend pyro_squib\freertos.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -135,13 +137,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
-F (..\Src\mbinit.c)(0x58E4D30B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbinit.o --omf_browse pyro_squib\mbinit.crf --depend pyro_squib\mbinit.d)
+F (..\Src\mbinit.c)(0x58E4D30B)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbinit.o --omf_browse pyro_squib\mbinit.crf --depend pyro_squib\mbinit.d)
 I (../Inc/mbinit.h)(0x58E39F46)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -154,9 +156,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -182,14 +184,26 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (..\modbus\include\mbproto.h)(0x4578834A)
 I (C:\Program Files\Keil\ARM\ARMCC\include\errno.h)(0x55DB71D0)
-F (..\modbus\rtu\mbcrc.c)(0x522999C1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbcrc.o --omf_browse pyro_squib\mbcrc.crf --depend pyro_squib\mbcrc.d)
-I (..\modbus\include\mbport.h)(0x58E396CF)
+F (..\Src\adc.c)(0x58E64629)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\adc.o --omf_browse pyro_squib\adc.crf --depend pyro_squib\adc.d)
+I (../Inc/adc.h)(0x58E646A2)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -213,16 +227,47 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (..\modbus\rtu\mbrtu.c)(0x52299A52)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbrtu.o --omf_browse pyro_squib\mbrtu.crf --depend pyro_squib\mbrtu.d)
+F (..\modbus\rtu\mbcrc.c)(0x522999C1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbcrc.o --omf_browse pyro_squib\mbcrc.crf --depend pyro_squib\mbcrc.d)
+I (..\modbus\include\mbport.h)(0x58E396CF)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x58440A6F)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x58440A70)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
+F (..\modbus\rtu\mbrtu.c)(0x52299A52)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbrtu.o --omf_browse pyro_squib\mbrtu.crf --depend pyro_squib\mbrtu.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -251,16 +296,16 @@ I (..\modbus\include\mbproto.h)(0x4578834A)
 I (..\modbus\rtu\mbrtu.h)(0x4578834A)
 I (..\modbus\include\mbframe.h)(0x4578834A)
 I (..\modbus\rtu\mbcrc.h)(0x4578834A)
-F (..\modbus\functions\mbfunccoils.c)(0x52297DC3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfunccoils.o --omf_browse pyro_squib\mbfunccoils.crf --depend pyro_squib\mbfunccoils.d)
+F (..\modbus\functions\mbfunccoils.c)(0x52297DC3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfunccoils.o --omf_browse pyro_squib\mbfunccoils.crf --depend pyro_squib\mbfunccoils.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -288,17 +333,17 @@ I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
 I (..\modbus\include\mbframe.h)(0x4578834A)
 I (..\modbus\include\mbconfig.h)(0x58E4AA2E)
-F (..\modbus\functions\mbfuncdiag.c)(0x4578834A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncdiag.o --omf_browse pyro_squib\mbfuncdiag.crf --depend pyro_squib\mbfuncdiag.d)
-F (..\modbus\functions\mbfuncdisc.c)(0x52297ECC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncdisc.o --omf_browse pyro_squib\mbfuncdisc.crf --depend pyro_squib\mbfuncdisc.d)
+F (..\modbus\functions\mbfuncdiag.c)(0x4578834A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncdiag.o --omf_browse pyro_squib\mbfuncdiag.crf --depend pyro_squib\mbfuncdiag.d)
+F (..\modbus\functions\mbfuncdisc.c)(0x52297ECC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncdisc.o --omf_browse pyro_squib\mbfuncdisc.crf --depend pyro_squib\mbfuncdisc.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -326,16 +371,16 @@ I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
 I (..\modbus\include\mbframe.h)(0x4578834A)
 I (..\modbus\include\mbconfig.h)(0x58E4AA2E)
-F (..\modbus\functions\mbfuncholding.c)(0x52297F87)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncholding.o --omf_browse pyro_squib\mbfuncholding.crf --depend pyro_squib\mbfuncholding.d)
+F (..\modbus\functions\mbfuncholding.c)(0x52297F87)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncholding.o --omf_browse pyro_squib\mbfuncholding.crf --depend pyro_squib\mbfuncholding.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -363,16 +408,16 @@ I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
 I (..\modbus\include\mbframe.h)(0x4578834A)
 I (..\modbus\include\mbconfig.h)(0x58E4AA2E)
-F (..\modbus\functions\mbfuncinput.c)(0x52297DC3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncinput.o --omf_browse pyro_squib\mbfuncinput.crf --depend pyro_squib\mbfuncinput.d)
+F (..\modbus\functions\mbfuncinput.c)(0x52297DC3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncinput.o --omf_browse pyro_squib\mbfuncinput.crf --depend pyro_squib\mbfuncinput.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -400,16 +445,16 @@ I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
 I (..\modbus\include\mbframe.h)(0x4578834A)
 I (..\modbus\include\mbconfig.h)(0x58E4AA2E)
-F (..\modbus\functions\mbfuncother.c)(0x522982B6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncother.o --omf_browse pyro_squib\mbfuncother.crf --depend pyro_squib\mbfuncother.d)
+F (..\modbus\functions\mbfuncother.c)(0x522982B6)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbfuncother.o --omf_browse pyro_squib\mbfuncother.crf --depend pyro_squib\mbfuncother.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -437,16 +482,16 @@ I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
 I (..\modbus\include\mbframe.h)(0x4578834A)
 I (..\modbus\include\mbconfig.h)(0x58E4AA2E)
-F (..\modbus\functions\mbutils.c)(0x58E39A93)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbutils.o --omf_browse pyro_squib\mbutils.crf --depend pyro_squib\mbutils.d)
+F (..\modbus\functions\mbutils.c)(0x58E39A93)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbutils.o --omf_browse pyro_squib\mbutils.crf --depend pyro_squib\mbutils.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -472,48 +517,15 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
-F (..\modbus\port\mbport.c)(0x58E4A9B5)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbport.o --omf_browse pyro_squib\mbport.crf --depend pyro_squib\mbport.d)
-I (..\modbus\include\mb.h)(0x5229806C)
-I (..\modbus\include\mbport.h)(0x58E396CF)
-I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
-I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
-I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
-I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
-I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x58440A6F)
-I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
-I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
-I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x58440A6F)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x58440A70)
-I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-I (..\modbus\include\mbproto.h)(0x4578834A)
-F (..\modbus\port\portevent.c)(0x58E4B44C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\portevent.o --omf_browse pyro_squib\portevent.crf --depend pyro_squib\portevent.d)
+F (..\modbus\port\mbport.c)(0x58E64D90)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbport.o --omf_browse pyro_squib\mbport.crf --depend pyro_squib\mbport.d)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -538,14 +550,49 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (..\modbus\include\mbproto.h)(0x4578834A)
-F (..\modbus\port\portserial.c)(0x58E4DF64)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\portserial.o --omf_browse pyro_squib\portserial.crf --depend pyro_squib\portserial.d)
+I (../Inc/adc.h)(0x58E646A2)
+I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
+F (..\modbus\port\portevent.c)(0x58E4B44C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\portevent.o --omf_browse pyro_squib\portevent.crf --depend pyro_squib\portevent.d)
+I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x58440A6F)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x58440A70)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
+I (..\modbus\include\mbproto.h)(0x4578834A)
+F (..\modbus\port\portserial.c)(0x58E4DF64)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\portserial.o --omf_browse pyro_squib\portserial.crf --depend pyro_squib\portserial.d)
+I (..\modbus\include\mbport.h)(0x58E396CF)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -571,15 +618,15 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
-F (..\modbus\port\porttimer.c)(0x58E4D271)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\porttimer.o --omf_browse pyro_squib\porttimer.crf --depend pyro_squib\porttimer.d)
+F (..\modbus\port\porttimer.c)(0x58E4D271)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\porttimer.o --omf_browse pyro_squib\porttimer.crf --depend pyro_squib\porttimer.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -593,9 +640,9 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -619,16 +666,16 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
-F (..\modbus\mb.c)(0x58E4D320)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mb.o --omf_browse pyro_squib\mb.crf --depend pyro_squib\mb.d)
+F (..\modbus\mb.c)(0x58E4D320)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mb.o --omf_browse pyro_squib\mb.crf --depend pyro_squib\mb.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (..\modbus\include\mbport.h)(0x58E396CF)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -658,13 +705,13 @@ I (..\modbus\include\mbconfig.h)(0x58E4AA2E)
 I (..\modbus\include\mbframe.h)(0x4578834A)
 I (..\modbus\include\mbfunc.h)(0x4578834A)
 I (..\modbus\rtu\mbrtu.h)(0x4578834A)
-F (startup_stm32f100xb.s)(0x58E39107)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I..\Inc-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD_VL SETA 1"--list startup_stm32f100xb.lst --xref -o pyro_squib\startup_stm32f100xb.o --depend pyro_squib\startup_stm32f100xb.d)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_cortex.o --omf_browse pyro_squib\stm32f1xx_hal_cortex.crf --depend pyro_squib\stm32f1xx_hal_cortex.d)
+F (startup_stm32f100xb.s)(0x58E63380)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1" -I..\Inc-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"--pd "__UVISION_VERSION SETA 517" --pd "_RTE_ SETA 1" --pd "STM32F10X_MD_VL SETA 1"--list startup_stm32f100xb.lst --xref -o pyro_squib\startup_stm32f100xb.o --depend pyro_squib\startup_stm32f100xb.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_cortex.o --omf_browse pyro_squib\stm32f1xx_hal_cortex.crf --depend pyro_squib\stm32f1xx_hal_cortex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -689,12 +736,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_gpio_ex.o --omf_browse pyro_squib\stm32f1xx_hal_gpio_ex.crf --depend pyro_squib\stm32f1xx_hal_gpio_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_gpio_ex.o --omf_browse pyro_squib\stm32f1xx_hal_gpio_ex.crf --depend pyro_squib\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -719,12 +766,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_pwr.o --omf_browse pyro_squib\stm32f1xx_hal_pwr.crf --depend pyro_squib\stm32f1xx_hal_pwr.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_pwr.o --omf_browse pyro_squib\stm32f1xx_hal_pwr.crf --depend pyro_squib\stm32f1xx_hal_pwr.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -749,12 +796,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal.o --omf_browse pyro_squib\stm32f1xx_hal.crf --depend pyro_squib\stm32f1xx_hal.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal.o --omf_browse pyro_squib\stm32f1xx_hal.crf --depend pyro_squib\stm32f1xx_hal.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -779,12 +826,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_tim.o --omf_browse pyro_squib\stm32f1xx_hal_tim.crf --depend pyro_squib\stm32f1xx_hal_tim.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_tim.o --omf_browse pyro_squib\stm32f1xx_hal_tim.crf --depend pyro_squib\stm32f1xx_hal_tim.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -809,12 +856,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_gpio.o --omf_browse pyro_squib\stm32f1xx_hal_gpio.crf --depend pyro_squib\stm32f1xx_hal_gpio.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_gpio.o --omf_browse pyro_squib\stm32f1xx_hal_gpio.crf --depend pyro_squib\stm32f1xx_hal_gpio.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -839,12 +886,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_flash.o --omf_browse pyro_squib\stm32f1xx_hal_flash.crf --depend pyro_squib\stm32f1xx_hal_flash.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_flash.o --omf_browse pyro_squib\stm32f1xx_hal_flash.crf --depend pyro_squib\stm32f1xx_hal_flash.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -869,12 +916,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_tim_ex.o --omf_browse pyro_squib\stm32f1xx_hal_tim_ex.crf --depend pyro_squib\stm32f1xx_hal_tim_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_tim_ex.o --omf_browse pyro_squib\stm32f1xx_hal_tim_ex.crf --depend pyro_squib\stm32f1xx_hal_tim_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -899,12 +946,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_rcc.o --omf_browse pyro_squib\stm32f1xx_hal_rcc.crf --depend pyro_squib\stm32f1xx_hal_rcc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_rcc.o --omf_browse pyro_squib\stm32f1xx_hal_rcc.crf --depend pyro_squib\stm32f1xx_hal_rcc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -929,12 +976,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_flash_ex.o --omf_browse pyro_squib\stm32f1xx_hal_flash_ex.crf --depend pyro_squib\stm32f1xx_hal_flash_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_flash_ex.o --omf_browse pyro_squib\stm32f1xx_hal_flash_ex.crf --depend pyro_squib\stm32f1xx_hal_flash_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -959,12 +1006,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_rcc_ex.o --omf_browse pyro_squib\stm32f1xx_hal_rcc_ex.crf --depend pyro_squib\stm32f1xx_hal_rcc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_rcc_ex.o --omf_browse pyro_squib\stm32f1xx_hal_rcc_ex.crf --depend pyro_squib\stm32f1xx_hal_rcc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -989,12 +1036,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_dma.o --omf_browse pyro_squib\stm32f1xx_hal_dma.crf --depend pyro_squib\stm32f1xx_hal_dma.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_dma.o --omf_browse pyro_squib\stm32f1xx_hal_dma.crf --depend pyro_squib\stm32f1xx_hal_dma.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -1019,12 +1066,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_adc_ex.o --omf_browse pyro_squib\stm32f1xx_hal_adc_ex.crf --depend pyro_squib\stm32f1xx_hal_adc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_adc_ex.o --omf_browse pyro_squib\stm32f1xx_hal_adc_ex.crf --depend pyro_squib\stm32f1xx_hal_adc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -1049,12 +1096,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_uart.o --omf_browse pyro_squib\stm32f1xx_hal_uart.crf --depend pyro_squib\stm32f1xx_hal_uart.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_uart.o --omf_browse pyro_squib\stm32f1xx_hal_uart.crf --depend pyro_squib\stm32f1xx_hal_uart.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -1079,12 +1126,12 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_adc.o --omf_browse pyro_squib\stm32f1xx_hal_adc.crf --depend pyro_squib\stm32f1xx_hal_adc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x58440A70)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_adc.o --omf_browse pyro_squib\stm32f1xx_hal_adc.crf --depend pyro_squib\stm32f1xx_hal_adc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -1109,7 +1156,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Src/system_stm32f1xx.c)(0x58440A6F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\system_stm32f1xx.o --omf_browse pyro_squib\system_stm32f1xx.crf --depend pyro_squib\system_stm32f1xx.d)
+F (../Src/system_stm32f1xx.c)(0x58440A6F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\system_stm32f1xx.o --omf_browse pyro_squib\system_stm32f1xx.crf --depend pyro_squib\system_stm32f1xx.d)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
@@ -1119,10 +1166,10 @@ I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
 I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x58440A6F)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
-I (../Inc/stm32f1xx_hal_conf.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/stm32f1xx_hal_conf.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
-I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58E3958D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x58440A70)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x58440A70)
@@ -1139,7 +1186,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\cmsis_os.o --omf_browse pyro_squib\cmsis_os.crf --depend pyro_squib\cmsis_os.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\cmsis_os.o --omf_browse pyro_squib\cmsis_os.crf --depend pyro_squib\cmsis_os.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
@@ -1147,8 +1194,8 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1160,13 +1207,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_1.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\heap_1.o --omf_browse pyro_squib\heap_1.crf --depend pyro_squib\heap_1.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_1.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\heap_1.o --omf_browse pyro_squib\heap_1.crf --depend pyro_squib\heap_1.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1174,13 +1221,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\event_groups.o --omf_browse pyro_squib\event_groups.crf --depend pyro_squib\event_groups.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\event_groups.o --omf_browse pyro_squib\event_groups.crf --depend pyro_squib\event_groups.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1190,14 +1237,14 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\tasks.o --omf_browse pyro_squib\tasks.crf --depend pyro_squib\tasks.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/tasks.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\tasks.o --omf_browse pyro_squib\tasks.crf --depend pyro_squib\tasks.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1207,13 +1254,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\timers.o --omf_browse pyro_squib\timers.crf --depend pyro_squib\timers.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/timers.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\timers.o --omf_browse pyro_squib\timers.crf --depend pyro_squib\timers.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1223,12 +1270,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\croutine.o --omf_browse pyro_squib\croutine.crf --depend pyro_squib\croutine.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\croutine.o --omf_browse pyro_squib\croutine.crf --depend pyro_squib\croutine.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1237,12 +1284,12 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\port.o --omf_browse pyro_squib\port.crf --depend pyro_squib\port.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\port.o --omf_browse pyro_squib\port.crf --depend pyro_squib\port.d)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1250,14 +1297,14 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\queue.o --omf_browse pyro_squib\queue.crf --depend pyro_squib\queue.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/queue.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\queue.o --omf_browse pyro_squib\queue.crf --depend pyro_squib\queue.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1266,13 +1313,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x58440A71)
-F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\list.o --omf_browse pyro_squib\list.crf --depend pyro_squib\list.d)
+F (../Middlewares/Third_Party/FreeRTOS/Source/list.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\list.o --omf_browse pyro_squib\list.crf --depend pyro_squib\list.d)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x58E39106)
-I (../Inc/main.h)(0x58E39106)
+I (../Inc/FreeRTOSConfig.h)(0x58E6337F)
+I (../Inc/main.h)(0x58E63380)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
