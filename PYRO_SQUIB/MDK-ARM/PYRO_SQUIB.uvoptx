@@ -203,6 +203,10 @@
           <WinId>35902</WinId>
         </Entry>
         <Entry>
+          <Name>System Viewer\GPIOB</Name>
+          <WinId>35901</WinId>
+        </Entry>
+        <Entry>
           <Name>System Viewer\TIM4</Name>
           <WinId>35904</WinId>
         </Entry>

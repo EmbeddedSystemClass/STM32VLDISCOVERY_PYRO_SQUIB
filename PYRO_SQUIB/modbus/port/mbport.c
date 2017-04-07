@@ -112,48 +112,55 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
             {
                 usRegHoldingBuf[iRegIndex] = *pucRegBuffer++ << 8;
                 usRegHoldingBuf[iRegIndex] |= *pucRegBuffer++;
-                iRegIndex++;
-                usNRegs--;
+
 								
 								switch(iRegIndex)
 								{
 										case REG_PIR_EN1:
 										{
-							
-											//	HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,);
+												HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,usRegHoldingBuf[iRegIndex]&0x1);
 										}
 										break;
 										
 										case REG_PIR_EN2:
 										{
+												HAL_GPIO_WritePin(PIR_EN2_GPIO_Port,PIR_EN2_Pin,usRegHoldingBuf[iRegIndex]&0x1);
 										}
 										break;	
 
 										case REG_PIR_EN3:
 										{
+												HAL_GPIO_WritePin(PIR_EN3_GPIO_Port,PIR_EN3_Pin,usRegHoldingBuf[iRegIndex]&0x1);
 										}
 										break;	
 
 										case REG_PIR_EN4:
 										{
+												HAL_GPIO_WritePin(PIR_EN4_GPIO_Port,PIR_EN4_Pin,usRegHoldingBuf[iRegIndex]&0x1);
 										}
 										break;
 										
 										case REG_PIR_EN5:
 										{
+												HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,usRegHoldingBuf[iRegIndex]&0x1);
 										}
 										break;
 
 										case REG_PIR_EN6:
 										{
+												HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,usRegHoldingBuf[iRegIndex]&0x1);
 										}
 										break;
 										
 										case REG_PIR_EN7:
 										{
+												HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,usRegHoldingBuf[iRegIndex]&0x1);
 										}
 										break;										
 								}
+								
+								iRegIndex++;
+                usNRegs--;
             }
             break;
         }
