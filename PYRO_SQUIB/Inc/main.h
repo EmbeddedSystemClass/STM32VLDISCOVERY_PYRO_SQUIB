@@ -51,6 +51,18 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define SCL_AKT_Pin GPIO_PIN_10
+#define SCL_AKT_GPIO_Port GPIOB
+#define SDA_AKT_Pin GPIO_PIN_11
+#define SDA_AKT_GPIO_Port GPIOB
+#define A0_AKT_Pin GPIO_PIN_12
+#define A0_AKT_GPIO_Port GPIOB
+#define A1_AKT_Pin GPIO_PIN_13
+#define A1_AKT_GPIO_Port GPIOB
+#define A2_AKT_Pin GPIO_PIN_14
+#define A2_AKT_GPIO_Port GPIOB
+#define INT_AKT_Pin GPIO_PIN_15
+#define INT_AKT_GPIO_Port GPIOB
 #define LED_1_Pin GPIO_PIN_6
 #define LED_1_GPIO_Port GPIOC
 #define LED_0_Pin GPIO_PIN_7

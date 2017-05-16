@@ -27,6 +27,7 @@ pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
 pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
@@ -34,3 +35,4 @@ pyro_squib\mbport.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 pyro_squib\mbport.o: ..\modbus\include\mbproto.h
 pyro_squib\mbport.o: ../Inc/adc.h
 pyro_squib\mbport.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
+pyro_squib\mbport.o: ../Inc/dig_pot.h

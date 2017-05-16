@@ -48,11 +48,14 @@
 /* USER CODE BEGIN Includes */
 #include "mbinit.h"
 #include "adc.h"
+#include "dig_pot.h"
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
+
+I2C_HandleTypeDef hi2c2;
 
 TIM_HandleTypeDef htim4;
 
@@ -73,6 +76,7 @@ static void MX_DMA_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM4_Init(void);
+static void MX_I2C2_Init(void);
 void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
@@ -105,8 +109,10 @@ int main(void)
   MX_ADC1_Init();
   MX_USART1_UART_Init();
   MX_TIM4_Init();
+  MX_I2C2_Init();
 
   /* USER CODE BEGIN 2 */
+	DigPot_Init();
   ADC_Init();
 	Modbus_Init();
   /* USER CODE END 2 */
@@ -125,8 +131,8 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-//  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 128);
-//  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 128);
+  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -305,6 +311,26 @@ static void MX_ADC1_Init(void)
 
 }
 
+/* I2C2 init function */
+static void MX_I2C2_Init(void)
+{
+
+  hi2c2.Instance = I2C2;
+  hi2c2.Init.ClockSpeed = 100000;
+  hi2c2.Init.DutyCycle = I2C_DUTYCYCLE_2;
+  hi2c2.Init.OwnAddress1 = 0;
+  hi2c2.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
+  hi2c2.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
+  hi2c2.Init.OwnAddress2 = 0;
+  hi2c2.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
+  hi2c2.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
+  if (HAL_I2C_Init(&hi2c2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+}
+
 /* TIM4 init function */
 static void MX_TIM4_Init(void)
 {
@@ -386,8 +412,12 @@ static void MX_GPIO_Init(void)
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, A0_AKT_Pin|A1_AKT_Pin|A2_AKT_Pin|PIR_EN5_Pin 
+                          |PIR_EN4_Pin|PIR_EN3_Pin|PIR_EN2_Pin|PIR_EN1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOC, LED_1_Pin|LED_0_Pin|LD4_Pin|LD3_Pin 
@@ -396,9 +426,19 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(PIR_EN6_GPIO_Port, PIR_EN6_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, PIR_EN5_Pin|PIR_EN4_Pin|PIR_EN3_Pin|PIR_EN2_Pin 
-                          |PIR_EN1_Pin, GPIO_PIN_RESET);
+  /*Configure GPIO pins : A0_AKT_Pin A1_AKT_Pin A2_AKT_Pin PIR_EN5_Pin 
+                           PIR_EN4_Pin PIR_EN3_Pin PIR_EN2_Pin PIR_EN1_Pin */
+  GPIO_InitStruct.Pin = A0_AKT_Pin|A1_AKT_Pin|A2_AKT_Pin|PIR_EN5_Pin 
+                          |PIR_EN4_Pin|PIR_EN3_Pin|PIR_EN2_Pin|PIR_EN1_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : INT_AKT_Pin */
+  GPIO_InitStruct.Pin = INT_AKT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  HAL_GPIO_Init(INT_AKT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : LED_1_Pin LED_0_Pin LD4_Pin LD3_Pin 
                            PIR_EN8_Pin PIR_EN7_Pin */
@@ -413,14 +453,6 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(PIR_EN6_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pins : PIR_EN5_Pin PIR_EN4_Pin PIR_EN3_Pin PIR_EN2_Pin 
-                           PIR_EN1_Pin */
-  GPIO_InitStruct.Pin = PIR_EN5_Pin|PIR_EN4_Pin|PIR_EN3_Pin|PIR_EN2_Pin 
-                          |PIR_EN1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 

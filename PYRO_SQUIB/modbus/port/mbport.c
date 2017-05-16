@@ -2,6 +2,7 @@
 #include "adc.h"
 #include "string.h"
 #include "main.h"
+#include "dig_pot.h"
 void ENTER_CRITICAL_SECTION(void)
 {
 	//__set_PRIMASK(1);
@@ -16,12 +17,13 @@ void EXIT_CRITICAL_SECTION(void)
 }
 
 extern volatile float ADC_voltage[ADC_CHN_NUM];
+extern uint8_t digPotValue[I2C_POT_NUM];
 
 #define REG_INPUT_START     1001
 #define REG_INPUT_NREGS     16
 
 #define REG_HOLDING_START   2001
-#define REG_HOLDING_NREGS   8
+#define REG_HOLDING_NREGS   16
 
 #define REG_ADC_0						0
 #define REG_ADC_1						2
@@ -76,6 +78,11 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 #define REG_PIR_EN7		6
 #define REG_PIR_EN8		7
 
+#define REG_POT1			8
+#define REG_POT2			9
+#define REG_POT3			10
+#define REG_POT4			11
+
 eMBErrorCode
 eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode )
 {
@@ -97,6 +104,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 						usRegHoldingBuf[REG_PIR_EN6]=HAL_GPIO_ReadPin(PIR_EN6_GPIO_Port,PIR_EN6_Pin);
 						usRegHoldingBuf[REG_PIR_EN7]=HAL_GPIO_ReadPin(PIR_EN7_GPIO_Port,PIR_EN7_Pin);
 						usRegHoldingBuf[REG_PIR_EN8]=HAL_GPIO_ReadPin(PIR_EN8_GPIO_Port,PIR_EN8_Pin);
+						usRegHoldingBuf[REG_POT1]=digPotValue[DIG_POT_1];
+						usRegHoldingBuf[REG_POT2]=digPotValue[DIG_POT_2];
+						usRegHoldingBuf[REG_POT3]=digPotValue[DIG_POT_3];
+						usRegHoldingBuf[REG_POT4]=digPotValue[DIG_POT_4];
 				
             while( usNRegs > 0 )
             {
@@ -155,6 +166,30 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_EN7:
 										{
 												HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,usRegHoldingBuf[iRegIndex]&0x1);
+										}
+										break;
+
+										case REG_POT1:
+										{
+												DigPot_SetValue(DIG_POT_1,usRegHoldingBuf[iRegIndex]&0x7F);
+										}
+										break;
+										
+										case REG_POT2:
+										{
+												DigPot_SetValue(DIG_POT_2,usRegHoldingBuf[iRegIndex]&0x7F);
+										}
+										break;
+
+										case REG_POT3:
+										{
+												DigPot_SetValue(DIG_POT_3,usRegHoldingBuf[iRegIndex]&0x7F);
+										}
+										break;
+										
+										case REG_POT4:
+										{
+												DigPot_SetValue(DIG_POT_4,usRegHoldingBuf[iRegIndex]&0x7F);
 										}
 										break;										
 								}

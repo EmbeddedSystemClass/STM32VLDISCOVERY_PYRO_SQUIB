@@ -25,6 +25,7 @@ pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h
 pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h
 pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h
 pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 pyro_squib\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
@@ -47,3 +48,4 @@ pyro_squib\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 pyro_squib\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\main.o: ../Inc/mbinit.h
 pyro_squib\main.o: ../Inc/adc.h
+pyro_squib\main.o: ../Inc/dig_pot.h
