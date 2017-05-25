@@ -19,12 +19,14 @@ void DigPot_Init(void)
 void DigPot_SetValue(enDigPot DigPot, uint8_t value)
 {
 	  uint8_t mux_reg;
+		HAL_StatusTypeDef err=HAL_ERROR;
 		
 		digPotValue[DigPot]=value;
 	
 		mux_reg=(DigPot&0x3)|0x4;
-		if(HAL_I2C_Master_Transmit(&hi2c2,I2C_MUX_ADDR,&mux_reg,1,0)==HAL_OK)
+		err=HAL_I2C_Master_Transmit(&hi2c2,I2C_MUX_ADDR,&mux_reg,1,10);
+		if(err==HAL_OK)
 		{
-				HAL_I2C_Master_Transmit(&hi2c2,I2C_POT_ADDR,&value,1,0);
+				HAL_I2C_Master_Transmit(&hi2c2,I2C_POT_ADDR,&value,1,10);
 		}
 }
