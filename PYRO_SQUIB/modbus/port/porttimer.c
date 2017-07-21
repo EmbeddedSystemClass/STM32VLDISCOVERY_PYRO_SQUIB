@@ -28,7 +28,7 @@
 #include "mbport.h"
 
 /* ----------------------- static functions ---------------------------------*/
-static void prvvTIMERExpiredISR( void );
+static  void prvvTIMERExpiredISR( void );
 extern TIM_HandleTypeDef htim4;
 /* ----------------------- Start implementation -----------------------------*/
 BOOL
@@ -77,7 +77,7 @@ vMBPortTimersDisable(  )
  * must then call pxMBPortCBTimerExpired( ) to notify the protocol stack that
  * the timer has expired.
  */
-static void prvvTIMERExpiredISR( void )
+static  void prvvTIMERExpiredISR( void )
 {
     BOOL bTaskWoken = FALSE;
 	
@@ -89,12 +89,10 @@ static void prvvTIMERExpiredISR( void )
     portEND_SWITCHING_ISR( bTaskWoken ? pdTRUE : pdFALSE );
 }
 
-
-void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htimer)
+void  xMBPort_TimerExpired(void)
 {
-	switch((uint32_t)(htimer->Instance)){
-		case (uint32_t)TIM4:
-			prvvTIMERExpiredISR();
-			break;
-	}
+	prvvTIMERExpiredISR();
 }
+
+
+

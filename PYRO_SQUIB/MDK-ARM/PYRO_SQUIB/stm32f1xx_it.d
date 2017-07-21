@@ -49,3 +49,5 @@ pyro_squib\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/se
 pyro_squib\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\stm32f1xx_it.o: ..\modbus\include\mbport.h
 pyro_squib\stm32f1xx_it.o: ../Inc/adc.h
+pyro_squib\stm32f1xx_it.o: ../Inc/pyro_squib.h
+pyro_squib\stm32f1xx_it.o: ../Inc/dig_pot.h

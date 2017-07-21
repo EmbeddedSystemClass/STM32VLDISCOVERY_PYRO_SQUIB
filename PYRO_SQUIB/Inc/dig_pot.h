@@ -15,6 +15,6 @@ typedef enum
 
 
 void DigPot_Init(void);
-void DigPot_SetValue(enDigPot DigPot, uint8_t value);
+HAL_StatusTypeDef DigPot_SetValue(enDigPot DigPot, uint8_t value);
 
 #endif

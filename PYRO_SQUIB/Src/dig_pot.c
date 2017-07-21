@@ -16,7 +16,7 @@ void DigPot_Init(void)
 		HAL_GPIO_WritePin(A2_AKT_GPIO_Port, A2_AKT_Pin, GPIO_PIN_RESET);
 }
 
-void DigPot_SetValue(enDigPot DigPot, uint8_t value)
+HAL_StatusTypeDef DigPot_SetValue(enDigPot DigPot, uint8_t value)
 {
 	  uint8_t mux_reg;
 		HAL_StatusTypeDef err=HAL_ERROR;
@@ -27,6 +27,8 @@ void DigPot_SetValue(enDigPot DigPot, uint8_t value)
 		err=HAL_I2C_Master_Transmit(&hi2c2,I2C_MUX_ADDR,&mux_reg,1,10);
 		if(err==HAL_OK)
 		{
-				HAL_I2C_Master_Transmit(&hi2c2,I2C_POT_ADDR,&value,1,10);
+				err=HAL_I2C_Master_Transmit(&hi2c2,I2C_POT_ADDR,&value,1,10);
 		}
+		
+		return err;
 }

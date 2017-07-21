@@ -6,6 +6,7 @@
 "pyro_squib\mbinit.o"
 "pyro_squib\adc.o"
 "pyro_squib\dig_pot.o"
+"pyro_squib\pyro_squib.o"
 "pyro_squib\mbcrc.o"
 "pyro_squib\mbrtu.o"
 "pyro_squib\mbfunccoils.o"

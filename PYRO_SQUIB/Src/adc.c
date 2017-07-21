@@ -7,8 +7,17 @@
 
 #include "stm32f1xx_hal.h"
 
-#define ADC_TASK_STACK_SIZE	256
-#define ADC_POLL_TIME				10
+#define ADC_TASK_STACK_SIZE	128
+#define ADC_POLL_TIME				1
+
+#define ADC_NUM_SAMPLES			50
+
+#define ADC_BUF_LEN					(ADC_CHN_NUM*ADC_NUM_SAMPLES)
+	
+float ADC_buf[ADC_BUF_LEN];
+uint16_t ADC_buf_cnt;
+
+uint8_t ADC_buf_fill_flag=0;
 
 
 extern ADC_HandleTypeDef hadc1;
@@ -40,9 +49,21 @@ static void ADC_Task(void *pvParameters)
 //					__HAL_DMA_ENABLE_IT(&hdma_adc1, DMA_IT_TE);
 					if( xSemaphoreTake( xADCSemaphore, ( TickType_t )100 ) == pdTRUE )
 					{
-							for(adc_cnt=0;adc_cnt<ADC_CHN_NUM;adc_cnt++)
+							if(ADC_buf_fill_flag)
 							{
-								ADC_voltage[adc_cnt] = ADC_toVoltage(ADC_value[adc_cnt]);
+									for(adc_cnt=0;adc_cnt<ADC_CHN_NUM;adc_cnt++)
+									{
+										ADC_voltage[adc_cnt] = ADC_toVoltage(ADC_value[adc_cnt]);									
+									  ADC_buf[ADC_buf_cnt+adc_cnt]=ADC_voltage[adc_cnt];
+									}
+									ADC_buf_cnt+=ADC_CHN_NUM;
+							}
+							else
+							{
+									for(adc_cnt=0;adc_cnt<ADC_CHN_NUM;adc_cnt++)
+									{
+										ADC_voltage[adc_cnt] = ADC_toVoltage(ADC_value[adc_cnt]);
+									}
 							}
 					}	
 					vTaskDelay(ADC_POLL_TIME);

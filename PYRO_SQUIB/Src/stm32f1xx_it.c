@@ -39,11 +39,13 @@
 /* USER CODE BEGIN 0 */
 #include "mbport.h"
 #include "adc.h"
+#include "pyro_squib.h"
 BOOL UART_IRQ_Handler(USART_TypeDef * usart) ;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
 extern DMA_HandleTypeDef hdma_adc1;
+extern TIM_HandleTypeDef htim2;
 extern TIM_HandleTypeDef htim4;
 extern UART_HandleTypeDef huart1;
 
@@ -181,6 +183,20 @@ void DMA1_Channel1_IRQHandler(void)
 }
 
 /**
+* @brief This function handles TIM2 global interrupt.
+*/
+void TIM2_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM2_IRQn 0 */
+
+  /* USER CODE END TIM2_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim2);
+  /* USER CODE BEGIN TIM2_IRQn 1 */
+
+  /* USER CODE END TIM2_IRQn 1 */
+}
+
+/**
 * @brief This function handles TIM4 global interrupt.
 */
 void TIM4_IRQHandler(void)
@@ -212,6 +228,25 @@ void USART1_IRQHandler(void)
 }
 
 /* USER CODE BEGIN 1 */
+
+void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htimer)
+{
+	switch((uint32_t)(htimer->Instance))
+	{
+		case (uint32_t)TIM4:
+		{
+			xMBPort_TimerExpired();		
+		}
+		break;
+		
+		case (uint32_t)TIM2:
+		{
+			PyroSquib_TimerExpired();
+		}
+		break;
+		
+	}
+}
 
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

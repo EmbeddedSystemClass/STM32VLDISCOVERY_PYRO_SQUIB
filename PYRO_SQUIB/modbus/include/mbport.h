@@ -147,6 +147,8 @@ BOOL            xMBTCPPortGetRequest( UCHAR **ppucMBTCPFrame, USHORT * usTCPLeng
 
 BOOL            xMBTCPPortSendResponse( const UCHAR *pucMBTCPFrame, USHORT usTCPLength );
 
+void        		xMBPort_TimerExpired(void);
+
 #ifdef __cplusplus
 PR_END_EXTERN_C
 #endif
