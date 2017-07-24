@@ -10,14 +10,8 @@
 #define ADC_TASK_STACK_SIZE	128
 #define ADC_POLL_TIME				1
 
-#define ADC_NUM_SAMPLES			50
 
-#define ADC_BUF_LEN					(ADC_CHN_NUM*ADC_NUM_SAMPLES)
-	
-float ADC_buf[ADC_BUF_LEN];
-uint16_t ADC_buf_cnt;
-
-uint8_t ADC_buf_fill_flag=0;
+stADC_PyroBuf ADC_PyroBuf;
 
 
 extern ADC_HandleTypeDef hadc1;
@@ -33,6 +27,10 @@ extern DMA_HandleTypeDef hdma_adc1;
 
 void ADC_Init(void)
 {
+		ADC_PyroBuf.buf_cnt=0;
+		ADC_PyroBuf.fill_is_end=FALSE;
+		ADC_PyroBuf.start_fill=FALSE;
+	
 		xADCSemaphore = xSemaphoreCreateBinary();
 		xTaskCreate(ADC_Task,"ADC task",ADC_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }
@@ -49,14 +47,19 @@ static void ADC_Task(void *pvParameters)
 //					__HAL_DMA_ENABLE_IT(&hdma_adc1, DMA_IT_TE);
 					if( xSemaphoreTake( xADCSemaphore, ( TickType_t )100 ) == pdTRUE )
 					{
-							if(ADC_buf_fill_flag)
+							if(ADC_PyroBuf.start_fill)
 							{
 									for(adc_cnt=0;adc_cnt<ADC_CHN_NUM;adc_cnt++)
 									{
 										ADC_voltage[adc_cnt] = ADC_toVoltage(ADC_value[adc_cnt]);									
-									  ADC_buf[ADC_buf_cnt+adc_cnt]=ADC_voltage[adc_cnt];
+									  ADC_PyroBuf.buf[ADC_PyroBuf.buf_cnt+adc_cnt]=ADC_voltage[adc_cnt];
 									}
-									ADC_buf_cnt+=ADC_CHN_NUM;
+									ADC_PyroBuf.buf_cnt+=ADC_CHN_NUM;
+									
+									if(ADC_PyroBuf.buf_cnt>=ADC_BUF_LEN)
+									{
+											ADC_PyroBuf.start_fill=0;
+									}
 							}
 							else
 							{
@@ -84,6 +87,17 @@ void ADC_ConvComplete(void)
 	static  BaseType_t xHigherPriorityTaskWoken;
 	xHigherPriorityTaskWoken = pdFALSE;	
 	xSemaphoreGiveFromISR( xADCSemaphore, &xHigherPriorityTaskWoken );
+}
+
+void ADC_FillBuf_Start(void)
+{
+		ADC_PyroBuf.buf_cnt=0;
+		ADC_PyroBuf.start_fill=TRUE;
+}
+
+void ADC_FillBuf_Stop(void)
+{
+		ADC_PyroBuf.start_fill=FALSE;
 }
 
 //void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc)

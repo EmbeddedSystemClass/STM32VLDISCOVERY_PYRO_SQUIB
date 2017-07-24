@@ -3,6 +3,7 @@
 #include "string.h"
 #include "main.h"
 #include "dig_pot.h"
+#include "pyro_squib.h"
 void ENTER_CRITICAL_SECTION(void)
 {
 	//__set_PRIMASK(1);
@@ -18,9 +19,13 @@ void EXIT_CRITICAL_SECTION(void)
 
 extern volatile float ADC_voltage[ADC_CHN_NUM];
 extern uint8_t digPotValue[I2C_POT_NUM];
+extern stPyroSquib PyroSquibParam;
+extern stADC_PyroBuf ADC_PyroBuf;
+
+static enPyroSquibError			PyroSquibError;  
 
 #define REG_INPUT_START     1001
-#define REG_INPUT_NREGS     16
+#define REG_INPUT_NREGS     20
 
 #define REG_HOLDING_START   2001
 #define REG_HOLDING_NREGS   16
@@ -33,6 +38,12 @@ extern uint8_t digPotValue[I2C_POT_NUM];
 #define REG_ADC_5						10
 #define REG_ADC_6						12
 #define REG_ADC_7						14
+
+
+#define REG_PIR_STATE					16
+#define REG_PIR_BUF_COUNTER		17
+#define REG_PIR_FILL_IS_END		18
+#define REG_PIR_ERROR					19
 
 static USHORT   usRegInputStart = REG_INPUT_START;
 USHORT   usRegInputBuf[REG_INPUT_NREGS];
@@ -53,6 +64,13 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
         iRegIndex = (int) ( usAddress - usRegInputStart );
 			
 				memcpy((void*)usRegInputBuf,(const void*)ADC_voltage,sizeof(float)*ADC_CHN_NUM);
+				
+				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam.state;
+				usRegInputBuf[REG_PIR_BUF_COUNTER]=ADC_PyroBuf.buf_cnt;
+				usRegInputBuf[REG_PIR_FILL_IS_END]=ADC_PyroBuf.fill_is_end;
+				usRegInputBuf[REG_PIR_ERROR]=PyroSquibError;
+			
+			
         while ( usNRegs > 0 )
         {
             *pucRegBuffer++ = (unsigned char) ( usRegInputBuf[ iRegIndex ] >> 8 );
@@ -69,19 +87,13 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
     return eStatus;
 }
 
-#define REG_PIR_EN1		0
-#define REG_PIR_EN2		1
-#define REG_PIR_EN3		2
-#define REG_PIR_EN4		3
-#define REG_PIR_EN5		4
-#define REG_PIR_EN6		5
-#define REG_PIR_EN7		6
-#define REG_PIR_EN8		7
 
-#define REG_POT1			8
-#define REG_POT2			9
-#define REG_POT3			10
-#define REG_POT4			11
+
+
+#define REG_PIR_SET_TIME			0
+#define REG_PIR_SET_CURRENT		1
+#define REG_PIR_SET_MASK			3
+#define REG_PIR_START					4
 
 eMBErrorCode
 eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode )
@@ -95,19 +107,11 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
         iRegIndex = ( int )( usAddress - usRegHoldingStart );
         switch ( eMode )
         {
-        case MB_REG_READ:
-						usRegHoldingBuf[REG_PIR_EN1]=HAL_GPIO_ReadPin(PIR_EN1_GPIO_Port,PIR_EN1_Pin);
-						usRegHoldingBuf[REG_PIR_EN2]=HAL_GPIO_ReadPin(PIR_EN2_GPIO_Port,PIR_EN2_Pin);
-						usRegHoldingBuf[REG_PIR_EN3]=HAL_GPIO_ReadPin(PIR_EN3_GPIO_Port,PIR_EN3_Pin);
-						usRegHoldingBuf[REG_PIR_EN4]=HAL_GPIO_ReadPin(PIR_EN4_GPIO_Port,PIR_EN4_Pin);
-						usRegHoldingBuf[REG_PIR_EN5]=HAL_GPIO_ReadPin(PIR_EN5_GPIO_Port,PIR_EN5_Pin);
-						usRegHoldingBuf[REG_PIR_EN6]=HAL_GPIO_ReadPin(PIR_EN6_GPIO_Port,PIR_EN6_Pin);
-						usRegHoldingBuf[REG_PIR_EN7]=HAL_GPIO_ReadPin(PIR_EN7_GPIO_Port,PIR_EN7_Pin);
-						usRegHoldingBuf[REG_PIR_EN8]=HAL_GPIO_ReadPin(PIR_EN8_GPIO_Port,PIR_EN8_Pin);
-						usRegHoldingBuf[REG_POT1]=digPotValue[DIG_POT_1];
-						usRegHoldingBuf[REG_POT2]=digPotValue[DIG_POT_2];
-						usRegHoldingBuf[REG_POT3]=digPotValue[DIG_POT_3];
-						usRegHoldingBuf[REG_POT4]=digPotValue[DIG_POT_4];
+        case MB_REG_READ:	
+						usRegHoldingBuf[REG_PIR_SET_TIME]=PyroSquibParam.time;
+						usRegHoldingBuf[REG_PIR_SET_CURRENT]=PyroSquibParam.current;
+						usRegHoldingBuf[REG_PIR_SET_MASK]=PyroSquibParam.mask;
+						usRegHoldingBuf[REG_PIR_START]=0;
 				
             while( usNRegs > 0 )
             {
@@ -127,71 +131,34 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 								
 								switch(iRegIndex)
 								{
-										case REG_PIR_EN1:
+										case REG_PIR_SET_TIME:
 										{
-												HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,usRegHoldingBuf[iRegIndex]&0x1);
+												PyroSquibParam.time=usRegHoldingBuf[REG_PIR_SET_TIME];
 										}
 										break;
 										
-										case REG_PIR_EN2:
+										case REG_PIR_SET_CURRENT:
 										{
-												HAL_GPIO_WritePin(PIR_EN2_GPIO_Port,PIR_EN2_Pin,usRegHoldingBuf[iRegIndex]&0x1);
+												PyroSquibParam.current=usRegHoldingBuf[REG_PIR_SET_CURRENT];
 										}
 										break;	
 
-										case REG_PIR_EN3:
+										case REG_PIR_SET_MASK:
 										{
-												HAL_GPIO_WritePin(PIR_EN3_GPIO_Port,PIR_EN3_Pin,usRegHoldingBuf[iRegIndex]&0x1);
+												PyroSquibParam.mask=usRegHoldingBuf[REG_PIR_SET_MASK];
 										}
 										break;	
-
-										case REG_PIR_EN4:
-										{
-												HAL_GPIO_WritePin(PIR_EN4_GPIO_Port,PIR_EN4_Pin,usRegHoldingBuf[iRegIndex]&0x1);
-										}
-										break;
 										
-										case REG_PIR_EN5:
+										case REG_PIR_START:
 										{
-												HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,usRegHoldingBuf[iRegIndex]&0x1);
+											 if(usRegHoldingBuf[REG_PIR_START])
+											 {
+													usRegHoldingBuf[REG_PIR_START]=0;
+													PyroSquibError=PyroSquib_Start();
+											 }
 										}
 										break;
 
-										case REG_PIR_EN6:
-										{
-												HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,usRegHoldingBuf[iRegIndex]&0x1);
-										}
-										break;
-										
-										case REG_PIR_EN7:
-										{
-												HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,usRegHoldingBuf[iRegIndex]&0x1);
-										}
-										break;
-
-										case REG_POT1:
-										{
-												DigPot_SetValue(DIG_POT_1,usRegHoldingBuf[iRegIndex]&0x7F);
-										}
-										break;
-										
-										case REG_POT2:
-										{
-												DigPot_SetValue(DIG_POT_2,usRegHoldingBuf[iRegIndex]&0x7F);
-										}
-										break;
-
-										case REG_POT3:
-										{
-												DigPot_SetValue(DIG_POT_3,usRegHoldingBuf[iRegIndex]&0x7F);
-										}
-										break;
-										
-										case REG_POT4:
-										{
-												DigPot_SetValue(DIG_POT_4,usRegHoldingBuf[iRegIndex]&0x7F);
-										}
-										break;										
 								}
 								
 								iRegIndex++;

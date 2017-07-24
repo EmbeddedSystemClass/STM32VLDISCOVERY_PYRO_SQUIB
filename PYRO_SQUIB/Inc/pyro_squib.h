@@ -20,12 +20,20 @@ typedef enum
 }
 enPyroSquibKeysState;
 
+typedef enum
+{
+  PYRO_SQUIB_STOP=0,
+	PYRO_SQUIB_RUN,
+}
+enPyroSquibProcessState;
+
 typedef struct
 {
 	uint16_t time; //on time in ms
 	float current;
 	uint8_t mask;
 	enPyroSquibError error;
+	enPyroSquibProcessState state;
 } stPyroSquib;
 
 enPyroSquibError PyroSquib_SetParameters(stPyroSquib *PyroSquib, uint16_t time,float current, uint8_t mask);

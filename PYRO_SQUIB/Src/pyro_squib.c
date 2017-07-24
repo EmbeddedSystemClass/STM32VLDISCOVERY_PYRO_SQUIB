@@ -6,7 +6,7 @@
 #define PYRO_SQUIB_NUM 4
 
 #define PYRO_SQUIB_TIME_MIN		10
-#define PYRO_SQUIB_TIME_MAX		100
+#define PYRO_SQUIB_TIME_MAX		500
 #define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
 
 
@@ -16,7 +16,7 @@
 
 
 extern TIM_HandleTypeDef htim2;
-static stPyroSquib PyroSquibParam;
+stPyroSquib PyroSquibParam={100,0.0,0,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
 
 //enPyroSquibError PyroSquib_SetParameters(stPyroSquib *PyroSquib, uint16_t time,float current, uint8_t mask)
 //{
@@ -83,6 +83,9 @@ enPyroSquibError PyroSquib_SetCurrent(stPyroSquib *PyroSquib,float current)
 		uint8_t pyro_squib_cnt=0;
 		PyroSquib->current=current;
 		
+		//current to pot_val
+		pot_val=DigPot_CurrentToPotVal(current);
+		
 		for(pyro_squib_cnt=0;pyro_squib_cnt<DIG_POT_4;pyro_squib_cnt++)
 		{
 				hal_err=DigPot_SetValue(pyro_squib_cnt, pot_val);
@@ -133,9 +136,12 @@ enPyroSquibError PyroSquib_SetKeysState(stPyroSquib *PyroSquib, enPyroSquibKeysS
 enPyroSquibError PyroSquib_Start(void)
 {
 	//start adc 
+	ADC_FillBuf_Start();
+	//delay?
 	
 	//enable current keys
 	PyroSquib_SetKeysState(&PyroSquibParam,PYRO_SQUIB_KEYS_ON);
+	PyroSquibParam.state=PYRO_SQUIB_RUN;
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
 	HAL_TIM_Base_Start_IT(&htim2);
@@ -145,8 +151,9 @@ void PyroSquib_TimerExpired(void)
 {
 	//disable current keys
 	PyroSquib_SetKeysState(&PyroSquibParam,PYRO_SQUIB_KEYS_OFF);
-	
+	PyroSquibParam.state=PYRO_SQUIB_STOP;
 	//stop adc
+	ADC_FillBuf_Stop();
 	
 }
 

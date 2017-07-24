@@ -16,5 +16,6 @@ typedef enum
 
 void DigPot_Init(void);
 HAL_StatusTypeDef DigPot_SetValue(enDigPot DigPot, uint8_t value);
+uint8_t DigPot_CurrentToPotVal(float current);
 
 #endif

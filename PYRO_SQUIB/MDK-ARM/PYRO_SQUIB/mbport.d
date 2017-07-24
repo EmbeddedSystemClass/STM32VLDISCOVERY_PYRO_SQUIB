@@ -36,3 +36,4 @@ pyro_squib\mbport.o: ..\modbus\include\mbproto.h
 pyro_squib\mbport.o: ../Inc/adc.h
 pyro_squib\mbport.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
 pyro_squib\mbport.o: ../Inc/dig_pot.h
+pyro_squib\mbport.o: ../Inc/pyro_squib.h
