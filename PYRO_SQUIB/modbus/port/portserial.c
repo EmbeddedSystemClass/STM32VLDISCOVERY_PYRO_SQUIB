@@ -32,22 +32,22 @@ extern UART_HandleTypeDef huart1;
 void
 vMBPortSerialEnable( BOOL xRxEnable, BOOL xTxEnable ) 
 {
-	if(TRUE==xRxEnable)
-	{
-			__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+    /* If xRXEnable enable serial receive interrupts. If xTxENable enable
+     * transmitter empty interrupts.
+     */
+	// Нам нужно запустить прием и прерывания по RX, если xRxEnable, иначе запретить.
+	if(xRxEnable){
+		startUARTRcv(&huart1);
 	}
-	else
-	{
-			__HAL_UART_DISABLE_IT(&huart1, UART_IT_RXNE);
+	else{
+		stopUART(&huart1);
 	}
-
-	if(TRUE==xTxEnable)
-	{
-			__HAL_UART_ENABLE_IT(&huart1, UART_IT_TXE);
-	}
-	else
-	{
-			__HAL_UART_DISABLE_IT(&huart1, UART_IT_TXE);
+	// Нам нужно запустить передачу и прерывания по TX, если xTxEnable, иначе запретить.
+	// !!! Причем стек сам не запустит прием, если он не примет событие "буфер передатчика свободен"
+	// В нашем случае прямо вызову pxMBFrameCBTransmitterEmpty(  );
+	//!!! Не сделан запрет!!!
+	if(xTxEnable){
+		pxMBFrameCBTransmitterEmpty(  );
 	}
 }
 
@@ -67,39 +67,89 @@ xMBPortSerialInit( UCHAR ucPORT, ULONG ulBaudRate, UCHAR ucDataBits, eMBParity e
 }
 
 
+//not used for DMA!
+//static CHAR txByte;	// отправляемый байт должен быть доступен во время отправки
+//not used for DMA!
 BOOL
 xMBPortSerialPutByte( CHAR ucByte )
 {
-		//HAL_UART_Transmit_IT(&huart1, (uint8_t *)&ucByte, 1); 
-		huart1.Instance->DR=ucByte;
-	  return TRUE;
-}
-
-
-BOOL
-xMBPortSerialGetByte( CHAR * pucByte )
-{
-		//HAL_UART_Receive_IT(&huart1, (uint8_t *)pucByte, 1); 
-		*pucByte=huart1.Instance->DR;
+    /* Put a byte in the UARTs transmit buffer. This function is called
+     * by the protocol stack if pxMBFrameCBTransmitterEmpty( ) has been
+     * called. */
+/*		UART_BB_DIR_SEND();
+		txByte = ucByte;	// мы только заряжаем отправку. Во время отправки буфер должен быть доступен, поэтому используем глобальную переменную
+		HAL_UART_Transmit_IT(&H_UART_BB, (uint8_t *)&txByte, 1); // заряжаем...
+*/
     return TRUE;
 }
 
-
-BOOL UART_IRQ_Handler(USART_TypeDef * usart) 
+/*
+Инициализация отправки по DMA
+*/
+BOOL
+xMBPortSerialPutPktDMA( CHAR *pucSndBuffer, USHORT usSndBufferCount)
 {
-	if (usart == huart1.Instance) 
-	{
-		if((__HAL_UART_GET_FLAG(&huart1, UART_FLAG_RXNE) != RESET) && (__HAL_UART_GET_IT_SOURCE(&huart1, UART_IT_RXNE) != RESET)) 
-		{
-			pxMBFrameCBByteReceived();
-			//__HAL_UART_SEND_REQ(&huart1, UART_RXDATA_FLUSH_REQUEST);
-			return TRUE;
-		}
-		if((__HAL_UART_GET_FLAG(&huart1, UART_FLAG_TXE) != RESET) &&(__HAL_UART_GET_IT_SOURCE(&huart1, UART_IT_TXE) != RESET)) 
-		{
-			pxMBFrameCBTransmitterEmpty();
-			return TRUE;
-		}
-	}
-	return FALSE;
+		HAL_UART_Transmit_DMA(&huart1, (uint8_t*)pucSndBuffer, usSndBufferCount);
+		return TRUE;
 }
+
+//not used for DMA!
+BOOL
+xMBPortSerialGetByte( CHAR * pucByte )
+{
+    /* Return the byte in the UARTs receive buffer. This function is called
+     * by the protocol stack after pxMBFrameCBByteReceived( ) has been called.
+     */
+//		*pucByte = CH_UART_BB;
+		*pucByte = 0;
+    return TRUE;
+}
+
+/* Create an interrupt handler for the transmit buffer empty interrupt
+ * (or an equivalent) for your target processor. This function should then
+ * call pxMBFrameCBTransmitterEmpty( ) which tells the protocol stack that
+ * a new character can be sent. The protocol stack will then call 
+ * xMBPortSerialPutByte( ) to send the character.
+ */
+//static unsigned int uiCnt = 0;
+/*
+При использовании DMA вызывается в конце выдачи единожды - нужно сразу вызвать необходимую функцию
+*/
+void prvvUARTTxReadyISR( void )
+{
+    BOOL bTaskWoken = FALSE;
+	
+//		vMBPortSetWithinException( TRUE );
+/*    if( uiCnt++ < 10 )
+    {
+        ( void )xMBPortSerialPutByte( 'a' );
+    }
+    else
+    {
+        vMBPortSerialEnable( FALSE, FALSE );
+    }*/
+		bTaskWoken = pxMBFrameCBTransmitterEmpty(  );
+//    vMBPortSetWithinException( FALSE );
+
+    portEND_SWITCHING_ISR( bTaskWoken ? pdTRUE : pdFALSE );
+}
+
+/* Create an interrupt handler for the receive interrupt for your target
+ * processor. This function should then call pxMBFrameCBByteReceived( ). The
+ * protocol stack will then call xMBPortSerialGetByte( ) to retrieve the
+ * character.
+ */
+//not used for DMA!
+/*void prvvUARTRxISR( void )
+{
+    BOOL bTaskWoken = FALSE;
+
+		vMBPortSetWithinException( TRUE );
+		
+		bTaskWoken = pxMBFrameCBByteReceived(  );
+    
+		vMBPortSetWithinException( FALSE );
+
+    portEND_SWITCHING_ISR( bTaskWoken ? pdTRUE : pdFALSE );
+}
+*/

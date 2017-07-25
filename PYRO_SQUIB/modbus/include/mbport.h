@@ -35,31 +35,9 @@
 PR_BEGIN_EXTERN_C
 #endif
 
-#include "stdint.h"
-#include "stm32f1xx_hal.h"
+#include "port.h"
 
 /* ----------------------- Type definitions ---------------------------------*/
-
-typedef uint8_t BOOL;
-
-typedef unsigned char UCHAR;
-typedef char CHAR;
-
-typedef uint16_t USHORT;
-typedef int16_t SHORT;
-
-typedef uint32_t ULONG;
-typedef int32_t LONG;
-
-
-
-#ifndef TRUE
-#define TRUE            1
-#endif
-
-#ifndef FALSE
-#define FALSE           0
-#endif
 
 typedef enum
 {
@@ -105,6 +83,7 @@ BOOL            xMBPortSerialGetByte( CHAR * pucByte );
 
 BOOL            xMBPortSerialPutByte( CHAR ucByte );
 
+BOOL						xMBPortSerialPutPktDMA( CHAR *pucSndBuffer, USHORT usSndBufferCount);
 /* ----------------------- Timers functions ---------------------------------*/
 BOOL            xMBPortTimersInit( USHORT usTimeOut50us );
 
@@ -147,10 +126,7 @@ BOOL            xMBTCPPortGetRequest( UCHAR **ppucMBTCPFrame, USHORT * usTCPLeng
 
 BOOL            xMBTCPPortSendResponse( const UCHAR *pucMBTCPFrame, USHORT usTCPLength );
 
-void        		xMBPort_TimerExpired(void);
-
 #ifdef __cplusplus
 PR_END_EXTERN_C
 #endif
-
 #endif

@@ -19,6 +19,8 @@ pyro_squib\porttimer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue
 pyro_squib\porttimer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 pyro_squib\porttimer.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\porttimer.o: ..\modbus\include\mbport.h
+pyro_squib\porttimer.o: ..\modbus\port\port.h
+pyro_squib\porttimer.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
 pyro_squib\porttimer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\porttimer.o: ../Inc/stm32f1xx_hal_conf.h
 pyro_squib\porttimer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -47,5 +49,7 @@ pyro_squib\porttimer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 pyro_squib\porttimer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 pyro_squib\porttimer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 pyro_squib\porttimer.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+pyro_squib\porttimer.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+pyro_squib\porttimer.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\porttimer.o: ..\modbus\include\mb.h
 pyro_squib\porttimer.o: ..\modbus\include\mbproto.h

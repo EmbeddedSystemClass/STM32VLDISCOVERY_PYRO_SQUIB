@@ -1,5 +1,7 @@
 pyro_squib\portserial.o: ..\modbus\port\portserial.c
 pyro_squib\portserial.o: ..\modbus\include\mbport.h
+pyro_squib\portserial.o: ..\modbus\port\port.h
+pyro_squib\portserial.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
 pyro_squib\portserial.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\portserial.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\portserial.o: ../Inc/stm32f1xx_hal_conf.h
@@ -31,5 +33,21 @@ pyro_squib\portserial.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 pyro_squib\portserial.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 pyro_squib\portserial.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 pyro_squib\portserial.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+pyro_squib\portserial.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\portserial.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+pyro_squib\portserial.o: ../Inc/FreeRTOSConfig.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+pyro_squib\portserial.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\portserial.o: ..\modbus\include\mb.h
 pyro_squib\portserial.o: ..\modbus\include\mbproto.h

@@ -16,6 +16,8 @@ pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 pyro_squib\mbinit.o: ..\modbus\include\mb.h
 pyro_squib\mbinit.o: ..\modbus\include\mbport.h
+pyro_squib\mbinit.o: ..\modbus\port\port.h
+pyro_squib\mbinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\mbinit.o: ../Inc/stm32f1xx_hal_conf.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -45,5 +47,9 @@ pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+pyro_squib\mbinit.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\mbinit.o: ..\modbus\include\mbproto.h
 pyro_squib\mbinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\errno.h

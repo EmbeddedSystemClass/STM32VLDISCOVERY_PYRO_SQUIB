@@ -48,6 +48,10 @@ pyro_squib\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/qu
 pyro_squib\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 pyro_squib\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\stm32f1xx_it.o: ..\modbus\include\mbport.h
+pyro_squib\stm32f1xx_it.o: ..\modbus\port\port.h
+pyro_squib\stm32f1xx_it.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
+pyro_squib\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+pyro_squib\stm32f1xx_it.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\stm32f1xx_it.o: ../Inc/adc.h
 pyro_squib\stm32f1xx_it.o: ../Inc/pyro_squib.h
 pyro_squib\stm32f1xx_it.o: ../Inc/dig_pot.h

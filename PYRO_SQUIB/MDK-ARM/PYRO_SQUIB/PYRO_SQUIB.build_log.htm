@@ -22,23 +22,23 @@ Dialog DLL:      TCM.DLL V1.14.6.0
  
 <h2>Project:</h2>
 E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\PYRO_SQUIB.uvprojx
-Project File Date:  07/21/2017
+Project File Date:  07/24/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
-compiling mbport.c...
-../Inc/adc.h(35): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/pyro_squib.h(49): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\modbus\port\mbport.c: 3 warnings, 0 errors
+compiling mbinit.c...
+..\Src\mbinit.c(32): warning:  #188-D: enumerated type mixed with another type
+  	eStatus = eMBInit(MB_RTU, 
+ODBUS_DEV_ADDR, 0, 
+ODBUS_BAUDRATE, 0 );
+..\Src\mbinit.c(30): warning:  #550-D: variable "eStatus" was set but never used
+  	eMBErrorCode    eStatus;
+..\Src\mbinit.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=21160 RO-data=856 RW-data=308 ZI-data=5652  
+Program Size: Code=22016 RO-data=856 RW-data=308 ZI-data=6788  
 FromELF: creating hex file...
-"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 3 Warning(s).
+"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
