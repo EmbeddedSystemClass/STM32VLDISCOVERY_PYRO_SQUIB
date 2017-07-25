@@ -21,6 +21,7 @@ extern volatile float ADC_voltage[ADC_CHN_NUM];
 extern uint8_t digPotValue[I2C_POT_NUM];
 extern stPyroSquib PyroSquibParam;
 extern stADC_PyroBuf ADC_PyroBuf;
+extern uint16_t ADC_value[ADC_CHN_NUM];
 
 static enPyroSquibError			PyroSquibError;  
 
@@ -63,7 +64,16 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
     {
         iRegIndex = (int) ( usAddress - usRegInputStart );
 			
-				memcpy((void*)usRegInputBuf,(const void*)ADC_voltage,sizeof(float)*ADC_CHN_NUM);
+//				memcpy((void*)usRegInputBuf,(const void*)ADC_voltage,sizeof(float)*ADC_CHN_NUM);
+			*(float*)&usRegInputBuf[REG_ADC_0]=ADC_value[0];
+			*(float*)&usRegInputBuf[REG_ADC_1]=ADC_value[1];
+			*(float*)&usRegInputBuf[REG_ADC_2]=ADC_value[2];
+			*(float*)&usRegInputBuf[REG_ADC_3]=ADC_value[3];
+			*(float*)&usRegInputBuf[REG_ADC_4]=ADC_value[4];
+			*(float*)&usRegInputBuf[REG_ADC_5]=ADC_value[5];
+			*(float*)&usRegInputBuf[REG_ADC_6]=ADC_value[6];
+			*(float*)&usRegInputBuf[REG_ADC_7]=ADC_value[7];
+			
 				
 				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam.state;
 				usRegInputBuf[REG_PIR_BUF_COUNTER]=ADC_PyroBuf.buf_cnt;

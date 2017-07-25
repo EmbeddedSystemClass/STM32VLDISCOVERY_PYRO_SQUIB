@@ -32,4 +32,5 @@ void ADC_Init(void);
 void ADC_ConvComplete(void);
 void ADC_FillBuf_Start(void);
 void ADC_FillBuf_Stop(void);
+float ADC_toVoltage(uint16_t adc_val);
 #endif

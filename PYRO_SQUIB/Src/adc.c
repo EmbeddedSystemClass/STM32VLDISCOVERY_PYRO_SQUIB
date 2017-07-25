@@ -17,10 +17,10 @@ stADC_PyroBuf ADC_PyroBuf;
 extern ADC_HandleTypeDef hadc1;
 
 static void ADC_Task(void *pvParameters);
-static float ADC_toVoltage(uint16_t adc_val);
+
 
 volatile float ADC_voltage[ADC_CHN_NUM];
-volatile  uint16_t ADC_value[ADC_CHN_NUM];
+uint16_t ADC_value[ADC_CHN_NUM];
 
 SemaphoreHandle_t xADCSemaphore;
 extern DMA_HandleTypeDef hdma_adc1;
@@ -31,8 +31,9 @@ void ADC_Init(void)
 		ADC_PyroBuf.fill_is_end=FALSE;
 		ADC_PyroBuf.start_fill=FALSE;
 	
-		xADCSemaphore = xSemaphoreCreateBinary();
-		xTaskCreate(ADC_Task,"ADC task",ADC_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
+	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_value,ADC_CHN_NUM);
+		//xADCSemaphore = xSemaphoreCreateBinary();
+		//xTaskCreate(ADC_Task,"ADC task",ADC_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }
 
 static void ADC_Task(void *pvParameters)
@@ -65,7 +66,7 @@ static void ADC_Task(void *pvParameters)
 							{
 									for(adc_cnt=0;adc_cnt<ADC_CHN_NUM;adc_cnt++)
 									{
-										ADC_voltage[adc_cnt] = ADC_toVoltage(ADC_value[adc_cnt]);
+										ADC_voltage[adc_cnt] = ADC_toVoltage(/*ADC_value[adc_cnt]*/adc_cnt);
 									}
 							}
 					}	
@@ -74,7 +75,7 @@ static void ADC_Task(void *pvParameters)
     }
 }
 
-static float ADC_toVoltage(uint16_t adc_val)
+float ADC_toVoltage(uint16_t adc_val)
 {
 		float voltage=(float)adc_val;
 	

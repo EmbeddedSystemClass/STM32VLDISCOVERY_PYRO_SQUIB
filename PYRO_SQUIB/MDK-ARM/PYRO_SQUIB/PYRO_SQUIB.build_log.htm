@@ -22,23 +22,33 @@ Dialog DLL:      TCM.DLL V1.14.6.0
  
 <h2>Project:</h2>
 E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\PYRO_SQUIB.uvprojx
-Project File Date:  07/24/2017
+Project File Date:  07/25/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
-compiling mbinit.c...
-..\Src\mbinit.c(32): warning:  #188-D: enumerated type mixed with another type
-  	eStatus = eMBInit(MB_RTU, 
-ODBUS_DEV_ADDR, 0, 
-ODBUS_BAUDRATE, 0 );
-..\Src\mbinit.c(30): warning:  #550-D: variable "eStatus" was set but never used
-  	eMBErrorCode    eStatus;
-..\Src\mbinit.c: 2 warnings, 0 errors
+compiling stm32f1xx_it.c...
+../Inc/adc.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(49): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/stm32f1xx_it.c(257): warning:  #223-D: function "xMBRTUReceiveFSM" declared implicitly
+  		xMBRTUReceiveFSM();
+../Src/stm32f1xx_it.c(275): warning:  #223-D: function "xMBPort_TimerExpired" declared implicitly
+  			xMBPort_TimerExpired();		
+../Src/stm32f1xx_it.c: 5 warnings, 0 errors
+compiling main.c...
+../Inc/adc.h(36): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=22016 RO-data=856 RW-data=308 ZI-data=6788  
+Program Size: Code=20076 RO-data=888 RW-data=304 ZI-data=6792  
 FromELF: creating hex file...
-"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 2 Warning(s).
+"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 7 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -56,7 +66,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
