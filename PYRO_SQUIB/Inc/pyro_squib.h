@@ -4,6 +4,15 @@
 #include "stdint.h"
 #include "dig_pot.h"
 
+#define PYRO_SQUIB_NUM	4
+
+typedef enum
+{
+	PYRO_SQUIB_1=0,
+	PYRO_SQUIB_2,
+	PYRO_SQUIB_3,
+	PYRO_SQUIB_4,	
+}enPyroSquibNums;
 
 typedef enum
 {
@@ -30,18 +39,16 @@ enPyroSquibProcessState;
 typedef struct
 {
 	uint16_t time; //on time in ms
-	float current;
+	float current[PYRO_SQUIB_NUM];
 	uint8_t mask;
 	enPyroSquibError error;
 	enPyroSquibProcessState state;
 } stPyroSquib;
 
-enPyroSquibError PyroSquib_SetParameters(stPyroSquib *PyroSquib, uint16_t time,float current, uint8_t mask);
-
-enPyroSquibError PyroSquib_SetTime(stPyroSquib *PyroSquib, uint16_t time);
-enPyroSquibError PyroSquib_SetCurrent(stPyroSquib *PyroSquib,float current);
-enPyroSquibError PyroSquib_SetMask(stPyroSquib *PyroSquib, uint8_t mask);
-enPyroSquibError PyroSquib_SetKeysState(stPyroSquib *PyroSquib, enPyroSquibKeysState state);
+enPyroSquibError PyroSquib_SetTime(uint16_t time);
+enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib,float current);
+enPyroSquibError PyroSquib_SetMask(uint8_t mask);
+enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state);
 enPyroSquibError PyroSquib_Start(void);
 
 void PyroSquib_TimerExpired(void);

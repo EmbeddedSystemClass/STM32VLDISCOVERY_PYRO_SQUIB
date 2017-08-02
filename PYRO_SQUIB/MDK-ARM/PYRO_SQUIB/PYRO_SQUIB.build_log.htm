@@ -27,28 +27,14 @@ Project File Date:  07/25/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
-compiling stm32f1xx_it.c...
-../Inc/adc.h(36): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/pyro_squib.h(49): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Src/stm32f1xx_it.c(257): warning:  #223-D: function "xMBRTUReceiveFSM" declared implicitly
-  		xMBRTUReceiveFSM();
-../Src/stm32f1xx_it.c(275): warning:  #223-D: function "xMBPort_TimerExpired" declared implicitly
-  			xMBPort_TimerExpired();		
-../Src/stm32f1xx_it.c: 5 warnings, 0 errors
-compiling main.c...
-../Inc/adc.h(36): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Src/main.c: 2 warnings, 0 errors
+compiling mbfuncdisc.c...
+compiling mbfunccoils.c...
+compiling mbfuncholding.c...
+compiling mbfuncinput.c...
 linking...
-Program Size: Code=20076 RO-data=888 RW-data=304 ZI-data=6792  
+Program Size: Code=22344 RO-data=888 RW-data=320 ZI-data=5184  
 FromELF: creating hex file...
-"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 7 Warning(s).
+"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -66,7 +52,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

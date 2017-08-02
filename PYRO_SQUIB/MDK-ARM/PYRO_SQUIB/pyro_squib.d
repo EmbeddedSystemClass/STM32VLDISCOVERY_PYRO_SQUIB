@@ -33,3 +33,13 @@ pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 pyro_squib\pyro_squib.o: ../Inc/adc.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+pyro_squib\pyro_squib.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\pyro_squib.o: ../Inc/FreeRTOSConfig.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
