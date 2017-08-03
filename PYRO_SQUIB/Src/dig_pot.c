@@ -27,10 +27,11 @@ HAL_StatusTypeDef DigPot_SetValue(enDigPot DigPot, uint8_t value)
 		digPotValue[DigPot]=value;
 	
 		mux_reg=(DigPot&0x3)|0x4;
+	
 		err=HAL_I2C_Master_Transmit(&hi2c2,I2C_MUX_ADDR,&mux_reg,1,10);
 		if(err==HAL_OK)
 		{
-				err=HAL_I2C_Master_Transmit(&hi2c2,I2C_POT_ADDR,&value,1,10);
+					err=HAL_I2C_Master_Transmit(&hi2c2,I2C_POT_ADDR,&value,1,10);
 		}
 		
 		return err;

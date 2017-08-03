@@ -89,6 +89,8 @@ void StartDefaultTask(void const * argument);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
+/* USER CODE BEGIN 1 */
+
 
 /* USER CODE END 0 */
 
@@ -117,7 +119,6 @@ int main(void)
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
-	
   HAL_NVIC_DisableIRQ(DMA1_Channel1_IRQn);
 	
 	DigPot_Init();

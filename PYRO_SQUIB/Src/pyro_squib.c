@@ -19,7 +19,7 @@
 
 
 extern TIM_HandleTypeDef htim2;
-stPyroSquib PyroSquibParam={100,0.0,0.0,0.0,0.0,0,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
+stPyroSquib PyroSquibParam={100,0.7,0.7,0.7,0.7,255,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
 
 
 enPyroSquibError PyroSquib_SetTime(uint16_t time)
@@ -102,22 +102,23 @@ enPyroSquibError PyroSquib_Start(void)
 	enPyroSquibError err=PYRO_SQUIB_OK;
 	
 	//set current
-	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
-	{
-			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam.current[PyroSquib]);
-			if(err!=PYRO_SQUIB_OK)
-			{
-					return err;
-			}
-	}
+//	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
+//	{
+//			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam.current[PyroSquib]);
+//			if(err!=PYRO_SQUIB_OK)
+//			{
+//					return err;
+//			}
+//	}
 	
 	//delay?
-	vTaskDelay(PYRO_SQUIB_DELAY_START_MS);
+//	vTaskDelay(PYRO_SQUIB_DELAY_START_MS);
 	//enable current keys
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON);
 	PyroSquibParam.state=PYRO_SQUIB_RUN;
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
+	htim2.Instance->ARR=PyroSquibParam.time;
 	HAL_TIM_Base_Start_IT(&htim2);
 	
 	return PYRO_SQUIB_OK;
