@@ -90,7 +90,15 @@ void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN 0 */
 /* USER CODE BEGIN 1 */
-
+#define CPU_CLK_1MS 24000
+void delay_ms(uint16_t time)
+{
+	uint32_t cpu_clk=time*CPU_CLK_1MS;
+	while(cpu_clk)
+	{
+		 cpu_clk--;
+	}
+}
 
 /* USER CODE END 0 */
 
@@ -107,18 +115,20 @@ int main(void)
   HAL_Init();
 
   /* Configure the system clock */
-  SystemClock_Config();
+//  SystemClock_Config();
 
   /* Initialize all configured peripherals */
-  MX_GPIO_Init();
+	MX_GPIO_Init();
   MX_DMA_Init();
   MX_ADC1_Init();
   MX_USART1_UART_Init();
   MX_TIM4_Init();
   MX_I2C2_Init();
-  MX_TIM2_Init();
+	MX_TIM2_Init();
+	
 
   /* USER CODE BEGIN 2 */
+	  SystemClock_Config();
   HAL_NVIC_DisableIRQ(DMA1_Channel1_IRQn);
 	
 	DigPot_Init();
@@ -140,7 +150,7 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityIdle, 5, 256);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -518,9 +528,11 @@ void StartDefaultTask(void const * argument)
 
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
+	uint8_t value=0x7B;
   for(;;)
   {
-//    DigPot_SetValue(DIG_POT_4,value);
+    DigPot_SetValue(DIG_POT_4,value);
+		
 		osDelay(500);
   }
   /* USER CODE END 5 */ 

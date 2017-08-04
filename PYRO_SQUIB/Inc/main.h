@@ -46,7 +46,7 @@
   /* Includes ------------------------------------------------------------------*/
 
 /* USER CODE BEGIN Includes */
-
+#define SCL_SDA_AKT_GPIO_Port GPIOB
 /* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/

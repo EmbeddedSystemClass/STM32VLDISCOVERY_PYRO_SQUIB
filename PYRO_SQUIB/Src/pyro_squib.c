@@ -102,17 +102,15 @@ enPyroSquibError PyroSquib_Start(void)
 	enPyroSquibError err=PYRO_SQUIB_OK;
 	
 	//set current
-//	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
-//	{
-//			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam.current[PyroSquib]);
-//			if(err!=PYRO_SQUIB_OK)
-//			{
-//					return err;
-//			}
-//	}
+	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
+	{
+			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam.current[PyroSquib]);
+			if(err!=PYRO_SQUIB_OK)
+			{
+					return err;
+			}
+	}
 	
-	//delay?
-//	vTaskDelay(PYRO_SQUIB_DELAY_START_MS);
 	//enable current keys
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON);
 	PyroSquibParam.state=PYRO_SQUIB_RUN;
