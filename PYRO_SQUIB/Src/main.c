@@ -84,24 +84,7 @@ static void MX_I2C2_Init(void);
 static void MX_TIM2_Init(void);
 void StartDefaultTask(void const * argument);
 
-/* USER CODE BEGIN PFP */
-/* Private function prototypes -----------------------------------------------*/
 
-/* USER CODE END PFP */
-
-/* USER CODE BEGIN 0 */
-/* USER CODE BEGIN 1 */
-#define CPU_CLK_1MS 24000
-void delay_ms(uint16_t time)
-{
-	uint32_t cpu_clk=time*CPU_CLK_1MS;
-	while(cpu_clk)
-	{
-		 cpu_clk--;
-	}
-}
-
-/* USER CODE END 0 */
 
 int main(void)
 {

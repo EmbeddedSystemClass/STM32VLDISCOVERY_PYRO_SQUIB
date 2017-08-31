@@ -175,13 +175,13 @@ int ConfigInfoWrite(void)
   return 0;
 }
 
-void StartConfigInfoWrite(void)
-{
-	xTaskCreate( Flash_Write_Task, "Flash Write Task", 128, NULL, 4, NULL );
-}
+//void StartConfigInfoWrite(void)
+//{
+//	xTaskCreate( Flash_Write_Task, "Flash Write Task", 128, NULL, 4, NULL );
+//}
 
-void Flash_Write_Task( void *pvParameters )
-{
-	ConfigInfoWrite();
-	vTaskDelete(NULL);
-}
+//void Flash_Write_Task( void *pvParameters )
+//{
+//	ConfigInfoWrite();
+//	vTaskDelete(NULL);
+//}
