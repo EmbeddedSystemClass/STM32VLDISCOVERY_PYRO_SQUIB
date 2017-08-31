@@ -2,6 +2,7 @@
 #include "stm32f1xx_hal.h"
 #include "dig_pot.h"
 #include "adc.h"
+#include "cfg_info.h"
 
 #include "FreeRTOS.h"
 #include "task.h"
@@ -19,14 +20,16 @@
 
 
 extern TIM_HandleTypeDef htim2;
-stPyroSquib PyroSquibParam={100,0.7,0.7,0.7,0.7,255,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
+extern sConfigInfo configInfo;	
+
+stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;//={100,0.7,0.7,0.7,0.7,255,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
 
 
 enPyroSquibError PyroSquib_SetTime(uint16_t time)
 {
 	if(IS_PYRO_SQUIB_TIME(time))
 	{
-		PyroSquibParam.time=time;
+		PyroSquibParam->time=time;
 	}
 	else
 	{
@@ -44,7 +47,7 @@ enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 	{
 		uint8_t pot_val=0;
 		uint8_t pyro_squib_cnt=0;
-		PyroSquibParam.current[PyroSquib]=current;
+		PyroSquibParam->current[PyroSquib]=current;
 		
 		//current to pot_val
 		pot_val=DigPot_CurrentToPotVal(current);
@@ -67,7 +70,7 @@ enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 
 enPyroSquibError PyroSquib_SetMask(uint8_t mask)
 {
-		PyroSquibParam.mask=mask;
+		PyroSquibParam->mask=mask;
 }
 
 enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state)
@@ -84,14 +87,14 @@ enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state)
 	
 		if(state==PYRO_SQUIB_KEYS_ON)
 		{
-				if(PyroSquibParam.mask&(1<<0)) HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam.mask&(1<<1)) HAL_GPIO_WritePin(PIR_EN2_GPIO_Port,PIR_EN2_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam.mask&(1<<2)) HAL_GPIO_WritePin(PIR_EN3_GPIO_Port,PIR_EN3_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam.mask&(1<<3)) HAL_GPIO_WritePin(PIR_EN4_GPIO_Port,PIR_EN4_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam.mask&(1<<4)) HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam.mask&(1<<5)) HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam.mask&(1<<6)) HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam.mask&(1<<7)) HAL_GPIO_WritePin(PIR_EN8_GPIO_Port,PIR_EN8_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<0)) HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<1)) HAL_GPIO_WritePin(PIR_EN2_GPIO_Port,PIR_EN2_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<2)) HAL_GPIO_WritePin(PIR_EN3_GPIO_Port,PIR_EN3_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<3)) HAL_GPIO_WritePin(PIR_EN4_GPIO_Port,PIR_EN4_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<4)) HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<5)) HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<6)) HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,GPIO_PIN_SET);
+				if(PyroSquibParam->mask&(1<<7)) HAL_GPIO_WritePin(PIR_EN8_GPIO_Port,PIR_EN8_Pin,GPIO_PIN_SET);
 		}
 }
 
@@ -104,7 +107,7 @@ enPyroSquibError PyroSquib_Start(void)
 	//set current
 	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
 	{
-			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam.current[PyroSquib]);
+			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam->current[PyroSquib]);
 			if(err!=PYRO_SQUIB_OK)
 			{
 					return err;
@@ -113,10 +116,10 @@ enPyroSquibError PyroSquib_Start(void)
 	
 	//enable current keys
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON);
-	PyroSquibParam.state=PYRO_SQUIB_RUN;
+	PyroSquibParam->state=PYRO_SQUIB_RUN;
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
-	htim2.Instance->ARR=PyroSquibParam.time;
+	htim2.Instance->ARR=PyroSquibParam->time;
 	HAL_TIM_Base_Start_IT(&htim2);
 	
 	return PYRO_SQUIB_OK;
@@ -126,7 +129,7 @@ void PyroSquib_TimerExpired(void)
 {
 	//disable current keys
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);
-	PyroSquibParam.state=PYRO_SQUIB_STOP;
+	PyroSquibParam->state=PYRO_SQUIB_STOP;
 	
 }
 

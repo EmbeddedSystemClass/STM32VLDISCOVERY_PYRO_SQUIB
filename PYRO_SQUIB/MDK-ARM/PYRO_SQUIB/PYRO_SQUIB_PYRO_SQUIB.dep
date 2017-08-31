@@ -1,5 +1,5 @@
 Dependencies for Project 'PYRO_SQUIB', Target 'PYRO_SQUIB': (DO NOT MODIFY !)
-F (../Src/main.c)(0x59847BE2)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\main.o --omf_browse pyro_squib\main.crf --depend pyro_squib\main.d)
+F (../Src/main.c)(0x59A7F784)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\main.o --omf_browse pyro_squib\main.crf --depend pyro_squib\main.d)
 I (../Inc/main.h)(0x598438FA)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
 I (../Inc/stm32f1xx_hal_conf.h)(0x597725F4)
@@ -33,7 +33,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -48,6 +48,8 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71
 I (../Inc/mbinit.h)(0x58E39F46)
 I (../Inc/adc.h)(0x59771DDC)
 I (../Inc/dig_pot.h)(0x5975A2BF)
+I (../Inc/cfg_info.h)(0x59A7DC55)
+I (../Inc/pyro_squib.h)(0x59A7DC5A)
 F (../Src/stm32f1xx_it.c)(0x59772734)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_it.o --omf_browse pyro_squib\stm32f1xx_it.crf --depend pyro_squib\stm32f1xx_it.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
 I (../Inc/stm32f1xx_hal_conf.h)(0x597725F4)
@@ -83,7 +85,7 @@ I (../Inc/stm32f1xx_it.h)(0x597725F4)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -99,7 +101,7 @@ I (..\modbus\include\mbport.h)(0x59760326)
 I (..\modbus\port\port.h)(0x5976EAC5)
 I (C:\Program Files\Keil\ARM\ARMCC\include\inttypes.h)(0x55DB71CE)
 I (../Inc/adc.h)(0x59771DDC)
-I (../Inc/pyro_squib.h)(0x5981CD45)
+I (../Inc/pyro_squib.h)(0x59A7DC5A)
 I (../Inc/dig_pot.h)(0x5975A2BF)
 F (../Src/stm32f1xx_hal_msp.c)(0x598451DB)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_msp.o --omf_browse pyro_squib\stm32f1xx_hal_msp.crf --depend pyro_squib\stm32f1xx_hal_msp.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
@@ -136,7 +138,7 @@ F (../Src/freertos.c)(0x597725F4)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -150,7 +152,7 @@ I (../Inc/mbinit.h)(0x58E39F46)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -203,7 +205,7 @@ I (../Inc/adc.h)(0x59771DDC)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -274,8 +276,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (..\Src\pyro_squib.c)(0x59832B91)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\pyro_squib.o --omf_browse pyro_squib\pyro_squib.crf --depend pyro_squib\pyro_squib.d)
-I (../Inc/pyro_squib.h)(0x5981CD45)
+F (..\Src\pyro_squib.c)(0x59A7E2A3)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\pyro_squib.o --omf_browse pyro_squib\pyro_squib.crf --depend pyro_squib\pyro_squib.d)
+I (../Inc/pyro_squib.h)(0x59A7DC5A)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Inc/dig_pot.h)(0x5975A2BF)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
@@ -308,9 +310,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Inc/adc.h)(0x59771DDC)
+I (../Inc/cfg_info.h)(0x59A7DC55)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -353,7 +356,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -367,6 +370,51 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
 I (..\modbus\port\port.h)(0x5976EAC5)
 I (C:\Program Files\Keil\ARM\ARMCC\include\inttypes.h)(0x55DB71CE)
+F (..\Src\cfg_info.c)(0x59A7F0E1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\cfg_info.o --omf_browse pyro_squib\cfg_info.crf --depend pyro_squib\cfg_info.d)
+I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
+I (../Inc/stm32f1xx_hal_conf.h)(0x597725F4)
+I (../Inc/main.h)(0x598438FA)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x58440A70)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f1xx.h)(0x58440A6F)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\stm32f100xb.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
+I (..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h)(0x58440A6F)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
+I (../Inc/cfg_info.h)(0x59A7DC55)
+I (../Inc/pyro_squib.h)(0x59A7DC5A)
+I (../Inc/dig_pot.h)(0x5975A2BF)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 F (..\modbus\rtu\mbcrc.c)(0x522999C1)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbcrc.o --omf_browse pyro_squib\mbcrc.crf --depend pyro_squib\mbcrc.d)
 I (..\modbus\include\mbport.h)(0x59760326)
 I (..\modbus\port\port.h)(0x5976EAC5)
@@ -404,7 +452,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -494,7 +542,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -550,7 +598,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -605,7 +653,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -660,7 +708,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -715,7 +763,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -770,7 +818,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -784,7 +832,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbproto.h)(0x4578834A)
-F (..\modbus\port\mbport.c)(0x5982F93A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbport.o --omf_browse pyro_squib\mbport.crf --depend pyro_squib\mbport.d)
+F (..\modbus\port\mbport.c)(0x59A7F287)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbport.o --omf_browse pyro_squib\mbport.crf --depend pyro_squib\mbport.d)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbport.h)(0x59760326)
 I (..\modbus\port\port.h)(0x5976EAC5)
@@ -822,7 +870,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -838,7 +886,8 @@ I (..\modbus\include\mbproto.h)(0x4578834A)
 I (../Inc/adc.h)(0x59771DDC)
 I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Inc/dig_pot.h)(0x5975A2BF)
-I (../Inc/pyro_squib.h)(0x5981CD45)
+I (../Inc/pyro_squib.h)(0x59A7DC5A)
+I (../Inc/cfg_info.h)(0x59A7DC55)
 F (..\modbus\port\portevent.c)(0x58E4B44C)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\portevent.o --omf_browse pyro_squib\portevent.crf --depend pyro_squib\portevent.d)
 I (..\modbus\include\mb.h)(0x5229806C)
 I (..\modbus\include\mbport.h)(0x59760326)
@@ -877,7 +926,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -927,7 +976,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -948,7 +997,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1031,7 +1080,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1087,7 +1136,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
@@ -1641,7 +1690,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x58440A6F)
 I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x58440A6F)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1659,7 +1708,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1673,7 +1722,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1690,7 +1739,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1706,7 +1755,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1721,7 +1770,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/croutine.c)(0x58440A71)(-c --cpu C
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1735,7 +1784,7 @@ F (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/port.c)(0x58
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1750,7 +1799,7 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
@@ -1765,11 +1814,25 @@ I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
 I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
-I (../Inc/FreeRTOSConfig.h)(0x59846845)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
 I (../Inc/main.h)(0x598438FA)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
+F (..\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_2.c)(0x58440A71)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I "C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include"-I "C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include"-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\heap_2.o --omf_browse pyro_squib\heap_2.crf --depend pyro_squib\heap_2.d)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdlib.h)(0x55DB71C8)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
+I (C:\Program Files\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
+I (../Inc/FreeRTOSConfig.h)(0x59A7D43D)
+I (../Inc/main.h)(0x598438FA)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)

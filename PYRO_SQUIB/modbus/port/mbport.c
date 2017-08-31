@@ -4,6 +4,7 @@
 #include "main.h"
 #include "dig_pot.h"
 #include "pyro_squib.h"
+#include "cfg_info.h"
 void ENTER_CRITICAL_SECTION(void)
 {
 	//__set_PRIMASK(1);
@@ -19,7 +20,7 @@ void EXIT_CRITICAL_SECTION(void)
 
 extern volatile float ADC_voltage[ADC_CHN_NUM];
 extern uint8_t digPotValue[I2C_POT_NUM];
-extern stPyroSquib PyroSquibParam;
+extern stPyroSquib *PyroSquibParam;
 extern stADC_PyroBuf ADC_PyroBuf;
 extern uint16_t ADC_value[ADC_CHN_NUM];
 
@@ -73,7 +74,7 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 			*(float*)&usRegInputBuf[REG_ADC_7]=(float)ADC_value[7];
 			
 				
-				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam.state;
+				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam->state;
 				usRegInputBuf[REG_PIR_ERROR]=PyroSquibError;
 			
 			
@@ -109,7 +110,8 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 {
     eMBErrorCode    eStatus = MB_ENOERR;
     int             iRegIndex;
-
+		uint8_t settings_need_write=0;
+	
     if( ( usAddress >= REG_HOLDING_START ) &&
         ( usAddress + usNRegs <= REG_HOLDING_START + REG_HOLDING_NREGS ) )
     {
@@ -117,12 +119,12 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
         switch ( eMode )
         {
         case MB_REG_READ:	
-						usRegHoldingBuf[REG_PIR_SET_TIME]=PyroSquibParam.time;
-						*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT]=PyroSquibParam.current[0];
-						*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT]=PyroSquibParam.current[1];
-						*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT]=PyroSquibParam.current[2];
-						*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT]=PyroSquibParam.current[3];
-						usRegHoldingBuf[REG_PIR_SET_MASK]=PyroSquibParam.mask;
+						usRegHoldingBuf[REG_PIR_SET_TIME]=PyroSquibParam->time;
+						*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT]=PyroSquibParam->current[0];
+						*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT]=PyroSquibParam->current[1];
+						*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT]=PyroSquibParam->current[2];
+						*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT]=PyroSquibParam->current[3];
+						usRegHoldingBuf[REG_PIR_SET_MASK]=PyroSquibParam->mask;
 						usRegHoldingBuf[REG_PIR_START]=0;
 				
             while( usNRegs > 0 )
@@ -134,7 +136,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
             }
             break;
         case MB_REG_WRITE:
-					
+						
             while( usNRegs > 0 )
             {
                 usRegHoldingBuf[iRegIndex] = *pucRegBuffer++ << 8;
@@ -145,37 +147,43 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 								{
 										case REG_PIR_SET_TIME:
 										{
-												PyroSquibParam.time=usRegHoldingBuf[REG_PIR_SET_TIME];
+												PyroSquibParam->time=usRegHoldingBuf[REG_PIR_SET_TIME];
+												settings_need_write=1;
 										}
 										break;
 										
 										case REG_PIR_1_SET_CURRENT +1:
 										{
-												PyroSquibParam.current[0]=*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT];
+												PyroSquibParam->current[0]=*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT];
+												settings_need_write=1;
 										}
 										break;	
 										
 										case REG_PIR_2_SET_CURRENT +1:
 										{
-												PyroSquibParam.current[1]=*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT];
+												PyroSquibParam->current[1]=*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT];
+												settings_need_write=1;
 										}
 										break;	
 										
 										case REG_PIR_3_SET_CURRENT +1:
 										{
-												PyroSquibParam.current[2]=*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT];
+												PyroSquibParam->current[2]=*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT];
+												settings_need_write=1;
 										}
 										break;	
 										
 										case REG_PIR_4_SET_CURRENT +1:
 										{
-												PyroSquibParam.current[3]=*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT];
+												PyroSquibParam->current[3]=*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT];
+												settings_need_write=1;
 										}
 										break;											
 
 										case REG_PIR_SET_MASK:
 										{
-												PyroSquibParam.mask=usRegHoldingBuf[REG_PIR_SET_MASK];
+												PyroSquibParam->mask=usRegHoldingBuf[REG_PIR_SET_MASK];
+												settings_need_write=1;
 										}
 										break;	
 										
@@ -194,6 +202,12 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 								iRegIndex++;
                 usNRegs--;
             }
+						
+						if(settings_need_write)
+						{
+								//StartConfigInfoWrite();
+								ConfigInfoWrite();
+						}
             break;
         }
     }

@@ -33,6 +33,7 @@ pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 pyro_squib\pyro_squib.o: ../Inc/adc.h
+pyro_squib\pyro_squib.o: ../Inc/cfg_info.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 pyro_squib\pyro_squib.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 pyro_squib\pyro_squib.o: ../Inc/FreeRTOSConfig.h
