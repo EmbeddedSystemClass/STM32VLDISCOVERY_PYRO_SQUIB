@@ -64,14 +64,14 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
         iRegIndex = (int) ( usAddress - usRegInputStart );
 			
 //				memcpy((void*)usRegInputBuf,(const void*)ADC_voltage,sizeof(float)*ADC_CHN_NUM);
-			*(float*)&usRegInputBuf[REG_ADC_0]=(float)ADC_value[0];
-			*(float*)&usRegInputBuf[REG_ADC_1]=(float)ADC_value[1];
-			*(float*)&usRegInputBuf[REG_ADC_2]=(float)ADC_value[2];
-			*(float*)&usRegInputBuf[REG_ADC_3]=(float)ADC_value[3];
-			*(float*)&usRegInputBuf[REG_ADC_4]=(float)ADC_value[4];
-			*(float*)&usRegInputBuf[REG_ADC_5]=(float)ADC_value[5];
-			*(float*)&usRegInputBuf[REG_ADC_6]=(float)ADC_value[6];
-			*(float*)&usRegInputBuf[REG_ADC_7]=(float)ADC_value[7];
+			*(float*)&usRegInputBuf[REG_ADC_0]=ADC_toVoltage(ADC_value[0]);
+			*(float*)&usRegInputBuf[REG_ADC_1]=ADC_toVoltage(ADC_value[1]);
+			*(float*)&usRegInputBuf[REG_ADC_2]=ADC_toVoltage(ADC_value[2]);
+			*(float*)&usRegInputBuf[REG_ADC_3]=ADC_toVoltage(ADC_value[3]);
+			*(float*)&usRegInputBuf[REG_ADC_4]=ADC_toVoltage(ADC_value[4]);
+			*(float*)&usRegInputBuf[REG_ADC_5]=ADC_toVoltage(ADC_value[5]);
+			*(float*)&usRegInputBuf[REG_ADC_6]=ADC_toVoltage(ADC_value[6]);
+			*(float*)&usRegInputBuf[REG_ADC_7]=ADC_toVoltage(ADC_value[7]);
 			
 				
 				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam->state;
