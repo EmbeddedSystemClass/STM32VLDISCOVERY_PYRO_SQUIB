@@ -6,7 +6,7 @@
 #define I2C_MUX_ADDR		0xE0
 #define I2C_POT_ADDR		0x5C
 
-#define DIG_POT_MAX_CURRENT	5.0
+#define DIG_POT_MAX_CURRENT	127
 #define DIG_POT_MAX_VALUE		127
 
 uint8_t digPotValue[I2C_POT_NUM];

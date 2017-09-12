@@ -84,13 +84,20 @@ static void MX_I2C2_Init(void);
 static void MX_TIM2_Init(void);
 void StartDefaultTask(void const * argument);
 
+//void delay(uint32_t time)
+//{
+//		while(time)
+//		{
+//				time--;
+//		}
+//}
 
 
 int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+//		delay(1000000);
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
