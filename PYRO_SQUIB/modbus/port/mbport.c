@@ -30,7 +30,7 @@ static enPyroSquibError			PyroSquibError;
 #define REG_INPUT_NREGS     20
 
 #define REG_HOLDING_START   2000
-#define REG_HOLDING_NREGS   16
+#define REG_HOLDING_NREGS   20
 
 #define REG_ADC_0						0
 #define REG_ADC_1						2
@@ -97,13 +97,24 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 
 
 
-#define REG_PIR_SET_TIME				0
-#define REG_PIR_1_SET_CURRENT		1
-#define REG_PIR_2_SET_CURRENT		3
-#define REG_PIR_3_SET_CURRENT		5
-#define REG_PIR_4_SET_CURRENT		7
-#define REG_PIR_SET_MASK				9
-#define REG_PIR_START						10
+//#define REG_PIR_SET_TIME				0
+
+#define REG_PIR_SET_PERIOD						0
+#define REG_PIR_SET_PULSE_TIME				1
+#define REG_PIR_SET_PULSES_NUM				2
+
+#define REG_PIR_POT_CALIBR_VALUE_1		3	
+#define REG_PIR_POT_CALIBR_CURRENT_1	4
+
+#define REG_PIR_POT_CALIBR_VALUE_2		6
+#define REG_PIR_POT_CALIBR_CURRENT_2	7
+
+#define REG_PIR_1_SET_CURRENT					8
+#define REG_PIR_2_SET_CURRENT					10
+#define REG_PIR_3_SET_CURRENT					12
+#define REG_PIR_4_SET_CURRENT					14
+#define REG_PIR_SET_MASK							16
+#define REG_PIR_START									17
 
 eMBErrorCode
 eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode )
@@ -119,7 +130,16 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
         switch ( eMode )
         {
         case MB_REG_READ:	
-						usRegHoldingBuf[REG_PIR_SET_TIME]=PyroSquibParam->time;
+						usRegHoldingBuf[REG_PIR_SET_PERIOD]=PyroSquibParam->period;
+						usRegHoldingBuf[REG_PIR_SET_PULSE_TIME]=PyroSquibParam->pulse_time;
+						usRegHoldingBuf[REG_PIR_SET_PULSES_NUM]=PyroSquibParam->pulses_num;
+				
+						
+						usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_1]=PyroSquibParam->calibr.pot_min;
+						usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_1]=PyroSquibParam->calibr.current_min;
+						usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_2]=PyroSquibParam->calibr.pot_max;
+						usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_2]=PyroSquibParam->calibr.current_max;
+				
 						*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT]=PyroSquibParam->current[0];
 						*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT]=PyroSquibParam->current[1];
 						*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT]=PyroSquibParam->current[2];
@@ -145,44 +165,120 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 								
 								switch(iRegIndex)
 								{
-										case REG_PIR_SET_TIME:
+										case REG_PIR_SET_PERIOD:
 										{
-												PyroSquibParam->time=usRegHoldingBuf[REG_PIR_SET_TIME];
-												settings_need_write=1;
+												if(IS_PYRO_SQUIB_PERIOD(usRegHoldingBuf[REG_PIR_SET_PERIOD]))
+												{
+														PyroSquibParam->period=usRegHoldingBuf[REG_PIR_SET_PERIOD];
+														settings_need_write=1;
+												}
 										}
 										break;
 										
+										case REG_PIR_SET_PULSE_TIME:
+										{
+												if(IS_PYRO_SQUIB_PULSE_TIME(usRegHoldingBuf[REG_PIR_SET_PULSE_TIME]))
+												{
+														PyroSquibParam->pulse_time=usRegHoldingBuf[REG_PIR_SET_PULSE_TIME];
+														settings_need_write=1;
+												}
+										}
+										break;
+
+										case REG_PIR_SET_PULSES_NUM:
+										{
+												if(IS_PYRO_SQUIB_PULSES_NUM(usRegHoldingBuf[REG_PIR_SET_PULSES_NUM]))
+												{
+														PyroSquibParam->pulses_num=usRegHoldingBuf[REG_PIR_SET_PULSES_NUM];
+														settings_need_write=1;
+												}
+										}
+										break;		
+
+										case REG_PIR_POT_CALIBR_VALUE_1:
+										{
+												if(IS_DIG_POT_VALUE(usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_1]))
+												{
+														PyroSquibParam->calibr.pot_min=usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_1];
+														settings_need_write=1;
+												}
+										}
+										break;	
+
+										case REG_PIR_POT_CALIBR_VALUE_2:
+										{
+												if(IS_DIG_POT_VALUE(usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_2]))
+												{
+														PyroSquibParam->calibr.pot_max=usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_2];
+														settings_need_write=1;
+												}
+										}
+										break;
+
+										case REG_PIR_POT_CALIBR_CURRENT_1+1:
+										{
+												if(IS_DIG_POT_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_1]))
+												{
+														PyroSquibParam->calibr.current_min=*(float*)&usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_1];
+														settings_need_write=1;
+												}
+										}
+										break;		
+
+										case REG_PIR_POT_CALIBR_CURRENT_2+1:
+										{
+												if(IS_DIG_POT_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_2]))
+												{
+														PyroSquibParam->calibr.current_max=*(float*)&usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_2];
+														settings_need_write=1;
+												}
+										}
+										break;											
+																				
+										
 										case REG_PIR_1_SET_CURRENT +1:
 										{
+											if(IS_DIG_POT_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT]))
+											{
 												PyroSquibParam->current[0]=*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;	
 										
 										case REG_PIR_2_SET_CURRENT +1:
 										{
+											if(IS_DIG_POT_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT]))
+											{
 												PyroSquibParam->current[1]=*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;	
 										
 										case REG_PIR_3_SET_CURRENT +1:
 										{
+											if(IS_DIG_POT_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT]))
+											{
 												PyroSquibParam->current[2]=*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;	
 										
 										case REG_PIR_4_SET_CURRENT +1:
 										{
+											if(IS_DIG_POT_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT]))
+											{											
 												PyroSquibParam->current[3]=*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;											
 
 										case REG_PIR_SET_MASK:
 										{
-												PyroSquibParam->mask=usRegHoldingBuf[REG_PIR_SET_MASK];
+												PyroSquibParam->mask=usRegHoldingBuf[REG_PIR_SET_MASK]&0xFF;
 												settings_need_write=1;
 										}
 										break;	

@@ -1,15 +1,16 @@
 #include "dig_pot.h"
 #include "stm32f1xx_hal.h"
 #include "main.h"
+#include "pyro_squib.h"
 
 
 #define I2C_MUX_ADDR		0xE0
 #define I2C_POT_ADDR		0x5C
 
-#define DIG_POT_MAX_CURRENT	127
-#define DIG_POT_MAX_VALUE		127
+
 
 uint8_t digPotValue[I2C_POT_NUM];
+extern stPyroSquib *PyroSquibParam;
 
 extern I2C_HandleTypeDef hi2c2;
 
@@ -52,14 +53,15 @@ uint8_t DigPot_CurrentToPotVal(float current)//0..127
 {
 		uint8_t pot_val=0;
 		
-		if((current<0)||(current>DIG_POT_MAX_CURRENT))
+		if(IS_DIG_POT_CURRENT(current))
+		{						
+				pot_val= (uint8_t)((current-PyroSquibParam->calibr.current_min)*(PyroSquibParam->calibr.pot_max-PyroSquibParam->calibr.pot_min)/(PyroSquibParam->calibr.current_max-PyroSquibParam->calibr.current_min)+PyroSquibParam->calibr.pot_min);			
+				return pot_val; 
+		}
+		else
 		{
 				return 0;
 		}
-							
-		pot_val= (uint8_t)((current/DIG_POT_MAX_CURRENT)*DIG_POT_MAX_VALUE);
-	
-		return pot_val; 
 }
 
 //I2C busy bug

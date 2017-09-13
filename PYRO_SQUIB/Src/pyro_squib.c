@@ -9,14 +9,10 @@
 
 //#define PYRO_SQUIB_NUM 4
 
-#define PYRO_SQUIB_TIME_MIN		10
-#define PYRO_SQUIB_TIME_MAX		500
-#define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
+//#define PYRO_SQUIB_TIME_MIN		10
+//#define PYRO_SQUIB_TIME_MAX		500
+//#define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
 
-
-#define PYRO_SQUIB_CURRENT_MIN	0.5
-#define PYRO_SQUIB_CURRENT_MAX	5.0
-#define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
 
 
 extern TIM_HandleTypeDef htim2;
@@ -25,11 +21,53 @@ extern sConfigInfo configInfo;
 stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;//={100,0.7,0.7,0.7,0.7,255,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
 
 
-enPyroSquibError PyroSquib_SetTime(uint16_t time)
+//enPyroSquibError PyroSquib_SetTime(uint16_t time)
+//{
+//	if(IS_PYRO_SQUIB_TIME(time))
+//	{
+//		PyroSquibParam->time=time;
+//	}
+//	else
+//	{
+//		return PYRO_SQUIB_INCORRECT_PARAM;
+//	}
+//	
+//	return PYRO_SQUIB_OK;
+//}
+
+enPyroSquibError PyroSquib_SetPeriod(uint16_t period)
 {
-	if(IS_PYRO_SQUIB_TIME(time))
+	if(IS_PYRO_SQUIB_PERIOD(period))
 	{
-		PyroSquibParam->time=time;
+		PyroSquibParam->period=period;
+	}
+	else
+	{
+		return PYRO_SQUIB_INCORRECT_PARAM;
+	}
+	
+	return PYRO_SQUIB_OK;
+}
+
+enPyroSquibError PyroSquib_SetPulseTime(uint16_t pulse_time)
+{
+	if(IS_PYRO_SQUIB_PULSE_TIME(pulse_time))
+	{
+		PyroSquibParam->pulse_time=pulse_time;
+	}
+	else
+	{
+		return PYRO_SQUIB_INCORRECT_PARAM;
+	}
+	
+	return PYRO_SQUIB_OK;
+}
+
+enPyroSquibError PyroSquib_SetPulsesNum(uint16_t pulses_num)
+{
+	if(IS_PYRO_SQUIB_PULSES_NUM(pulses_num))
+	{
+		PyroSquibParam->pulses_num=pulses_num;
 	}
 	else
 	{
@@ -119,7 +157,7 @@ enPyroSquibError PyroSquib_Start(void)
 	PyroSquibParam->state=PYRO_SQUIB_RUN;
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
-	htim2.Instance->ARR=PyroSquibParam->time;
+	htim2.Instance->ARR=PyroSquibParam->pulse_time;
 	HAL_TIM_Base_Start_IT(&htim2);
 	
 	return PYRO_SQUIB_OK;
