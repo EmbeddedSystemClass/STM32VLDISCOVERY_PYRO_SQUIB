@@ -84,14 +84,14 @@ static void MX_I2C2_Init(void);
 static void MX_TIM2_Init(void);
 void StartDefaultTask(void const * argument);
 
-//void delay(uint32_t time)
-//{
-//		while(time)
-//		{
-//				time--;
-//		}
-//}
+/* USER CODE BEGIN PFP */
+/* Private function prototypes -----------------------------------------------*/
 
+/* USER CODE END PFP */
+
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
 
 int main(void)
 {
@@ -116,7 +116,6 @@ int main(void)
   MX_TIM4_Init();
   MX_I2C2_Init();
 	MX_TIM2_Init();
-	
 
   /* USER CODE BEGIN 2 */
 	
@@ -349,6 +348,7 @@ static void MX_TIM2_Init(void)
 
   TIM_ClockConfigTypeDef sClockSourceConfig;
   TIM_MasterConfigTypeDef sMasterConfig;
+  TIM_OC_InitTypeDef sConfigOC;
 
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 24000;
@@ -366,7 +366,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
 
-  if (HAL_TIM_OnePulse_Init(&htim2, TIM_OPMODE_SINGLE) != HAL_OK)
+  if (HAL_TIM_PWM_Init(&htim2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -374,6 +374,15 @@ static void MX_TIM2_Init(void)
   sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
   sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
   if (HAL_TIMEx_MasterConfigSynchronization(&htim2, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
   {
     Error_Handler();
   }

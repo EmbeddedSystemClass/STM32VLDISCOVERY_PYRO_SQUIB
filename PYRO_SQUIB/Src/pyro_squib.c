@@ -18,8 +18,12 @@
 extern TIM_HandleTypeDef htim2;
 extern sConfigInfo configInfo;	
 
+uint8_t pyro_pulse_counter=0;
+
 stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;//={100,0.7,0.7,0.7,0.7,255,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
 
+void PyroSquib_Timer_Start(void);
+void PyroSquib_Timer_Stop(void);
 
 //enPyroSquibError PyroSquib_SetTime(uint16_t time)
 //{
@@ -35,47 +39,47 @@ stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;//={100,0.7,0.7,0.7,0.7,
 //	return PYRO_SQUIB_OK;
 //}
 
-enPyroSquibError PyroSquib_SetPeriod(uint16_t period)
-{
-	if(IS_PYRO_SQUIB_PERIOD(period))
-	{
-		PyroSquibParam->period=period;
-	}
-	else
-	{
-		return PYRO_SQUIB_INCORRECT_PARAM;
-	}
-	
-	return PYRO_SQUIB_OK;
-}
+//enPyroSquibError PyroSquib_SetPeriod(uint16_t period)
+//{
+//	if(IS_PYRO_SQUIB_PERIOD(period))
+//	{
+//		PyroSquibParam->period=period;
+//	}
+//	else
+//	{
+//		return PYRO_SQUIB_INCORRECT_PARAM;
+//	}
+//	
+//	return PYRO_SQUIB_OK;
+//}
 
-enPyroSquibError PyroSquib_SetPulseTime(uint16_t pulse_time)
-{
-	if(IS_PYRO_SQUIB_PULSE_TIME(pulse_time))
-	{
-		PyroSquibParam->pulse_time=pulse_time;
-	}
-	else
-	{
-		return PYRO_SQUIB_INCORRECT_PARAM;
-	}
-	
-	return PYRO_SQUIB_OK;
-}
+//enPyroSquibError PyroSquib_SetPulseTime(uint16_t pulse_time)
+//{
+//	if(IS_PYRO_SQUIB_PULSE_TIME(pulse_time))
+//	{
+//		PyroSquibParam->pulse_time=pulse_time;
+//	}
+//	else
+//	{
+//		return PYRO_SQUIB_INCORRECT_PARAM;
+//	}
+//	
+//	return PYRO_SQUIB_OK;
+//}
 
-enPyroSquibError PyroSquib_SetPulsesNum(uint16_t pulses_num)
-{
-	if(IS_PYRO_SQUIB_PULSES_NUM(pulses_num))
-	{
-		PyroSquibParam->pulses_num=pulses_num;
-	}
-	else
-	{
-		return PYRO_SQUIB_INCORRECT_PARAM;
-	}
-	
-	return PYRO_SQUIB_OK;
-}
+//enPyroSquibError PyroSquib_SetPulsesNum(uint16_t pulses_num)
+//{
+//	if(IS_PYRO_SQUIB_PULSES_NUM(pulses_num))
+//	{
+//		PyroSquibParam->pulses_num=pulses_num;
+//	}
+//	else
+//	{
+//		return PYRO_SQUIB_INCORRECT_PARAM;
+//	}
+//	
+//	return PYRO_SQUIB_OK;
+//}
 
 enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 {
@@ -136,38 +140,74 @@ enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state)
 		}
 }
 
+void PyroSquib_Timer_Start(void)
+{
+		pyro_pulse_counter=0;
+		__HAL_TIM_SET_AUTORELOAD(&htim2, PyroSquibParam->period);
+		__HAL_TIM_SET_COMPARE(&htim2,TIM_CHANNEL_1,PyroSquibParam->pulse_time);
+		__HAL_TIM_SET_COUNTER(&htim2, 0);
+		__HAL_TIM_ENABLE_IT(&htim2, TIM_IT_CC1);
+		__HAL_TIM_ENABLE_IT(&htim2, TIM_IT_UPDATE);
+		TIM_CCxChannelCmd(htim2.Instance, TIM_CHANNEL_1, TIM_CCx_ENABLE);
+		__HAL_TIM_ENABLE(&htim2);
+}
+
+
+void PyroSquib_Timer_Stop(void)
+{
+		__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_CC1);
+		__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_UPDATE);
+		TIM_CCxChannelCmd(htim2.Instance, TIM_CHANNEL_1, TIM_CCx_DISABLE);
+		__HAL_TIM_DISABLE(&htim2);
+}
+
+
 #define PYRO_SQUIB_DELAY_START_MS	10
 enPyroSquibError PyroSquib_Start(void)
 {
 	enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
 	enPyroSquibError err=PYRO_SQUIB_OK;
 	
-	//set current
-	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
-	{
-			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam->current[PyroSquib]);
-			if(err!=PYRO_SQUIB_OK)
-			{
-					return err;
-			}
-	}
+//	//set current
+//	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
+//	{
+//			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam->current[PyroSquib]);
+//			if(err!=PYRO_SQUIB_OK)
+//			{
+//					return err;
+//			}
+//	}
 	
 	//enable current keys
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON);
 	PyroSquibParam->state=PYRO_SQUIB_RUN;
 	
-	__HAL_TIM_SET_COUNTER(&htim2, 0);
-	htim2.Instance->ARR=PyroSquibParam->pulse_time;
-	HAL_TIM_Base_Start_IT(&htim2);
 	
+//	htim2.Instance->ARR=PyroSquibParam->pulse_time;
+//	HAL_TIM_Base_Start_IT(&htim2);
+	PyroSquib_Timer_Start();
 	return PYRO_SQUIB_OK;
 }
 
 void PyroSquib_TimerExpired(void)
 {
+	pyro_pulse_counter++;
+	if(pyro_pulse_counter<PyroSquibParam->pulses_num)
+	{
 	//disable current keys
-	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);
-	PyroSquibParam->state=PYRO_SQUIB_STOP;
+		PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON);	
+	}
+	else
+	{
+			PyroSquib_Timer_Stop();
+			PyroSquibParam->state=PYRO_SQUIB_STOP;
+	}
 	
+}
+
+void PyroSquib_PulseEnd(void)
+{
+	//disable current keys
+	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);	
 }
 

@@ -136,9 +136,9 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 				
 						
 						usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_1]=PyroSquibParam->calibr.pot_min;
-						usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_1]=PyroSquibParam->calibr.current_min;
+						*(float*)&usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_1]=PyroSquibParam->calibr.current_min;
 						usRegHoldingBuf[REG_PIR_POT_CALIBR_VALUE_2]=PyroSquibParam->calibr.pot_max;
-						usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_2]=PyroSquibParam->calibr.current_max;
+						*(float*)&usRegHoldingBuf[REG_PIR_POT_CALIBR_CURRENT_2]=PyroSquibParam->calibr.current_max;
 				
 						*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT]=PyroSquibParam->current[0];
 						*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT]=PyroSquibParam->current[1];

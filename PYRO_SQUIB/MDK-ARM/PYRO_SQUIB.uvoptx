@@ -198,12 +198,6 @@
       <LintExecutable></LintExecutable>
       <LintConfigFile></LintConfigFile>
       <bLintAuto>0</bLintAuto>
-      <SystemViewers>
-        <Entry>
-          <Name>System Viewer\ADC1</Name>
-          <WinId>35900</WinId>
-        </Entry>
-      </SystemViewers>
       <DebugDescription>
         <Enable>1</Enable>
         <EnableLog>0</EnableLog>
@@ -307,7 +301,7 @@
       <GroupNumber>1</GroupNumber>
       <FileNumber>8</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>..\Src\pyro_squib.c</PathWithFileName>

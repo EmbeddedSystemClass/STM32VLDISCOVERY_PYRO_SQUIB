@@ -82,5 +82,6 @@ enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state);
 enPyroSquibError PyroSquib_Start(void);
 
 void PyroSquib_TimerExpired(void);
+void PyroSquib_PulseEnd(void);
 
 #endif

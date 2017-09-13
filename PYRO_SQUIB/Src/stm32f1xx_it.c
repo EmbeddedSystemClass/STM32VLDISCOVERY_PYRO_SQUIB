@@ -285,5 +285,24 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htimer)
 	}
 }
 
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim)
+{
+	switch((uint32_t)(htim->Instance))
+	{
+		case (uint32_t)TIM4:
+		{
+
+		}
+		break;
+		
+		case (uint32_t)TIM2:
+		{
+			PyroSquib_PulseEnd();
+		}
+		break;
+		
+	}
+}
+
 /* USER CODE END 1 */
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
