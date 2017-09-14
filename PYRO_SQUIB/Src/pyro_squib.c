@@ -14,8 +14,8 @@
 #define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
 
 
-#define PYRO_SQUIB_CURRENT_MIN	0.5
-#define PYRO_SQUIB_CURRENT_MAX	5.0
+#define PYRO_SQUIB_CURRENT_MIN	0
+#define PYRO_SQUIB_CURRENT_MAX	127
 #define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
 
 
@@ -131,5 +131,13 @@ void PyroSquib_TimerExpired(void)
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);
 	PyroSquibParam->state=PYRO_SQUIB_STOP;
 	
+}
+
+uint8_t  PyroSquib_Test(void)
+{
+		if(PyroSquibParam->state!=PYRO_SQUIB_RUN)
+		{
+				
+		}
 }
 
