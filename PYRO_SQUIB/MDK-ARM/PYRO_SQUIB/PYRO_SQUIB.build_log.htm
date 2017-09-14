@@ -27,32 +27,64 @@ Project File Date:  09/14/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
-compiling dig_pot.c...
+compiling adc.c...
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\adc.c: 1 warning, 0 errors
+compiling stm32f1xx_it.c...
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
 ../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
   #endif
-..\Src\dig_pot.c(177): warning:  #1-D: last line of file ends without a newline
-  }
-..\Src\dig_pot.c: 2 warnings, 0 errors
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/stm32f1xx_it.c(257): warning:  #223-D: function "xMBRTUReceiveFSM" declared implicitly
+  		xMBRTUReceiveFSM();
+../Src/stm32f1xx_it.c(275): warning:  #223-D: function "xMBPort_TimerExpired" declared implicitly
+  			xMBPort_TimerExpired();		
+../Src/stm32f1xx_it.c: 5 warnings, 0 errors
+compiling main.c...
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/main.c: 3 warnings, 0 errors
 compiling pyro_squib.c...
 ../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
   #endif
-../Inc/pyro_squib.h(56): warning:  #1-D: last line of file ends without a newline
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
   #endif
-../Inc/adc.h(36): warning:  #1-D: last line of file ends without a newline
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
   #endif
-..\Src\pyro_squib.c(56): warning:  #188-D: enumerated type mixed with another type
+..\Src\pyro_squib.c(66): warning:  #188-D: enumerated type mixed with another type
   		hal_err=DigPot_SetValue((uint8_t)PyroSquib, pot_val);
-..\Src\pyro_squib.c(49): warning:  #177-D: variable "pyro_squib_cnt" was declared but never referenced
+..\Src\pyro_squib.c(59): warning:  #177-D: variable "pyro_squib_cnt" was declared but never referenced
   		uint8_t pyro_squib_cnt=0;
-..\Src\pyro_squib.c(74): warning:  #940-D: missing return statement at end of non-void function "PyroSquib_SetMask"
+..\Src\pyro_squib.c(84): warning:  #940-D: missing return statement at end of non-void function "PyroSquib_SetMask"
   }
-..\Src\pyro_squib.c(99): warning:  #940-D: missing return statement at end of non-void function "PyroSquib_SetKeysState"
+..\Src\pyro_squib.c(131): warning:  #940-D: missing return statement at end of non-void function "PyroSquib_SetKeysState"
   }
 ..\Src\pyro_squib.c: 7 warnings, 0 errors
+compiling cfg_info.c...
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\cfg_info.c: 2 warnings, 0 errors
+compiling mbport.c...
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\modbus\port\mbport.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=24672 RO-data=928 RW-data=400 ZI-data=6288  
+Program Size: Code=27144 RO-data=928 RW-data=404 ZI-data=6300  
 FromELF: creating hex file...
-"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 9 Warning(s).
+"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 21 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -70,7 +102,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

@@ -44,3 +44,6 @@ pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVD
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
+pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
+pyro_squib\pyro_squib.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h

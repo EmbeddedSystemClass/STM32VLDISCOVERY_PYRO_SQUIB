@@ -49,5 +49,5 @@ pyro_squib\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_grou
 pyro_squib\main.o: ../Inc/mbinit.h
 pyro_squib\main.o: ../Inc/adc.h
 pyro_squib\main.o: ../Inc/dig_pot.h
-pyro_squib\main.o: ../Inc/cfg_info.h
 pyro_squib\main.o: ../Inc/pyro_squib.h
+pyro_squib\main.o: ../Inc/cfg_info.h

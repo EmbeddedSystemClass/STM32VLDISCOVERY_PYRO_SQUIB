@@ -23,8 +23,9 @@ extern uint8_t digPotValue[I2C_POT_NUM];
 extern stPyroSquib *PyroSquibParam;
 extern stADC_PyroBuf ADC_PyroBuf;
 extern uint16_t ADC_value[ADC_CHN_NUM];
-
-static enPyroSquibError			PyroSquibError;  
+extern enPyroSquibError			PyroSquibError;  
+extern uint8_t PyroSquibStatus;
+extern SemaphoreHandle_t xPyroSquib_Semaphore;
 
 #define REG_INPUT_START     1000
 #define REG_INPUT_NREGS     20
@@ -192,7 +193,8 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 											 if(usRegHoldingBuf[REG_PIR_START])
 											 {
 													usRegHoldingBuf[REG_PIR_START]=0;
-													PyroSquibError=PyroSquib_Start();
+													//PyroSquibError=PyroSquib_Start();
+													xSemaphoreGive( xPyroSquib_Semaphore);
 											 }
 										}
 										break;

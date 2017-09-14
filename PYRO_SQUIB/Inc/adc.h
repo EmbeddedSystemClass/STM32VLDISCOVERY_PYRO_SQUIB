@@ -3,7 +3,8 @@
 
 #include "stdint.h"
 
-#define ADC_CHN_NUM					8
+#define ADC_CHN_NUM					8//всего каналов ацп
+#define ADC_CHN_POT_NUM			4//каналы ацп на регулируемых выходах пиропатронов
 
 #define ADC_NUM_SAMPLES			50
 

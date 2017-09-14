@@ -6,6 +6,9 @@
 
 #define PYRO_SQUIB_NUM	4
 
+#define PYRO_SQUIB_TEST_TIME					1 //100uS
+#define PYRO_SQUIB_MIN_TEST_VOLTAGE		300 //0-4095
+
 typedef enum
 {
 	PYRO_SQUIB_1=0,
@@ -25,7 +28,8 @@ enPyroSquibError;
 typedef enum
 {
 	PYRO_SQUIB_KEYS_OFF=0,
-	PYRO_SQUIB_KEYS_ON,
+	PYRO_SQUIB_KEYS_ON_MASK,
+	PYRO_SQUIB_KEYS_ON_ALL,
 }
 enPyroSquibKeysState;
 
@@ -45,6 +49,18 @@ typedef struct
 	enPyroSquibProcessState state;
 } stPyroSquib;
 
+
+#define PYRO_SQUIB_TIME_MIN		10
+#define PYRO_SQUIB_TIME_MAX		500
+#define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
+
+
+#define PYRO_SQUIB_CURRENT_MIN	0
+#define PYRO_SQUIB_CURRENT_MAX	127
+#define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
+
+
+void 		 PyroSquib_Init(void);
 enPyroSquibError PyroSquib_SetTime(uint16_t time);
 enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib,float current);
 enPyroSquibError PyroSquib_SetMask(uint8_t mask);

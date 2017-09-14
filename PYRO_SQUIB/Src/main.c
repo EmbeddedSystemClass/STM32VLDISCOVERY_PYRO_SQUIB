@@ -49,6 +49,7 @@
 #include "mbinit.h"
 #include "adc.h"
 #include "dig_pot.h"
+#include "pyro_squib.h"
 #include "cfg_info.h"
 /* USER CODE END Includes */
 
@@ -126,7 +127,9 @@ int main(void)
 	
 	DigPot_Init();
   ADC_Init();
+	PyroSquib_Init();
 	Modbus_Init();
+
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -351,7 +354,7 @@ static void MX_TIM2_Init(void)
   TIM_MasterConfigTypeDef sMasterConfig;
 
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 24000;
+  htim2.Init.Prescaler = 2400;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 10;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;

@@ -6,24 +6,34 @@
 
 #include "FreeRTOS.h"
 #include "task.h"
+#include "queue.h"
+#include "semphr.h"
 
-//#define PYRO_SQUIB_NUM 4
-
-#define PYRO_SQUIB_TIME_MIN		10
-#define PYRO_SQUIB_TIME_MAX		500
-#define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
-
-
-#define PYRO_SQUIB_CURRENT_MIN	0
-#define PYRO_SQUIB_CURRENT_MAX	127
-#define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
-
+#include "string.h"
 
 extern TIM_HandleTypeDef htim2;
 extern sConfigInfo configInfo;	
 
-stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;//={100,0.7,0.7,0.7,0.7,255,PYRO_SQUIB_OK,PYRO_SQUIB_STOP};
+uint8_t PyroSquibStatus;
+uint8_t	pulse_time_expired=0;
+uint16_t ADC_value_temp[ADC_CHN_NUM];
+extern uint16_t ADC_value[ADC_CHN_NUM];
+enPyroSquibError			PyroSquibError;  
 
+SemaphoreHandle_t xPyroSquib_Semaphore=NULL;
+
+stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;
+
+uint8_t  PyroSquib_Test(void);
+
+#define PYRO_SQUIB_TASK_STACK_SIZE	128
+static void PyroSquib_Task(void *pvParameters);
+
+void 		 PyroSquib_Init(void)
+{
+		vSemaphoreCreateBinary( xPyroSquib_Semaphore );
+		xTaskCreate(PyroSquib_Task,"Pyro squib task",PYRO_SQUIB_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
+}
 
 enPyroSquibError PyroSquib_SetTime(uint16_t time)
 {
@@ -82,19 +92,41 @@ enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state)
 		HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(PIR_EN8_GPIO_Port,PIR_EN8_Pin,GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(PIR_EN8_GPIO_Port,PIR_EN8_Pin,GPIO_PIN_RESET);	
 	
-	
-		if(state==PYRO_SQUIB_KEYS_ON)
+		switch(state)
 		{
-				if(PyroSquibParam->mask&(1<<0)) HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam->mask&(1<<1)) HAL_GPIO_WritePin(PIR_EN2_GPIO_Port,PIR_EN2_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam->mask&(1<<2)) HAL_GPIO_WritePin(PIR_EN3_GPIO_Port,PIR_EN3_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam->mask&(1<<3)) HAL_GPIO_WritePin(PIR_EN4_GPIO_Port,PIR_EN4_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam->mask&(1<<4)) HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam->mask&(1<<5)) HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam->mask&(1<<6)) HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,GPIO_PIN_SET);
-				if(PyroSquibParam->mask&(1<<7)) HAL_GPIO_WritePin(PIR_EN8_GPIO_Port,PIR_EN8_Pin,GPIO_PIN_SET);
+			case PYRO_SQUIB_KEYS_ON_MASK:
+			{
+					if(PyroSquibParam->mask&(1<<0)) HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,GPIO_PIN_SET);
+					if(PyroSquibParam->mask&(1<<1)) HAL_GPIO_WritePin(PIR_EN2_GPIO_Port,PIR_EN2_Pin,GPIO_PIN_SET);
+					if(PyroSquibParam->mask&(1<<2)) HAL_GPIO_WritePin(PIR_EN3_GPIO_Port,PIR_EN3_Pin,GPIO_PIN_SET);
+					if(PyroSquibParam->mask&(1<<3)) HAL_GPIO_WritePin(PIR_EN4_GPIO_Port,PIR_EN4_Pin,GPIO_PIN_SET);
+					if(PyroSquibParam->mask&(1<<4)) HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,GPIO_PIN_SET);
+					if(PyroSquibParam->mask&(1<<5)) HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,GPIO_PIN_SET);
+					if(PyroSquibParam->mask&(1<<6)) HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,GPIO_PIN_SET);
+					if(PyroSquibParam->mask&(1<<7)) HAL_GPIO_WritePin(PIR_EN8_GPIO_Port,PIR_EN8_Pin,GPIO_PIN_SET);
+			}
+			break;
+			
+			case PYRO_SQUIB_KEYS_ON_ALL:
+			{
+					HAL_GPIO_WritePin(PIR_EN1_GPIO_Port,PIR_EN1_Pin,GPIO_PIN_SET);
+					HAL_GPIO_WritePin(PIR_EN2_GPIO_Port,PIR_EN2_Pin,GPIO_PIN_SET);
+					HAL_GPIO_WritePin(PIR_EN3_GPIO_Port,PIR_EN3_Pin,GPIO_PIN_SET);
+					HAL_GPIO_WritePin(PIR_EN4_GPIO_Port,PIR_EN4_Pin,GPIO_PIN_SET);
+					HAL_GPIO_WritePin(PIR_EN5_GPIO_Port,PIR_EN5_Pin,GPIO_PIN_SET);
+					HAL_GPIO_WritePin(PIR_EN6_GPIO_Port,PIR_EN6_Pin,GPIO_PIN_SET);
+					HAL_GPIO_WritePin(PIR_EN7_GPIO_Port,PIR_EN7_Pin,GPIO_PIN_SET);
+					HAL_GPIO_WritePin(PIR_EN8_GPIO_Port,PIR_EN8_Pin,GPIO_PIN_SET);					
+			}
+			break;
+			
+			default:
+			{
+		
+			}
+			break;		
 		}
 }
 
@@ -103,7 +135,7 @@ enPyroSquibError PyroSquib_Start(void)
 {
 	enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
 	enPyroSquibError err=PYRO_SQUIB_OK;
-	
+	pulse_time_expired=0;
 	//set current
 	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
 	{
@@ -115,29 +147,69 @@ enPyroSquibError PyroSquib_Start(void)
 	}
 	
 	//enable current keys
-	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON);
+	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON_MASK);
 	PyroSquibParam->state=PYRO_SQUIB_RUN;
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
-	htim2.Instance->ARR=PyroSquibParam->time;
+	__HAL_TIM_SET_AUTORELOAD(&htim2, PyroSquibParam->time*10);
 	HAL_TIM_Base_Start_IT(&htim2);
+	
+	while(pulse_time_expired==0)
+	{
+			taskYIELD();
+	}
 	
 	return PYRO_SQUIB_OK;
 }
 
 void PyroSquib_TimerExpired(void)
 {
-	//disable current keys
-	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);
+	memcpy(ADC_value, ADC_value_temp, sizeof(uint16_t)*ADC_CHN_POT_NUM);
+	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);	//disable current keys
 	PyroSquibParam->state=PYRO_SQUIB_STOP;
-	
+	pulse_time_expired=1;
 }
+
+
+#define PYRO_SQUIB_WAIT_START_SEMAPHORE		1000
+static void PyroSquib_Task(void *pvParameters)
+{
+		while(1)
+		{
+				if(xSemaphoreTake( xPyroSquib_Semaphore, PYRO_SQUIB_WAIT_START_SEMAPHORE ))
+				{
+						PyroSquibError=PyroSquib_Start();
+				}
+				else
+				{
+						PyroSquibStatus=PyroSquib_Test();
+				}
+		}
+}
+
 
 uint8_t  PyroSquib_Test(void)
 {
-		if(PyroSquibParam->state!=PYRO_SQUIB_RUN)
+		uint8_t i=0;
+		uint8_t stat_temp=0;
+		pulse_time_expired=0;
+		PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON_ALL);
+		__HAL_TIM_SET_AUTORELOAD(&htim2, PYRO_SQUIB_TEST_TIME);
+		HAL_TIM_Base_Start_IT(&htim2);	
+		
+		while(pulse_time_expired==0)
 		{
-				
+				taskYIELD();
 		}
+		
+		for(i=0;i<ADC_CHN_POT_NUM;i++)
+		{
+				if(ADC_value_temp[i]>PYRO_SQUIB_MIN_TEST_VOLTAGE)
+				{
+						stat_temp|=(1<<i);
+				}
+		}
+		return stat_temp;
 }
+
 
