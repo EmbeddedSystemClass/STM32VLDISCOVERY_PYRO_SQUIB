@@ -44,7 +44,6 @@ static void Modbus_Task(void *pvParameters)
     for( ;; )
     {
         eMBPoll();
-        //vTaskDelay(MODBUS_POLL_TIME);
     }
 }
 

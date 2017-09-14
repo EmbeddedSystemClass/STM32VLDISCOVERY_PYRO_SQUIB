@@ -45,6 +45,7 @@ extern SemaphoreHandle_t xPyroSquib_Semaphore;
 
 #define REG_PIR_STATE					16
 #define REG_PIR_ERROR					17
+#define REG_PIR_IN_LINE				18
 
 static USHORT   usRegInputStart = REG_INPUT_START;
 USHORT   usRegInputBuf[REG_INPUT_NREGS];
@@ -77,6 +78,7 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 				
 				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam->state;
 				usRegInputBuf[REG_PIR_ERROR]=PyroSquibError;
+				usRegInputBuf[REG_PIR_IN_LINE]=PyroSquibStatus;
 			
 			
         while ( usNRegs > 0 )
@@ -148,43 +150,66 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 								{
 										case REG_PIR_SET_TIME:
 										{
+											if(IS_PYRO_SQUIB_TIME(usRegHoldingBuf[REG_PIR_SET_TIME]) 	&&
+													(PyroSquibParam->time!=usRegHoldingBuf[REG_PIR_SET_TIME]))
+											{												
 												PyroSquibParam->time=usRegHoldingBuf[REG_PIR_SET_TIME];
 												settings_need_write=1;
+											}
 										}
 										break;
 										
 										case REG_PIR_1_SET_CURRENT +1:
 										{
+											if(IS_PYRO_SQUIB_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT])	&&
+													(PyroSquibParam->current[0]!=*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT]))
+											{
 												PyroSquibParam->current[0]=*(float*)&usRegHoldingBuf[REG_PIR_1_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;	
 										
 										case REG_PIR_2_SET_CURRENT +1:
 										{
+											if(IS_PYRO_SQUIB_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT]) 	&&
+													(PyroSquibParam->current[1]!=*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT]))
+											{
 												PyroSquibParam->current[1]=*(float*)&usRegHoldingBuf[REG_PIR_2_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;	
 										
 										case REG_PIR_3_SET_CURRENT +1:
 										{
+											if(IS_PYRO_SQUIB_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT])	&&
+													(PyroSquibParam->current[2]!=*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT]))
+											{
 												PyroSquibParam->current[2]=*(float*)&usRegHoldingBuf[REG_PIR_3_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;	
 										
 										case REG_PIR_4_SET_CURRENT +1:
 										{
+											if(IS_PYRO_SQUIB_CURRENT(*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT])	&&
+													(PyroSquibParam->current[3]!=*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT]))
+											{
 												PyroSquibParam->current[3]=*(float*)&usRegHoldingBuf[REG_PIR_4_SET_CURRENT];
 												settings_need_write=1;
+											}
 										}
 										break;											
 
 										case REG_PIR_SET_MASK:
 										{
-												PyroSquibParam->mask=usRegHoldingBuf[REG_PIR_SET_MASK];
-												settings_need_write=1;
+												if(PyroSquibParam->mask!=usRegHoldingBuf[REG_PIR_SET_MASK])
+												{
+													PyroSquibParam->mask=usRegHoldingBuf[REG_PIR_SET_MASK];
+													settings_need_write=1;
+												}
 										}
 										break;	
 										
@@ -193,7 +218,6 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 											 if(usRegHoldingBuf[REG_PIR_START])
 											 {
 													usRegHoldingBuf[REG_PIR_START]=0;
-													//PyroSquibError=PyroSquib_Start();
 													xSemaphoreGive( xPyroSquib_Semaphore);
 											 }
 										}

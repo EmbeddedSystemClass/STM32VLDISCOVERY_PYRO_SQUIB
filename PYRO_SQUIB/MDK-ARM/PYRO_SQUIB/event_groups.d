@@ -1,8 +1,8 @@
 pyro_squib\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
-pyro_squib\event_groups.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+pyro_squib\event_groups.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
 pyro_squib\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\event_groups.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-pyro_squib\event_groups.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\event_groups.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\event_groups.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\event_groups.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\event_groups.o: ../Inc/main.h
 pyro_squib\event_groups.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h

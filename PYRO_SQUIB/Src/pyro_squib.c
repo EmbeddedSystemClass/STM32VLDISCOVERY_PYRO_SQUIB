@@ -31,6 +31,20 @@ static void PyroSquib_Task(void *pvParameters);
 
 void 		 PyroSquib_Init(void)
 {
+	
+		enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
+		enPyroSquibError err=PYRO_SQUIB_OK;
+
+		//set current
+		for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
+		{
+				err=PyroSquib_SetCurrent(PyroSquib,PYRO_SQUIB_CURRENT_MAX);
+				if(err!=PYRO_SQUIB_OK)
+				{
+						PyroSquibError=err;
+				}
+		}
+	
 		vSemaphoreCreateBinary( xPyroSquib_Semaphore );
 		xTaskCreate(PyroSquib_Task,"Pyro squib task",PYRO_SQUIB_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }

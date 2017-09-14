@@ -452,14 +452,14 @@
               <FilePath>..\Src\dig_pot.c</FilePath>
             </File>
             <File>
-              <FileName>pyro_squib.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\Src\pyro_squib.c</FilePath>
-            </File>
-            <File>
               <FileName>usart_app.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Src\usart_app.c</FilePath>
+            </File>
+            <File>
+              <FileName>pyro_squib.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\pyro_squib.c</FilePath>
             </File>
             <File>
               <FileName>cfg_info.c</FileName>
