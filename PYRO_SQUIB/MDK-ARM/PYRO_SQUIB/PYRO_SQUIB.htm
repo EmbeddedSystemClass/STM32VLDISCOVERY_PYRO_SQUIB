@@ -3,7 +3,7 @@
 <title>Static Call Graph - [PYRO_SQUIB\PYRO_SQUIB.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image PYRO_SQUIB\PYRO_SQUIB.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Fri Sep 15 15:25:47 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Fri Sep 15 16:43:24 2017
 <BR><P>
 <H3>Maximum Stack Usage =        236 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1197,7 +1197,7 @@ Global Symbols
 <P><STRONG><a name="[b]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.NMI_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f100xb.o(RESET)
 </UL>
-<P><STRONG><a name="[e0]"></a>PyroSquib_Init</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_Init))
+<P><STRONG><a name="[e0]"></a>PyroSquib_Init</STRONG> (Thumb, 68 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 212<LI>Call Chain = PyroSquib_Init &rArr; PyroSquib_SetCurrent_All &rArr; PyroSquib_SetCurrent &rArr; DigPot_SetValue &rArr; I2C_AFBusyBugWorkaround &rArr; HAL_I2C_Init &rArr; HAL_I2C_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericCreate
@@ -1238,7 +1238,7 @@ Global Symbols
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_TimerExpired
 </UL>
 
-<P><STRONG><a name="[e5]"></a>PyroSquib_Start</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, pyro_squib.o(i.PyroSquib_Start))
+<P><STRONG><a name="[e5]"></a>PyroSquib_Start</STRONG> (Thumb, 160 bytes, Stack size 16 bytes, pyro_squib.o(i.PyroSquib_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 180<LI>Call Chain = PyroSquib_Start &rArr; PyroSquib_SetCurrent &rArr; DigPot_SetValue &rArr; I2C_AFBusyBugWorkaround &rArr; HAL_I2C_Init &rArr; HAL_I2C_MspInit &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield
@@ -1249,7 +1249,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_Task
 </UL>
 
-<P><STRONG><a name="[e9]"></a>PyroSquib_Test</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, pyro_squib.o(i.PyroSquib_Test))
+<P><STRONG><a name="[e9]"></a>PyroSquib_Test</STRONG> (Thumb, 134 bytes, Stack size 16 bytes, pyro_squib.o(i.PyroSquib_Test))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = PyroSquib_Test &rArr; PyroSquib_SetKeysState
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortYield
@@ -1502,7 +1502,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBFuncReadDiscreteInputs
 </UL>
 
-<P><STRONG><a name="[f5]"></a>eMBRegHoldingCB</STRONG> (Thumb, 674 bytes, Stack size 40 bytes, mbport.o(i.eMBRegHoldingCB))
+<P><STRONG><a name="[f5]"></a>eMBRegHoldingCB</STRONG> (Thumb, 676 bytes, Stack size 40 bytes, mbport.o(i.eMBRegHoldingCB))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple

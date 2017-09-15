@@ -13,6 +13,7 @@
 
 extern TIM_HandleTypeDef htim2;
 extern sConfigInfo configInfo;	
+extern uint32_t SystemCoreClock; 
 
 uint8_t PyroSquibStatus;
 uint8_t	pulse_time_expired=0;
@@ -34,6 +35,7 @@ static void PyroSquib_Task(void *pvParameters);
 void 		 PyroSquib_Init(void)
 {
 		xPyroSquib_Semaphore=xSemaphoreCreateBinary();
+		__HAL_TIM_URS_ENABLE(&htim2);//для использования флага UG-обновления регистра прескалера
 		PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_MAX);		
 		xTaskCreate(PyroSquib_Task,"Pyro squib task",PYRO_SQUIB_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }
@@ -76,18 +78,14 @@ enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 	{
 		uint8_t pot_val=0;
 		uint8_t pyro_squib_cnt=0;
-//		PyroSquibParam->current[PyroSquib]=current;
 		
-		//current to pot_val
 		pot_val=DigPot_CurrentToPotVal(current);
 		
-
 		hal_err=DigPot_SetValue((uint8_t)PyroSquib, pot_val);
 		if(hal_err!=HAL_OK)
 		{
 				return PYRO_SQUIB_I2C_ERR;
 		}
-
 	}
 	else
 	{
@@ -170,9 +168,12 @@ enPyroSquibError PyroSquib_Start(void)
 	PyroSquibParam->state=PYRO_SQUIB_RUN;
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
-	__HAL_TIM_SET_PRESCALER(&htim2,24000);
+	__HAL_TIM_SET_PRESCALER(&htim2,SystemCoreClock/1000);
 	__HAL_TIM_SET_AUTORELOAD(&htim2, PyroSquibParam->time);
+	__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_UPDATE);
+	htim2.Instance->EGR = TIM_EGR_UG;	
 	HAL_TIM_Base_Start_IT(&htim2);
+
 	
 	while(pulse_time_expired==0)
 	{
@@ -216,7 +217,9 @@ uint8_t  PyroSquib_Test(void)
 		pulse_time_expired=0;
 		PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON_ALL);
 		__HAL_TIM_SET_AUTORELOAD(&htim2, PYRO_SQUIB_TEST_TIME);
-		__HAL_TIM_SET_PRESCALER(&htim2,2400);
+		__HAL_TIM_SET_PRESCALER(&htim2,SystemCoreClock/10000);
+		__HAL_TIM_DISABLE_IT(&htim2, TIM_IT_UPDATE);
+		htim2.Instance->EGR = TIM_EGR_UG;
 		HAL_TIM_Base_Start_IT(&htim2);	
 		
 		while(pulse_time_expired==0)

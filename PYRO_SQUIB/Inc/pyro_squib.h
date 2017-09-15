@@ -50,8 +50,8 @@ typedef struct
 } stPyroSquib;
 
 
-#define PYRO_SQUIB_TIME_MIN		10
-#define PYRO_SQUIB_TIME_MAX		500
+#define PYRO_SQUIB_TIME_MIN		10		//10ms
+#define PYRO_SQUIB_TIME_MAX		10000 //10 s
 #define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
 
 
