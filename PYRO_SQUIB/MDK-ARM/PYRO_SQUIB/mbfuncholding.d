@@ -1,10 +1,10 @@
 pyro_squib\mbfuncholding.o: ..\modbus\functions\mbfuncholding.c
-pyro_squib\mbfuncholding.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
-pyro_squib\mbfuncholding.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\string.h
+pyro_squib\mbfuncholding.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+pyro_squib\mbfuncholding.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
 pyro_squib\mbfuncholding.o: ..\modbus\include\mbport.h
 pyro_squib\mbfuncholding.o: ..\modbus\port\port.h
-pyro_squib\mbfuncholding.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
-pyro_squib\mbfuncholding.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\mbfuncholding.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
+pyro_squib\mbfuncholding.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\mbfuncholding.o: ../Inc/stm32f1xx_hal_conf.h
 pyro_squib\mbfuncholding.o: ../Inc/main.h
@@ -19,7 +19,7 @@ pyro_squib\mbfuncholding.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\mbfuncholding.o: ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-pyro_squib\mbfuncholding.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+pyro_squib\mbfuncholding.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdio.h
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
@@ -36,7 +36,7 @@ pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_ti
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 pyro_squib\mbfuncholding.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 pyro_squib\mbfuncholding.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-pyro_squib\mbfuncholding.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\mbfuncholding.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 pyro_squib\mbfuncholding.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\mbfuncholding.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 pyro_squib\mbfuncholding.o: ../Inc/FreeRTOSConfig.h

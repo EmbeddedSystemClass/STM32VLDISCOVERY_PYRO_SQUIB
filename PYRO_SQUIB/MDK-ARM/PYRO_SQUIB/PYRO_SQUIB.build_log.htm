@@ -5,11 +5,11 @@
 <h2>Tool Versions:</h2>
 IDE-Version: µVision V5.17.0.0
 Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: noW noW, geo, LIC=NHY9U-SL21I-KTI3H-W80HX-ENB0V-57A1N
+License Information: noW noW, GEO, LIC=HF8WF-62X2I-WJ96K-ZARRL-VTY53-2R3MP
  
 Tool Versions:
 Toolchain:       MDK-ARM Professional  Version: 5.17
-Toolchain Path:  D:\Programs\Keil\ARM\ARMCC\Bin
+Toolchain Path:  C:\Program Files\Keil\ARM\ARMCC\Bin
 C Compiler:      Armcc.exe V5.06 update 1 (build 61)
 Assembler:       Armasm.exe V5.06 update 1 (build 61)
 Linker/Locator:  ArmLink.exe V5.06 update 1 (build 61)
@@ -21,12 +21,13 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
 Dialog DLL:      TCM.DLL V1.14.6.0
  
 <h2>Project:</h2>
-D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\PYRO_SQUIB.uvprojx
-Project File Date:  09/14/2017
+E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\PYRO_SQUIB.uvprojx
+Project File Date:  09/15/2017
 
 <h2>Output:</h2>
-*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\Programs\Keil\ARM\ARMCC\Bin'
+*** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
+compiling freertos.c...
 compiling mbinit.c...
 ..\Src\mbinit.c(32): warning:  #188-D: enumerated type mixed with another type
   	eStatus = eMBInit(MB_RTU, 
@@ -35,6 +36,30 @@ ODBUS_BAUDRATE, 0 );
 ..\Src\mbinit.c(30): warning:  #550-D: variable "eStatus" was set but never used
   	eMBErrorCode    eStatus;
 ..\Src\mbinit.c: 2 warnings, 0 errors
+compiling stm32f1xx_it.c...
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/stm32f1xx_it.c(257): warning:  #223-D: function "xMBRTUReceiveFSM" declared implicitly
+  		xMBRTUReceiveFSM();
+../Src/stm32f1xx_it.c(275): warning:  #223-D: function "xMBPort_TimerExpired" declared implicitly
+  			xMBPort_TimerExpired();		
+../Src/stm32f1xx_it.c: 5 warnings, 0 errors
+compiling main.c...
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/main.c: 3 warnings, 0 errors
+compiling adc.c...
+../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\adc.c: 1 warning, 0 errors
 compiling pyro_squib.c...
 ../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -51,6 +76,20 @@ compiling pyro_squib.c...
 ..\Src\pyro_squib.c(145): warning:  #940-D: missing return statement at end of non-void function "PyroSquib_SetKeysState"
   }
 ..\Src\pyro_squib.c: 7 warnings, 0 errors
+compiling usart_app.c...
+compiling cfg_info.c...
+../Inc/dig_pot.h(21): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\cfg_info.c: 2 warnings, 0 errors
+compiling mbcrc.c...
+compiling mbfunccoils.c...
+compiling mbfuncdisc.c...
+compiling mbfuncholding.c...
+compiling mbfuncinput.c...
+compiling mbfuncother.c...
+compiling mbutils.c...
 compiling mbport.c...
 ../Inc/adc.h(37): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -59,28 +98,77 @@ compiling mbport.c...
 ../Inc/pyro_squib.h(72): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\modbus\port\mbport.c: 3 warnings, 0 errors
+compiling portevent.c...
+compiling portserial.c...
+..\modbus\port\portserial.c(40): warning:  #223-D: function "startUARTRcv" declared implicitly
+  		startUARTRcv(&huart1);
+..\modbus\port\portserial.c(43): warning:  #223-D: function "stopUART" declared implicitly
+  		stopUART(&huart1);
+..\modbus\port\portserial.c: 2 warnings, 0 errors
+compiling porttimer.c...
+compiling mb.c...
+..\modbus\mb.c(233): warning:  #223-D: function "ENTER_CRITICAL_SECTION" declared implicitly
+          ENTER_CRITICAL_SECTION(  );
+..\modbus\mb.c(262): warning:  #223-D: function "EXIT_CRITICAL_SECTION" declared implicitly
+          EXIT_CRITICAL_SECTION(  );
+..\modbus\mb.c: 2 warnings, 0 errors
+compiling cmsis_os.c...
+compiling event_groups.c...
+compiling mbrtu_dma.c...
+..\modbus\rtu\mbrtu_dma.c(88): warning:  #223-D: function "ENTER_CRITICAL_SECTION" declared implicitly
+      ENTER_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(124): warning:  #223-D: function "EXIT_CRITICAL_SECTION" declared implicitly
+      EXIT_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(132): warning:  #223-D: function "ENTER_CRITICAL_SECTION" declared implicitly
+      ENTER_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(142): warning:  #223-D: function "EXIT_CRITICAL_SECTION" declared implicitly
+      EXIT_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(148): warning:  #223-D: function "ENTER_CRITICAL_SECTION" declared implicitly
+      ENTER_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(151): warning:  #223-D: function "EXIT_CRITICAL_SECTION" declared implicitly
+      EXIT_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(160): warning:  #223-D: function "ENTER_CRITICAL_SECTION" declared implicitly
+      ENTER_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(186): warning:  #223-D: function "EXIT_CRITICAL_SECTION" declared implicitly
+      EXIT_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(157): warning:  #550-D: variable "xFrameReceived" was set but never used
+      BOOL            xFrameReceived = FALSE;
+..\modbus\rtu\mbrtu_dma.c(196): warning:  #223-D: function "ENTER_CRITICAL_SECTION" declared implicitly
+      ENTER_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(225): warning:  #223-D: function "EXIT_CRITICAL_SECTION" declared implicitly
+      EXIT_CRITICAL_SECTION(  );
+..\modbus\rtu\mbrtu_dma.c(316): warning:  #223-D: function "getUART_BB_RcvDMAPktLength" declared implicitly
+  		usRcvBufferPos=	getUART_BB_RcvDMAPktLength();// Bykov_DMA
+..\modbus\rtu\mbrtu_dma.c: 12 warnings, 0 errors
+compiling timers.c...
+compiling tasks.c...
+compiling croutine.c...
+compiling port.c...
+compiling queue.c...
+compiling list.c...
+compiling heap_2.c...
 linking...
-Program Size: Code=27400 RO-data=928 RW-data=404 ZI-data=6300  
+Program Size: Code=28032 RO-data=928 RW-data=432 ZI-data=6320  
 FromELF: creating hex file...
-"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 12 Warning(s).
+"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 39 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
-                ARM::CMSIS:CORE:4.3.0
+                http://www.keil.com/pack/ARM.CMSIS.5.0.1.pack
+                ARM::CMSIS:CORE:5.0.1
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 4.3.0
+   * Component: CORE Version: 5.0.1
 
 <h2>Collection of Component include folders:</h2>
-  D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE
-  D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
-  D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+  E:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE
+  C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include
+  C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:00:02
+   * Component: ARM::CMSIS:CORE:5.0.1
+Build Time Elapsed:  00:00:14
 </pre>
 </body>
 </html>

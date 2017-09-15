@@ -1,8 +1,8 @@
 pyro_squib\mbinit.o: ..\Src\mbinit.c
 pyro_squib\mbinit.o: ../Inc/mbinit.h
 pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\mbinit.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-pyro_squib\mbinit.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\mbinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\mbinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\mbinit.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\mbinit.o: ../Inc/main.h
 pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
@@ -17,7 +17,7 @@ pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 pyro_squib\mbinit.o: ..\modbus\include\mb.h
 pyro_squib\mbinit.o: ..\modbus\include\mbport.h
 pyro_squib\mbinit.o: ..\modbus\port\port.h
-pyro_squib\mbinit.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
+pyro_squib\mbinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\inttypes.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\mbinit.o: ../Inc/stm32f1xx_hal_conf.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
@@ -31,7 +31,7 @@ pyro_squib\mbinit.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\mbinit.o: ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-pyro_squib\mbinit.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+pyro_squib\mbinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdio.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 pyro_squib\mbinit.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
@@ -52,4 +52,4 @@ pyro_squib\mbinit.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
 pyro_squib\mbinit.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 pyro_squib\mbinit.o: ..\modbus\include\mbproto.h
-pyro_squib\mbinit.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\errno.h
+pyro_squib\mbinit.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\errno.h

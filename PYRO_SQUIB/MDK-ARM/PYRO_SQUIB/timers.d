@@ -1,8 +1,8 @@
 pyro_squib\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/timers.c
-pyro_squib\timers.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+pyro_squib\timers.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
 pyro_squib\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\timers.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-pyro_squib\timers.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\timers.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\timers.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\timers.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\timers.o: ../Inc/main.h
 pyro_squib\timers.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h

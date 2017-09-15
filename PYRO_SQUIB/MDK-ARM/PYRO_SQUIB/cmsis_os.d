@@ -1,8 +1,8 @@
 pyro_squib\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c
-pyro_squib\cmsis_os.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\string.h
+pyro_squib\cmsis_os.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
 pyro_squib\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
-pyro_squib\cmsis_os.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
-pyro_squib\cmsis_os.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\cmsis_os.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\cmsis_os.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 pyro_squib\cmsis_os.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\cmsis_os.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
 pyro_squib\cmsis_os.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
