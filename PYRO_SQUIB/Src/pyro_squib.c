@@ -25,27 +25,16 @@ SemaphoreHandle_t xPyroSquib_Semaphore=NULL;
 stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;
 
 uint8_t  PyroSquib_Test(void);
+enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib,float current);
+enPyroSquibError PyroSquib_SetCurrent_All(float current);
 
 #define PYRO_SQUIB_TASK_STACK_SIZE	128
 static void PyroSquib_Task(void *pvParameters);
 
 void 		 PyroSquib_Init(void)
 {
-	
-		enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
-		enPyroSquibError err=PYRO_SQUIB_OK;
-
-		//set current
-		for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
-		{
-				err=PyroSquib_SetCurrent(PyroSquib,PYRO_SQUIB_CURRENT_MAX);
-				if(err!=PYRO_SQUIB_OK)
-				{
-						PyroSquibError=err;
-				}
-		}
-	
-		vSemaphoreCreateBinary( xPyroSquib_Semaphore );
+		xPyroSquib_Semaphore=xSemaphoreCreateBinary();
+		PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_MAX);		
 		xTaskCreate(PyroSquib_Task,"Pyro squib task",PYRO_SQUIB_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }
 
@@ -63,6 +52,22 @@ enPyroSquibError PyroSquib_SetTime(uint16_t time)
 	return PYRO_SQUIB_OK;
 }
 
+enPyroSquibError PyroSquib_SetCurrent_All(float current)
+{
+		enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
+		enPyroSquibError err=PYRO_SQUIB_OK, err_temp=PYRO_SQUIB_OK;
+	
+		for(PyroSquib=PYRO_SQUIB_1;PyroSquib<=PYRO_SQUIB_4;PyroSquib++)
+		{
+				err_temp=PyroSquib_SetCurrent(PyroSquib,PYRO_SQUIB_CURRENT_MAX);
+				if(err_temp!=PYRO_SQUIB_OK)
+				{
+						 err=err_temp;
+				}
+		}
+		return err;
+}
+
 enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 {
 	HAL_StatusTypeDef hal_err=HAL_ERROR;
@@ -71,7 +76,7 @@ enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 	{
 		uint8_t pot_val=0;
 		uint8_t pyro_squib_cnt=0;
-		PyroSquibParam->current[PyroSquib]=current;
+//		PyroSquibParam->current[PyroSquib]=current;
 		
 		//current to pot_val
 		pot_val=DigPot_CurrentToPotVal(current);
@@ -151,7 +156,7 @@ enPyroSquibError PyroSquib_Start(void)
 	enPyroSquibError err=PYRO_SQUIB_OK;
 	pulse_time_expired=0;
 	//set current
-	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<PYRO_SQUIB_4;PyroSquib++)
+	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<=PYRO_SQUIB_4;PyroSquib++)
 	{
 			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam->current[PyroSquib]);
 			if(err!=PYRO_SQUIB_OK)
@@ -165,7 +170,8 @@ enPyroSquibError PyroSquib_Start(void)
 	PyroSquibParam->state=PYRO_SQUIB_RUN;
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
-	__HAL_TIM_SET_AUTORELOAD(&htim2, PyroSquibParam->time*10);
+	__HAL_TIM_SET_PRESCALER(&htim2,24000);
+	__HAL_TIM_SET_AUTORELOAD(&htim2, PyroSquibParam->time);
 	HAL_TIM_Base_Start_IT(&htim2);
 	
 	while(pulse_time_expired==0)
@@ -178,7 +184,7 @@ enPyroSquibError PyroSquib_Start(void)
 
 void PyroSquib_TimerExpired(void)
 {
-	memcpy(ADC_value, ADC_value_temp, sizeof(uint16_t)*ADC_CHN_POT_NUM);
+	memcpy(ADC_value_temp, ADC_value,sizeof(uint16_t)*ADC_CHN_POT_NUM);
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);	//disable current keys
 	PyroSquibParam->state=PYRO_SQUIB_STOP;
 	pulse_time_expired=1;
@@ -190,9 +196,10 @@ static void PyroSquib_Task(void *pvParameters)
 {
 		while(1)
 		{
-				if(xSemaphoreTake( xPyroSquib_Semaphore, PYRO_SQUIB_WAIT_START_SEMAPHORE ))
+				if(xSemaphoreTake( xPyroSquib_Semaphore, PYRO_SQUIB_WAIT_START_SEMAPHORE )== pdTRUE)
 				{
 						PyroSquibError=PyroSquib_Start();
+						PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_MAX);
 				}
 				else
 				{
@@ -209,6 +216,7 @@ uint8_t  PyroSquib_Test(void)
 		pulse_time_expired=0;
 		PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON_ALL);
 		__HAL_TIM_SET_AUTORELOAD(&htim2, PYRO_SQUIB_TEST_TIME);
+		__HAL_TIM_SET_PRESCALER(&htim2,2400);
 		HAL_TIM_Base_Start_IT(&htim2);	
 		
 		while(pulse_time_expired==0)

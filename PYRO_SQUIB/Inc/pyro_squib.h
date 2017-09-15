@@ -62,7 +62,7 @@ typedef struct
 
 void 		 PyroSquib_Init(void);
 enPyroSquibError PyroSquib_SetTime(uint16_t time);
-enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib,float current);
+
 enPyroSquibError PyroSquib_SetMask(uint8_t mask);
 enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state);
 enPyroSquibError PyroSquib_Start(void);

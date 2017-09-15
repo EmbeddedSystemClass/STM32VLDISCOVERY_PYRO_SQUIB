@@ -285,8 +285,8 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 						
 						if(settings_need_write)
 						{
-								StartConfigInfoWrite();
-								//ConfigInfoWrite();
+								//StartConfigInfoWrite();
+								ConfigInfoWrite();
 						}
             break;
         }
