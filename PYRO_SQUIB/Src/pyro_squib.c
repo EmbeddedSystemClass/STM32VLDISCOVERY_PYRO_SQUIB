@@ -177,7 +177,8 @@ enPyroSquibError PyroSquib_Start(void)
 	
 	while(pulse_time_expired==0)
 	{
-			taskYIELD();
+			//taskYIELD();
+		vTaskDelay(50);
 	}
 	
 	return PYRO_SQUIB_OK;

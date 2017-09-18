@@ -38,7 +38,8 @@ HAL_StatusTypeDef DigPot_SetValue(enDigPot DigPot, uint8_t value)
 		err=HAL_I2C_Master_Transmit(&hi2c2,I2C_MUX_ADDR,&mux_reg,1,1);
 		if(err==HAL_BUSY)
 		{
-				I2C_AFBusyBugWorkaround(&hi2c2);
+				//I2C_AFBusyBugWorkaround(&hi2c2);
+			return err;
 		}
 		else if(err==HAL_OK)
 		{
