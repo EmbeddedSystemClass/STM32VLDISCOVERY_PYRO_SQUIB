@@ -55,9 +55,6 @@ typedef struct
 #define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
 
 
-#define PYRO_SQUIB_CURRENT_MIN	0
-#define PYRO_SQUIB_CURRENT_MAX	127
-#define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
 
 
 void 		 PyroSquib_Init(void);

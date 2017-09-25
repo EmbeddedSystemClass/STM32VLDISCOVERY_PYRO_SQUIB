@@ -25,6 +25,7 @@ void ADC_Init(void)
 	HAL_ADC_Start_DMA(&hadc1,(uint32_t*)ADC_value,ADC_CHN_NUM);
 }
 #define ADC_MAX_VAL			4095
+#define ADC_MID_CONST		(ADC_MAX_VAL>>1)
 #define ADC_REF_VOLTAGE	3.3
 #define OPAMP_COEF			34.3333
 float ADC_toVoltage(uint16_t adc_val)

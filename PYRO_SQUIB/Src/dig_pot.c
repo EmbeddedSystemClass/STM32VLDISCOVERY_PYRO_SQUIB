@@ -6,8 +6,11 @@
 #define I2C_MUX_ADDR		0xE0
 #define I2C_POT_ADDR		0x5C
 
-#define DIG_POT_MAX_CURRENT	127
-#define DIG_POT_MAX_VALUE		127
+//#define DIG_POT_MIN_CURRENT	0.04
+//#define DIG_POT_MIN_VALUE		0
+
+//#define DIG_POT_MAX_CURRENT	1.2
+//#define DIG_POT_MAX_VALUE		47
 
 uint8_t digPotValue[I2C_POT_NUM];
 
@@ -53,13 +56,11 @@ uint8_t DigPot_CurrentToPotVal(float current)//0..127
 {
 		uint8_t pot_val=0;
 		
-		if((current<0)||(current>DIG_POT_MAX_CURRENT))
+		if(IS_PYRO_SQUIB_CURRENT(current))
 		{
-				return 0;
+				pot_val= (uint8_t)((current-PYRO_SQUIB_CURRENT_MIN)*(DIG_POT_MAX_VALUE-DIG_POT_MIN_VALUE)/(PYRO_SQUIB_CURRENT_MAX-PYRO_SQUIB_CURRENT_MIN)+DIG_POT_MIN_VALUE);
 		}
-							
-		pot_val= (uint8_t)((current/DIG_POT_MAX_CURRENT)*DIG_POT_MAX_VALUE);
-	
+
 		return pot_val; 
 }
 
