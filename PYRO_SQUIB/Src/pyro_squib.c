@@ -36,7 +36,7 @@ void 		 PyroSquib_Init(void)
 {
 		xPyroSquib_Semaphore=xSemaphoreCreateBinary();
 		__HAL_TIM_URS_ENABLE(&htim2);//для использования флага UG-обновления регистра прескалера
-		PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_MAX);		
+		PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_TEST);		
 		xTaskCreate(PyroSquib_Task,"Pyro squib task",PYRO_SQUIB_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }
 
@@ -61,7 +61,7 @@ enPyroSquibError PyroSquib_SetCurrent_All(float current)
 	
 		for(PyroSquib=PYRO_SQUIB_1;PyroSquib<=PYRO_SQUIB_4;PyroSquib++)
 		{
-				err_temp=PyroSquib_SetCurrent(PyroSquib,PYRO_SQUIB_CURRENT_MAX);
+				err_temp=PyroSquib_SetCurrent(PyroSquib,current);
 				if(err_temp!=PYRO_SQUIB_OK)
 				{
 						 err=err_temp;
@@ -201,7 +201,7 @@ static void PyroSquib_Task(void *pvParameters)
 				if(xSemaphoreTake( xPyroSquib_Semaphore, PYRO_SQUIB_WAIT_START_SEMAPHORE )== pdTRUE)
 				{
 						PyroSquibError=PyroSquib_Start();
-						PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_MAX);
+						PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_TEST);
 				}
 				else
 				{

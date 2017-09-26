@@ -9,6 +9,7 @@
 "pyro_squib\usart_app.o"
 "pyro_squib\pyro_squib.o"
 "pyro_squib\cfg_info.o"
+"pyro_squib\utilities.o"
 "pyro_squib\mbcrc.o"
 "pyro_squib\mbfunccoils.o"
 "pyro_squib\mbfuncdiag.o"

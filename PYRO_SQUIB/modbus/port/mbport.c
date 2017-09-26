@@ -5,48 +5,8 @@
 #include "dig_pot.h"
 #include "pyro_squib.h"
 #include "cfg_info.h"
+#include "utilities.h"
 
-#pragma anon_unions
-typedef struct
-{
-	union
-	{
-		float val;
-		uint16_t buf[2];
-	};
-}stFloatToUint16Buf;
-
-typedef struct
-{
-	union
-	{
-		uint64_t val;
-		uint16_t buf[4];
-	};
-}stUint64ToUint16Buf;
-
-stFloatToUint16Buf FloatToUint16Buf;
-stUint64ToUint16Buf Uint64ToUint16Buf;
-
-#define FLOAT_TO_UINT16_BUF(fl,uint16buf) 	FloatToUint16Buf.val=fl;\
-																						(uint16buf)[0]=FloatToUint16Buf.buf[0];\
-																						(uint16buf)[1]=FloatToUint16Buf.buf[1];
-
-#define UINT16_BUF_TO_FLOAT(uint16buf,fl) 	FloatToUint16Buf.buf[0]=(uint16buf)[0];\
-																						FloatToUint16Buf.buf[1]=(uint16buf)[1];\
-																						fl=FloatToUint16Buf.val;
-
-#define UINT64_TO_UINT16_BUF(uint64_val,uint16buf) 	Uint64ToUint16Buf.val=uint64_val;\
-																						(uint16buf)[0]=Uint64ToUint16Buf.buf[0];\
-																						(uint16buf)[1]=Uint64ToUint16Buf.buf[1];\
-																						(uint16buf)[2]=Uint64ToUint16Buf.buf[2];\
-																						(uint16buf)[3]=Uint64ToUint16Buf.buf[3];
-
-#define UINT16_BUF_TO_UINT64(uint16buf,uint64_val) 	Uint64ToUint16Buf.buf[0]=(uint16buf)[0];\
-																						Uint64ToUint16Buf.buf[1]=(uint16buf)[1];\
-																						Uint64ToUint16Buf.buf[2]=(uint16buf)[2];\
-																						Uint64ToUint16Buf.buf[3]=(uint16buf)[3];\
-																						uint64_val=Uint64ToUint16Buf.val;
 
 void ENTER_CRITICAL_SECTION(void)
 {
@@ -61,10 +21,9 @@ void EXIT_CRITICAL_SECTION(void)
 	__ASM volatile ("cpsie i");
 }
 
-extern volatile float ADC_voltage[ADC_CHN_NUM];
+
 extern uint8_t digPotValue[I2C_POT_NUM];
 extern stPyroSquib *PyroSquibParam;
-extern stADC_PyroBuf ADC_PyroBuf;
 extern uint16_t ADC_value[ADC_CHN_NUM];
 extern enPyroSquibError			PyroSquibError;  
 extern uint8_t PyroSquibStatus;
@@ -109,22 +68,22 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
     {
         iRegIndex = (int) ( usAddress - usRegInputStart );
 			
-			tempADCvalue=ADC_toVoltage(ADC_value[0]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_0]);
-			tempADCvalue=ADC_toVoltage(ADC_value[1]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_1]);
-			tempADCvalue=ADC_toVoltage(ADC_value[2]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_2]);
-			tempADCvalue=ADC_toVoltage(ADC_value[3]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_3]);
-			tempADCvalue=ADC_toVoltage(ADC_value[4]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_4]);
-			tempADCvalue=ADC_toVoltage(ADC_value[5]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_5]);
-			tempADCvalue=ADC_toVoltage(ADC_value[6]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_6]);
-			tempADCvalue=ADC_toVoltage(ADC_value[7]);
-			FLOAT_TO_UINT16_BUF(tempADCvalue, &usRegInputBuf[REG_ADC_7]);			
+			tempADCvalue=ADC_toCurrent(ADC_value[0]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_0]);
+			tempADCvalue=ADC_toCurrent(ADC_value[1]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_1]);
+			tempADCvalue=ADC_toCurrent(ADC_value[2]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_2]);
+			tempADCvalue=ADC_toCurrent(ADC_value[3]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_3]);
+			tempADCvalue=ADC_toCurrent(ADC_value[4]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_4]);
+			tempADCvalue=ADC_toCurrent(ADC_value[5]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_5]);
+			tempADCvalue=ADC_toCurrent(ADC_value[6]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_6]);
+			tempADCvalue=ADC_toCurrent(ADC_value[7]);
+			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_7]);			
 
 						
 				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam->state;
@@ -176,10 +135,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
         case MB_REG_READ:	
 						usRegHoldingBuf[REG_PIR_SET_TIME]=PyroSquibParam->time;
 				
-						FLOAT_TO_UINT16_BUF(PyroSquibParam->current[0], &usRegHoldingBuf[REG_PIR_1_SET_CURRENT]);
-						FLOAT_TO_UINT16_BUF(PyroSquibParam->current[1], &usRegHoldingBuf[REG_PIR_2_SET_CURRENT]);
-						FLOAT_TO_UINT16_BUF(PyroSquibParam->current[2], &usRegHoldingBuf[REG_PIR_3_SET_CURRENT]);
-						FLOAT_TO_UINT16_BUF(PyroSquibParam->current[3], &usRegHoldingBuf[REG_PIR_4_SET_CURRENT]);
+						Float_To_UINT16_Buf(PyroSquibParam->current[0], &usRegHoldingBuf[REG_PIR_1_SET_CURRENT]);
+						Float_To_UINT16_Buf(PyroSquibParam->current[1], &usRegHoldingBuf[REG_PIR_2_SET_CURRENT]);
+						Float_To_UINT16_Buf(PyroSquibParam->current[2], &usRegHoldingBuf[REG_PIR_3_SET_CURRENT]);
+						Float_To_UINT16_Buf(PyroSquibParam->current[3], &usRegHoldingBuf[REG_PIR_4_SET_CURRENT]);
 				
 						usRegHoldingBuf[REG_PIR_SET_MASK]=PyroSquibParam->mask;
 						usRegHoldingBuf[REG_PIR_START]=0;
@@ -215,7 +174,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_1_SET_CURRENT +1:
 										{
-											UINT16_BUF_TO_FLOAT(&usRegHoldingBuf[REG_PIR_1_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_SET_CURRENT], tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[0]!=tempValue))
 											{
 												PyroSquibParam->current[0]=tempValue;
@@ -226,7 +185,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_2_SET_CURRENT +1:
 										{
-											UINT16_BUF_TO_FLOAT(&usRegHoldingBuf[REG_PIR_2_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_SET_CURRENT], tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[1]!=tempValue))
 											{
 												PyroSquibParam->current[1]=tempValue;
@@ -237,7 +196,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_3_SET_CURRENT +1:
 										{
-											UINT16_BUF_TO_FLOAT(&usRegHoldingBuf[REG_PIR_3_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_SET_CURRENT], tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[2]!=tempValue))
 											{
 												PyroSquibParam->current[2]=tempValue;
@@ -248,7 +207,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_4_SET_CURRENT +1:
 										{
-											UINT16_BUF_TO_FLOAT(&usRegHoldingBuf[REG_PIR_4_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_SET_CURRENT], tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[3]!=tempValue))
 											{
 												PyroSquibParam->current[3]=tempValue;
@@ -285,7 +244,6 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 						
 						if(settings_need_write)
 						{
-								//StartConfigInfoWrite();
 								ConfigInfoWrite();
 						}
             break;

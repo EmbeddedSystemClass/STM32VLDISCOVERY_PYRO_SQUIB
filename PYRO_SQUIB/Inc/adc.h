@@ -6,32 +6,12 @@
 #define ADC_CHN_NUM					8//всего каналов ацп
 #define ADC_CHN_POT_NUM			4//каналы ацп на регулируемых выходах пиропатронов
 
-#define ADC_NUM_SAMPLES			50
+#define ADC_CALIBR_MIN_VAL	0
+#define ADC_CALIBR_MIN_CUR	0.0 //Current - Amp.
 
-#define ADC_BUF_LEN					(ADC_CHN_NUM*ADC_NUM_SAMPLES)
-
-#ifndef TRUE
-#define TRUE            1
-#endif
-
-#ifndef FALSE
-#define FALSE           0
-#endif
-
-
-typedef struct 
-{
-	float buf[ADC_BUF_LEN];
-	uint16_t buf_cnt;
-	uint8_t  fill_is_end;
-	uint8_t  start_fill;	
-}
-stADC_PyroBuf;
-
+#define ADC_CALIBR_MAX_VAL	0x900
+#define ADC_CALIBR_MAX_CUR	1.2 //Current - Amp.
 
 void ADC_Init(void);
-void ADC_ConvComplete(void);
-void ADC_FillBuf_Start(void);
-void ADC_FillBuf_Stop(void);
-float ADC_toVoltage(uint16_t adc_val);
+float ADC_toCurrent(uint16_t adc_val);
 #endif
