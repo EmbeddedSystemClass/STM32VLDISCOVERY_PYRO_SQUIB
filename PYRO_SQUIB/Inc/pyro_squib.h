@@ -8,6 +8,7 @@
 
 #define PYRO_SQUIB_TEST_TIME					1 //100uS
 #define PYRO_SQUIB_MIN_TEST_VOLTAGE		300 //0-4095
+#define PYRO_SQUIB_MIN_TEST_CURRENT		0.3 //A
 
 typedef enum
 {

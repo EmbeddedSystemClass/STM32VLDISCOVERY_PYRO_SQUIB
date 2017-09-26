@@ -20,6 +20,6 @@ void ADC_Init(void)
 
 float ADC_toCurrent(uint16_t adc_val)
 {
-		float current= (uint8_t)((adc_val-ADC_CALIBR_MIN_VAL)*(ADC_CALIBR_MAX_CUR-ADC_CALIBR_MIN_CUR)/(ADC_CALIBR_MAX_VAL-ADC_CALIBR_MIN_VAL)+ADC_CALIBR_MIN_CUR);
+		float current= (((float)adc_val-ADC_CALIBR_MIN_VAL)*(ADC_CALIBR_MAX_CUR-ADC_CALIBR_MIN_CUR)/(ADC_CALIBR_MAX_VAL-ADC_CALIBR_MIN_VAL)+ADC_CALIBR_MIN_CUR);
 		return current;
 }

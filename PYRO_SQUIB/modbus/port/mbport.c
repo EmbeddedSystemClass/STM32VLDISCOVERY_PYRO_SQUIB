@@ -55,6 +55,7 @@ USHORT   usRegInputBuf[REG_INPUT_NREGS];
 static USHORT   usRegHoldingStart = REG_HOLDING_START;
 USHORT   usRegHoldingBuf[REG_HOLDING_NREGS];
 
+float current0=0;
 
 eMBErrorCode
 eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
@@ -68,7 +69,7 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
     {
         iRegIndex = (int) ( usAddress - usRegInputStart );
 			
-			tempADCvalue=ADC_toCurrent(ADC_value[0]);
+			current0=tempADCvalue=ADC_toCurrent(ADC_value[0]);
 			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_0]);
 			tempADCvalue=ADC_toCurrent(ADC_value[1]);
 			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_1]);
@@ -174,7 +175,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_1_SET_CURRENT +1:
 										{
-											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_SET_CURRENT], &tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[0]!=tempValue))
 											{
 												PyroSquibParam->current[0]=tempValue;
@@ -185,7 +186,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_2_SET_CURRENT +1:
 										{
-											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_SET_CURRENT], &tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[1]!=tempValue))
 											{
 												PyroSquibParam->current[1]=tempValue;
@@ -196,7 +197,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_3_SET_CURRENT +1:
 										{
-											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_SET_CURRENT], &tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[2]!=tempValue))
 											{
 												PyroSquibParam->current[2]=tempValue;
@@ -207,7 +208,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										
 										case REG_PIR_4_SET_CURRENT +1:
 										{
-											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_SET_CURRENT], tempValue);
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_SET_CURRENT], &tempValue);
 											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[3]!=tempValue))
 											{
 												PyroSquibParam->current[3]=tempValue;

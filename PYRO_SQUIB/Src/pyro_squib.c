@@ -230,7 +230,7 @@ uint8_t  PyroSquib_Test(void)
 		
 		for(i=0;i<ADC_CHN_POT_NUM;i++)
 		{
-				if(ADC_value_temp[i]>PYRO_SQUIB_MIN_TEST_VOLTAGE)
+				if(ADC_toCurrent(ADC_value_temp[i])>PYRO_SQUIB_MIN_TEST_CURRENT)
 				{
 						stat_temp|=(1<<i);
 				}
