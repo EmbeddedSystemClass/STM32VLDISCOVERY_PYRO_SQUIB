@@ -27,6 +27,14 @@ Project File Date:  09/15/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
+compiling main.c...
+../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(32): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(70): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/main.c: 3 warnings, 0 errors
 compiling adc.c...
 ../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -43,14 +51,6 @@ compiling stm32f1xx_it.c...
 ../Src/stm32f1xx_it.c(272): warning:  #223-D: function "xMBPort_TimerExpired" declared implicitly
   			xMBPort_TimerExpired();		
 ../Src/stm32f1xx_it.c: 5 warnings, 0 errors
-compiling main.c...
-../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/dig_pot.h(32): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/pyro_squib.h(70): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Src/main.c: 3 warnings, 0 errors
 compiling pyro_squib.c...
 ../Inc/dig_pot.h(32): warning:  #1-D: last line of file ends without a newline
   #endif
@@ -78,7 +78,7 @@ compiling mbport.c...
   #endif
 ..\modbus\port\mbport.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=27584 RO-data=896 RW-data=412 ZI-data=6284  
+Program Size: Code=27596 RO-data=896 RW-data=412 ZI-data=6284  
 FromELF: creating hex file...
 "PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 20 Warning(s).
 
@@ -98,7 +98,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:04
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>
