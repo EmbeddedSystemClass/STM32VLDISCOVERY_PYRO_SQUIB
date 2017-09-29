@@ -28,15 +28,67 @@ Project File Date:  09/27/2017
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'C:\Program Files\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
 compiling dig_pot.c...
-../Inc/dig_pot.h(32): warning:  #1-D: last line of file ends without a newline
+../Inc/dig_pot.h(34): warning:  #1-D: last line of file ends without a newline
   #endif
 ..\Src\dig_pot.c(179): warning:  #1-D: last line of file ends without a newline
   }
 ..\Src\dig_pot.c: 2 warnings, 0 errors
+compiling main.c...
+../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(34): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(79): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/main.c: 3 warnings, 0 errors
+compiling stm32f1xx_it.c...
+../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(34): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(79): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Src/stm32f1xx_it.c(254): warning:  #223-D: function "xMBRTUReceiveFSM" declared implicitly
+  		xMBRTUReceiveFSM();
+../Src/stm32f1xx_it.c(272): warning:  #223-D: function "xMBPort_TimerExpired" declared implicitly
+  			xMBPort_TimerExpired();		
+../Src/stm32f1xx_it.c: 5 warnings, 0 errors
+compiling cfg_info.c...
+../Inc/dig_pot.h(34): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(79): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\cfg_info.c: 2 warnings, 0 errors
+compiling pyro_squib.c...
+../Inc/dig_pot.h(34): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(79): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\Src\pyro_squib.c(84): warning:  #188-D: enumerated type mixed with another type
+  		hal_err=DigPot_SetValue((uint8_t)PyroSquib, pot_val);
+..\Src\pyro_squib.c(80): warning:  #177-D: variable "pyro_squib_cnt" was declared but never referenced
+  		uint8_t pyro_squib_cnt=0;
+..\Src\pyro_squib.c(101): warning:  #940-D: missing return statement at end of non-void function "PyroSquib_SetMask"
+  }
+..\Src\pyro_squib.c(148): warning:  #940-D: missing return statement at end of non-void function "PyroSquib_SetKeysState"
+  }
+..\Src\pyro_squib.c: 7 warnings, 0 errors
+compiling mbport.c...
+../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(34): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(79): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/utilities.h(13): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\modbus\port\mbport.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=27596 RO-data=896 RW-data=412 ZI-data=6284  
+Program Size: Code=27600 RO-data=964 RW-data=548 ZI-data=6356  
 FromELF: creating hex file...
-"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 2 Warning(s).
+"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 23 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -54,7 +106,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.0.1
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

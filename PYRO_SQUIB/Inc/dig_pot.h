@@ -24,6 +24,8 @@ typedef enum
 
 #define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
 
+#define IS_DIG_POT_VALUE(__VALUE__) (((__VALUE__) >=DIG_POT_MIN_VALUE) && ((__VALUE__) <= DIG_POT_MAX_VALUE))
+
 
 void DigPot_Init(void);
 HAL_StatusTypeDef DigPot_SetValue(enDigPot DigPot, uint8_t value);

@@ -43,9 +43,16 @@ enPyroSquibProcessState;
 
 typedef struct
 {
+	float k;
+	float b;
+}stPyroSquibCurrentCalibr;
+
+typedef struct
+{
 	uint16_t time; //on time in ms
 	float current[PYRO_SQUIB_NUM];
 	uint8_t mask;
+	stPyroSquibCurrentCalibr PyroSquibCurrentCalibr[PYRO_SQUIB_NUM];
 	enPyroSquibError error;
 	enPyroSquibProcessState state;
 } stPyroSquib;
