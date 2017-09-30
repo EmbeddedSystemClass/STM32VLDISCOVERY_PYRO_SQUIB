@@ -499,12 +499,12 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=pyro_squib\startup_stm32f100xb.d -opyro_squib\startup_stm32f100xb.
-o -I..\Inc -IE:\PROJECTS\GIT_REPOSITORY\STM32\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_
-SQUIB\MDK-ARM\RTE -I"C:\Program Files\Keil\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Inclu
-de" -I"C:\Program Files\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include" 
---predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 517" --pred
-efine="_RTE_ SETA 1" --predefine="STM32F10X_MD_VL SETA 1" --list=startup_stm32f
-100xb.lst startup_stm32f100xb.s
+o -I..\Inc -ID:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUI
+B\PYRO_SQUIB\MDK-ARM\RTE -ID:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Incl
+ude -ID:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include --prede
+fine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 517" --predefine="
+_RTE_ SETA 1" --predefine="STM32F10X_MD_VL SETA 1" --list=startup_stm32f100xb.l
+st startup_stm32f100xb.s
 
 
 

@@ -33,7 +33,7 @@ extern SemaphoreHandle_t xPyroSquib_Semaphore;
 #define REG_INPUT_NREGS     20
 
 #define REG_HOLDING_START   2000
-#define REG_HOLDING_NREGS   16
+#define REG_HOLDING_NREGS   32
 
 #define REG_ADC_0						0
 #define REG_ADC_1						2
@@ -118,6 +118,15 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 #define REG_PIR_4_SET_CURRENT		7
 #define REG_PIR_SET_MASK				9
 #define REG_PIR_START						10
+
+#define REG_PIR_1_CALIBR_CURRENT_K	11
+#define REG_PIR_1_CALIBR_CURRENT_B	13
+#define REG_PIR_2_CALIBR_CURRENT_K	15
+#define REG_PIR_2_CALIBR_CURRENT_B	17
+#define REG_PIR_3_CALIBR_CURRENT_K	19
+#define REG_PIR_3_CALIBR_CURRENT_B	21
+#define REG_PIR_4_CALIBR_CURRENT_K	23
+#define REG_PIR_4_CALIBR_CURRENT_B	25
 
 eMBErrorCode
 eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode )
@@ -236,6 +245,94 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 											 }
 										}
 										break;
+										
+										case REG_PIR_1_CALIBR_CURRENT_K +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_K], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[0].k !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[0].k=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;		
+
+										case REG_PIR_1_CALIBR_CURRENT_B +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_B], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[0].b !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[0].b=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;	
+
+										case REG_PIR_2_CALIBR_CURRENT_K +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_K], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[1].k !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[1].k=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;		
+
+										case REG_PIR_2_CALIBR_CURRENT_B +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_B], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[1].b !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[1].b=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;
+
+										case REG_PIR_3_CALIBR_CURRENT_K +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_K], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[2].k !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[2].k=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;		
+
+										case REG_PIR_3_CALIBR_CURRENT_B +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_B], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[2].b !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[2].b=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;	
+
+										case REG_PIR_4_CALIBR_CURRENT_K +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_K], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[3].k !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[3].k=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;		
+
+										case REG_PIR_4_CALIBR_CURRENT_B +1:
+										{
+											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_B], &tempValue);
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[3].b !=tempValue))
+											{
+												PyroSquibParam->PyroSquibCurrentCalibr[3].b=tempValue;
+												settings_need_write=1;
+											}
+										}
+										break;											
 
 								}
 								

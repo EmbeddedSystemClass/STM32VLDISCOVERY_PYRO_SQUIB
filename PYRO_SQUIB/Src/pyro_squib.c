@@ -28,6 +28,7 @@ stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;
 uint8_t  PyroSquib_Test(void);
 enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib,float current);
 enPyroSquibError PyroSquib_SetCurrent_All(float current);
+uint8_t PyroSquib_CurrentToPotVal(enPyroSquibNums PyroSquib, float current);
 
 #define PYRO_SQUIB_TASK_STACK_SIZE	128
 static void PyroSquib_Task(void *pvParameters);
@@ -40,18 +41,18 @@ void 		 PyroSquib_Init(void)
 		xTaskCreate(PyroSquib_Task,"Pyro squib task",PYRO_SQUIB_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }
 
-enPyroSquibError PyroSquib_SetTime(uint16_t time)
+
+
+uint8_t PyroSquib_CurrentToPotVal(enPyroSquibNums PyroSquib, float current)//0..127
 {
-	if(IS_PYRO_SQUIB_TIME(time))
-	{
-		PyroSquibParam->time=time;
-	}
-	else
-	{
-		return PYRO_SQUIB_INCORRECT_PARAM;
-	}
-	
-	return PYRO_SQUIB_OK;
+		uint8_t pot_val=0;
+		
+		if(IS_PYRO_SQUIB_CURRENT(current))
+		{
+				pot_val= (uint8_t)(PyroSquibParam->PyroSquibCurrentCalibr[PyroSquib].k*current + PyroSquibParam->PyroSquibCurrentCalibr[PyroSquib].b);
+		}
+
+		return pot_val; 
 }
 
 enPyroSquibError PyroSquib_SetCurrent_All(float current)
@@ -79,7 +80,7 @@ enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 		uint8_t pot_val=0;
 		uint8_t pyro_squib_cnt=0;
 		
-		pot_val=DigPot_CurrentToPotVal(current);
+		pot_val=PyroSquib_CurrentToPotVal(PyroSquib, current);
 		
 		hal_err=DigPot_SetValue((uint8_t)PyroSquib, pot_val);
 		if(hal_err!=HAL_OK)

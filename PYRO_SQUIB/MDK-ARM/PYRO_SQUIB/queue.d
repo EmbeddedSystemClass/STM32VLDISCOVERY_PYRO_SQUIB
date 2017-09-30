@@ -1,9 +1,9 @@
 pyro_squib\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/queue.c
-pyro_squib\queue.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
-pyro_squib\queue.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
+pyro_squib\queue.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+pyro_squib\queue.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\string.h
 pyro_squib\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\queue.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-pyro_squib\queue.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\queue.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\queue.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\queue.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\queue.o: ../Inc/main.h
 pyro_squib\queue.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h

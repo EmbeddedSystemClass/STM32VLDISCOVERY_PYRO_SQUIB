@@ -62,16 +62,15 @@ typedef struct
 #define PYRO_SQUIB_TIME_MAX		10000 //10 s
 #define IS_PYRO_SQUIB_TIME(__TIME__) (((__TIME__) >=PYRO_SQUIB_TIME_MIN) && ((__TIME__) <= PYRO_SQUIB_TIME_MAX))
 
+#define PYRO_SQUIB_CURRENT_MIN	0
+#define PYRO_SQUIB_CURRENT_MAX	1.2
+#define PYRO_SQUIB_CURRENT_TEST	1.0
+#define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
 
 
-
-void 		 PyroSquib_Init(void);
-enPyroSquibError PyroSquib_SetTime(uint16_t time);
-
-enPyroSquibError PyroSquib_SetMask(uint8_t mask);
-enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state);
-enPyroSquibError PyroSquib_Start(void);
-
-void PyroSquib_TimerExpired(void);
+void 		 					PyroSquib_Init(void);
+enPyroSquibError 	PyroSquib_SetKeysState(enPyroSquibKeysState state);
+enPyroSquibError 	PyroSquib_Start(void);
+void 							PyroSquib_TimerExpired(void);
 
 #endif

@@ -1,6 +1,6 @@
 pyro_squib\pyro_squib.o: ..\Src\pyro_squib.c
 pyro_squib\pyro_squib.o: ../Inc/pyro_squib.h
-pyro_squib\pyro_squib.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\pyro_squib.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\pyro_squib.o: ../Inc/dig_pot.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\pyro_squib.o: ../Inc/stm32f1xx_hal_conf.h
@@ -16,7 +16,7 @@ pyro_squib\pyro_squib.o: ../Drivers/CMSIS/Include/core_cmFunc.h
 pyro_squib\pyro_squib.o: ..\Drivers\CMSIS\Device\ST\STM32F1xx\Include\system_stm32f1xx.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
-pyro_squib\pyro_squib.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+pyro_squib\pyro_squib.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdio.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
 pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
@@ -35,7 +35,7 @@ pyro_squib\pyro_squib.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.
 pyro_squib\pyro_squib.o: ../Inc/adc.h
 pyro_squib\pyro_squib.o: ../Inc/cfg_info.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\pyro_squib.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\pyro_squib.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 pyro_squib\pyro_squib.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
@@ -46,4 +46,4 @@ pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
-pyro_squib\pyro_squib.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
+pyro_squib\pyro_squib.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\string.h
