@@ -3,7 +3,7 @@
 <title>Static Call Graph - [PYRO_SQUIB\PYRO_SQUIB.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image PYRO_SQUIB\PYRO_SQUIB.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Sat Sep 30 19:11:17 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Mon Oct 02 10:37:30 2017
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -411,18 +411,7 @@ Global Symbols
 
 <P><STRONG><a name="[74]"></a>__aeabi_f2d</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, f2d.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_Test
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetCurrent
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_CurrentToPotVal
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_toCurrent
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
-</UL>
-
-<P><STRONG><a name="[149]"></a>__aeabi_cdcmpeq</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, cdcmple.o(.text), UNUSED)
-
-<P><STRONG><a name="[dd]"></a>__aeabi_cdcmple</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, cdcmple.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetCurrent
-<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_CurrentToPotVal
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
 </UL>
 
 <P><STRONG><a name="[eb]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, cdrcmple.o(.text))
@@ -441,7 +430,11 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
 </UL>
 
-<P><STRONG><a name="[14a]"></a>__aeabi_cfcmple</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, cfcmple.o(.text), UNUSED)
+<P><STRONG><a name="[dd]"></a>__aeabi_cfcmple</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, cfcmple.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetCurrent
+<LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_CurrentToPotVal
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
+</UL>
 
 <P><STRONG><a name="[dc]"></a>__aeabi_cfrcmple</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, cfrcmple.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetCurrent
@@ -454,15 +447,15 @@ Global Symbols
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_double_epilogue
 </UL>
 
-<P><STRONG><a name="[14b]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[149]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[60]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[14c]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+<P><STRONG><a name="[14a]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 
-<P><STRONG><a name="[14d]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[14b]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[5b]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
@@ -501,11 +494,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[14e]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[14c]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[14f]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[14d]"></a>__decompress</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
-<P><STRONG><a name="[150]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
+<P><STRONG><a name="[14e]"></a>__decompress1</STRONG> (Thumb, 86 bytes, Stack size unknown bytes, __dczerorl2.o(.text), UNUSED)
 
 <P><STRONG><a name="[6b]"></a>ADC_ConversionStop_Disable</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, stm32f1xx_hal_adc.o(i.ADC_ConversionStop_Disable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_ConversionStop_Disable
@@ -1206,15 +1199,14 @@ Global Symbols
 <P><STRONG><a name="[b]"></a>NMI_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.NMI_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f100xb.o(RESET)
 </UL>
-<P><STRONG><a name="[db]"></a>PyroSquib_CurrentToPotVal</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_CurrentToPotVal))
+<P><STRONG><a name="[db]"></a>PyroSquib_CurrentToPotVal</STRONG> (Thumb, 80 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_CurrentToPotVal))
 <BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = PyroSquib_CurrentToPotVal &rArr; __aeabi_fadd &rArr; _float_epilogue
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetCurrent
 </UL>
@@ -1229,14 +1221,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[e3]"></a>PyroSquib_SetCurrent</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_SetCurrent))
+<P><STRONG><a name="[e3]"></a>PyroSquib_SetCurrent</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_SetCurrent))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = PyroSquib_SetCurrent &rArr; DigPot_SetValue &rArr; HAL_I2C_Master_Transmit &rArr; I2C_MasterRequestWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 <LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_CurrentToPotVal
 <LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DigPot_SetValue
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
 </UL>
 <BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_Start
 <LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetCurrent_All
@@ -1355,11 +1346,11 @@ Global Symbols
 <P><STRONG><a name="[f]"></a>UsageFault_Handler</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f1xx_it.o(i.UsageFault_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f100xb.o(RESET)
 </UL>
-<P><STRONG><a name="[151]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[14f]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[152]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[150]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[153]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[151]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[d9]"></a>eMBEnable</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, mb.o(i.eMBEnable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = eMBEnable
@@ -1384,7 +1375,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> mb.o(.data)
 </UL>
 <P><STRONG><a name="[2]"></a>eMBFuncReadHoldingRegister</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, mbfuncholding.o(i.eMBFuncReadHoldingRegister))
-<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = eMBFuncReadHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = eMBFuncReadHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prveMBError2Exception
@@ -1400,7 +1391,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> mb.o(.data)
 </UL>
 <P><STRONG><a name="[5]"></a>eMBFuncReadWriteMultipleHoldingRegister</STRONG> (Thumb, 212 bytes, Stack size 48 bytes, mbfuncholding.o(i.eMBFuncReadWriteMultipleHoldingRegister))
-<BR><BR>[Stack]<UL><LI>Max Depth = 208<LI>Call Chain = eMBFuncReadWriteMultipleHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
+<BR><BR>[Stack]<UL><LI>Max Depth = 200<LI>Call Chain = eMBFuncReadWriteMultipleHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prveMBError2Exception
@@ -1423,7 +1414,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> mb.o(.data)
 </UL>
 <P><STRONG><a name="[4]"></a>eMBFuncWriteHoldingRegister</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, mbfuncholding.o(i.eMBFuncWriteHoldingRegister))
-<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = eMBFuncWriteHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
+<BR><BR>[Stack]<UL><LI>Max Depth = 176<LI>Call Chain = eMBFuncWriteHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prveMBError2Exception
@@ -1439,7 +1430,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> mb.o(.data)
 </UL>
 <P><STRONG><a name="[3]"></a>eMBFuncWriteMultipleHoldingRegister</STRONG> (Thumb, 106 bytes, Stack size 32 bytes, mbfuncholding.o(i.eMBFuncWriteMultipleHoldingRegister))
-<BR><BR>[Stack]<UL><LI>Max Depth = 192<LI>Call Chain = eMBFuncWriteMultipleHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
+<BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = eMBFuncWriteMultipleHoldingRegister &rArr; eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBRegHoldingCB
 <LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prveMBError2Exception
@@ -1526,12 +1517,11 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;eMBFuncReadDiscreteInputs
 </UL>
 
-<P><STRONG><a name="[f6]"></a>eMBRegHoldingCB</STRONG> (Thumb, 1236 bytes, Stack size 48 bytes, mbport.o(i.eMBRegHoldingCB))
-<BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
+<P><STRONG><a name="[f6]"></a>eMBRegHoldingCB</STRONG> (Thumb, 1062 bytes, Stack size 40 bytes, mbport.o(i.eMBRegHoldingCB))
+<BR><BR>[Stack]<UL><LI>Max Depth = 152<LI>Call Chain = eMBRegHoldingCB &rArr; ConfigInfoWrite &rArr; FlashWrite_32 &rArr; HAL_FLASH_Program &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2d
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmple
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;xQueueGenericSend
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmpeq
 <LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UINT16_Buf_To_Float

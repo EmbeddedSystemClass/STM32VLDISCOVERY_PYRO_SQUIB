@@ -1,8 +1,8 @@
 pyro_squib\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/list.c
-pyro_squib\list.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
+pyro_squib\list.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdlib.h
 pyro_squib\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\list.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-pyro_squib\list.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\list.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\list.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\list.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\list.o: ../Inc/main.h
 pyro_squib\list.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h

@@ -1,7 +1,7 @@
 pyro_squib\cfg_info.o: ..\Src\cfg_info.c
-pyro_squib\cfg_info.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\string.h
-pyro_squib\cfg_info.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdio.h
-pyro_squib\cfg_info.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\cfg_info.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\string.h
+pyro_squib\cfg_info.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdio.h
+pyro_squib\cfg_info.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\cfg_info.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 pyro_squib\cfg_info.o: ../Inc/stm32f1xx_hal_conf.h
 pyro_squib\cfg_info.o: ../Inc/main.h
@@ -35,7 +35,7 @@ pyro_squib\cfg_info.o: ../Inc/cfg_info.h
 pyro_squib\cfg_info.o: ../Inc/pyro_squib.h
 pyro_squib\cfg_info.o: ../Inc/dig_pot.h
 pyro_squib\cfg_info.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\cfg_info.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\cfg_info.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
 pyro_squib\cfg_info.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\cfg_info.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 pyro_squib\cfg_info.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h

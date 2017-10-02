@@ -153,6 +153,18 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 						usRegHoldingBuf[REG_PIR_SET_MASK]=PyroSquibParam->mask;
 						usRegHoldingBuf[REG_PIR_START]=0;
 				
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[0].k, &usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_K]);
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[0].b, &usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_B]);
+				
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[1].k, &usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_K]);
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[1].b, &usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_B]);
+				
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[2].k, &usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_K]);
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[2].b, &usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_B]);
+				
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[3].k, &usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_K]);
+						Float_To_UINT16_Buf(PyroSquibParam->PyroSquibCurrentCalibr[3].b, &usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_B]);				
+				
             while( usNRegs > 0 )
             {
                 *pucRegBuffer++ = ( UCHAR ) ( usRegHoldingBuf[iRegIndex] >> 8 );
@@ -249,7 +261,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_1_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_K], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[0].k !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[0].k !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[0].k=tempValue;
 												settings_need_write=1;
@@ -260,7 +272,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_1_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_B], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[0].b !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[0].b !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[0].b=tempValue;
 												settings_need_write=1;
@@ -271,7 +283,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_2_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_K], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[1].k !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[1].k !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[1].k=tempValue;
 												settings_need_write=1;
@@ -282,7 +294,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_2_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_B], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[1].b !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[1].b !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[1].b=tempValue;
 												settings_need_write=1;
@@ -293,7 +305,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_3_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_K], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[2].k !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[2].k !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[2].k=tempValue;
 												settings_need_write=1;
@@ -304,7 +316,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_3_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_B], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[2].b !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[2].b !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[2].b=tempValue;
 												settings_need_write=1;
@@ -315,7 +327,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_4_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_K], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[3].k !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[3].k !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[3].k=tempValue;
 												settings_need_write=1;
@@ -326,7 +338,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_4_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_B], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->PyroSquibCurrentCalibr[3].b !=tempValue))
+											if(PyroSquibParam->PyroSquibCurrentCalibr[3].b !=tempValue)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[3].b=tempValue;
 												settings_need_write=1;
