@@ -96,7 +96,8 @@
 #define PIR_EN1_Pin GPIO_PIN_7
 #define PIR_EN1_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+#define TEST_PYRO_SQUIB_TIME_SHIFT_Pin 	GPIO_PIN_8
+#define TEST_PYRO_SQUIB_TIME_SHIFT_Port GPIOA
 /* USER CODE END Private defines */
 
 /**

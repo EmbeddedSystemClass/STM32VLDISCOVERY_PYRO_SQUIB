@@ -167,6 +167,7 @@ enPyroSquibError PyroSquib_Start(void)
 	//enable current keys
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON_MASK);
 	PyroSquibParam->state=PYRO_SQUIB_RUN;
+	HAL_GPIO_WritePin(TEST_PYRO_SQUIB_TIME_SHIFT_Port, TEST_PYRO_SQUIB_TIME_SHIFT_Pin, GPIO_PIN_SET);
 	
 	__HAL_TIM_SET_COUNTER(&htim2, 0);
 	__HAL_TIM_SET_PRESCALER(&htim2,SystemCoreClock/1000);
@@ -191,6 +192,7 @@ void PyroSquib_TimerExpired(void)
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);	//disable current keys
 	PyroSquibParam->state=PYRO_SQUIB_STOP;
 	pulse_time_expired=1;
+	HAL_GPIO_WritePin(TEST_PYRO_SQUIB_TIME_SHIFT_Port, TEST_PYRO_SQUIB_TIME_SHIFT_Pin, GPIO_PIN_RESET);
 }
 
 

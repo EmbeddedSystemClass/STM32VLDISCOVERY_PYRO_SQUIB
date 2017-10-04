@@ -3,7 +3,7 @@
 <title>Static Call Graph - [PYRO_SQUIB\PYRO_SQUIB.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image PYRO_SQUIB\PYRO_SQUIB.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Mon Oct 02 10:37:30 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Wed Oct 04 11:41:31 2017
 <BR><P>
 <H3>Maximum Stack Usage =        208 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -797,7 +797,9 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[7d]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetKeysState
+<BR><BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_Start
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetKeysState
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_TimerExpired
 <LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DigPot_Init
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 </UL>
@@ -1252,13 +1254,14 @@ Global Symbols
 <LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_TimerExpired
 </UL>
 
-<P><STRONG><a name="[e5]"></a>PyroSquib_Start</STRONG> (Thumb, 164 bytes, Stack size 16 bytes, pyro_squib.o(i.PyroSquib_Start))
+<P><STRONG><a name="[e5]"></a>PyroSquib_Start</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, pyro_squib.o(i.PyroSquib_Start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = PyroSquib_Start &rArr; PyroSquib_SetCurrent &rArr; DigPot_SetValue &rArr; HAL_I2C_Master_Transmit &rArr; I2C_MasterRequestWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskDelay
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetKeysState
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetCurrent
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_Task
 </UL>
@@ -1276,10 +1279,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_Task
 </UL>
 
-<P><STRONG><a name="[bc]"></a>PyroSquib_TimerExpired</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, pyro_squib.o(i.PyroSquib_TimerExpired))
+<P><STRONG><a name="[bc]"></a>PyroSquib_TimerExpired</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, pyro_squib.o(i.PyroSquib_TimerExpired))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PyroSquib_TimerExpired &rArr; PyroSquib_SetKeysState
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PyroSquib_SetKeysState
+<LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
 </UL>
@@ -2126,7 +2130,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[d0]"></a>MX_GPIO_Init</STRONG> (Thumb, 232 bytes, Stack size 24 bytes, main.o(i.MX_GPIO_Init))
+<P><STRONG><a name="[d0]"></a>MX_GPIO_Init</STRONG> (Thumb, 266 bytes, Stack size 24 bytes, main.o(i.MX_GPIO_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = MX_GPIO_Init &rArr; HAL_GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
