@@ -26,7 +26,7 @@ extern uint8_t digPotValue[I2C_POT_NUM];
 extern stPyroSquib *PyroSquibParam;
 extern uint16_t ADC_value[ADC_CHN_NUM];
 extern enPyroSquibError			PyroSquibError;  
-extern uint8_t PyroSquibStatus;
+extern uint8_t pyroSquibStatus;
 extern SemaphoreHandle_t xPyroSquib_Semaphore;
 
 #define REG_INPUT_START     1000
@@ -55,7 +55,6 @@ USHORT   usRegInputBuf[REG_INPUT_NREGS];
 static USHORT   usRegHoldingStart = REG_HOLDING_START;
 USHORT   usRegHoldingBuf[REG_HOLDING_NREGS];
 
-float current0=0;
 
 eMBErrorCode
 eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
@@ -69,7 +68,7 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
     {
         iRegIndex = (int) ( usAddress - usRegInputStart );
 			
-			current0=tempADCvalue=ADC_toCurrent(ADC_value[0]);
+			tempADCvalue=ADC_toCurrent(ADC_value[0]);
 			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_0]);
 			tempADCvalue=ADC_toCurrent(ADC_value[1]);
 			Float_To_UINT16_Buf(tempADCvalue, &usRegInputBuf[REG_ADC_1]);
@@ -89,7 +88,7 @@ eMBRegInputCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
 						
 				usRegInputBuf[REG_PIR_STATE]=PyroSquibParam->state;
 				usRegInputBuf[REG_PIR_ERROR]=PyroSquibError;
-				usRegInputBuf[REG_PIR_IN_LINE]=PyroSquibStatus;
+				usRegInputBuf[REG_PIR_IN_LINE]=pyroSquibStatus;
 			
 			
         while ( usNRegs > 0 )
@@ -133,7 +132,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 {
     eMBErrorCode    eStatus = MB_ENOERR;
     int             iRegIndex;
-		uint8_t settings_need_write=0;
+		uint8_t settingsNeedWrite=0;
 		float tempValue;
 	
     if( ( usAddress >= REG_HOLDING_START ) &&
@@ -189,7 +188,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 													(PyroSquibParam->time!=usRegHoldingBuf[REG_PIR_SET_TIME]))
 											{												
 												PyroSquibParam->time=usRegHoldingBuf[REG_PIR_SET_TIME];
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;
@@ -197,10 +196,11 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_1_SET_CURRENT +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_SET_CURRENT], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[0]!=tempValue))
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	
+												&& (FloatCheckEquality(PyroSquibParam->current[0],tempValue,FLOAT_EQ_EPSILON)==FALSE))
 											{
 												PyroSquibParam->current[0]=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;	
@@ -208,10 +208,11 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_2_SET_CURRENT +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_SET_CURRENT], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[1]!=tempValue))
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	
+												&& (FloatCheckEquality(PyroSquibParam->current[1],tempValue,FLOAT_EQ_EPSILON)==FALSE))
 											{
 												PyroSquibParam->current[1]=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;	
@@ -219,10 +220,11 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_3_SET_CURRENT +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_SET_CURRENT], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[2]!=tempValue))
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	
+												&& (FloatCheckEquality(PyroSquibParam->current[2],tempValue,FLOAT_EQ_EPSILON)==FALSE))
 											{
 												PyroSquibParam->current[2]=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;	
@@ -230,10 +232,11 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_4_SET_CURRENT +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_SET_CURRENT], &tempValue);
-											if(IS_PYRO_SQUIB_CURRENT(tempValue)	&& (PyroSquibParam->current[3]!=tempValue))
+											if(IS_PYRO_SQUIB_CURRENT(tempValue)	
+												&& (FloatCheckEquality(PyroSquibParam->current[3],tempValue,FLOAT_EQ_EPSILON)==FALSE))
 											{
 												PyroSquibParam->current[3]=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;											
@@ -243,7 +246,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 												if(PyroSquibParam->mask!=usRegHoldingBuf[REG_PIR_SET_MASK])
 												{
 													PyroSquibParam->mask=usRegHoldingBuf[REG_PIR_SET_MASK];
-													settings_need_write=1;
+													settingsNeedWrite=1;
 												}
 										}
 										break;	
@@ -261,10 +264,11 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_1_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_K], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[0].k !=tempValue)
+											
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[0].k, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[0].k=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;		
@@ -272,10 +276,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_1_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_1_CALIBR_CURRENT_B], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[0].b !=tempValue)
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[0].b, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[0].b=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;	
@@ -283,10 +287,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_2_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_K], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[1].k !=tempValue)
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[1].k, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[1].k=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;		
@@ -294,10 +298,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_2_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_2_CALIBR_CURRENT_B], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[1].b !=tempValue)
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[1].b, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[1].b=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;
@@ -305,10 +309,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_3_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_K], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[2].k !=tempValue)
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[2].k, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[2].k=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;		
@@ -316,10 +320,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_3_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_3_CALIBR_CURRENT_B], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[2].b !=tempValue)
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[2].b, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[2].b=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;	
@@ -327,10 +331,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_4_CALIBR_CURRENT_K +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_K], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[3].k !=tempValue)
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[3].k, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[3].k=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;		
@@ -338,10 +342,10 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
 										case REG_PIR_4_CALIBR_CURRENT_B +1:
 										{
 											UINT16_Buf_To_Float(&usRegHoldingBuf[REG_PIR_4_CALIBR_CURRENT_B], &tempValue);
-											if(PyroSquibParam->PyroSquibCurrentCalibr[3].b !=tempValue)
+											if(FloatCheckEquality(PyroSquibParam->PyroSquibCurrentCalibr[3].b, tempValue, FLOAT_EQ_EPSILON)==FALSE)
 											{
 												PyroSquibParam->PyroSquibCurrentCalibr[3].b=tempValue;
-												settings_need_write=1;
+												settingsNeedWrite=1;
 											}
 										}
 										break;											
@@ -352,7 +356,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
                 usNRegs--;
             }
 						
-						if(settings_need_write)
+						if(settingsNeedWrite)
 						{
 								ConfigInfoWrite();
 						}

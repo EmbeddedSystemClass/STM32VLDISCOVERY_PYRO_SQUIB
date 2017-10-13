@@ -67,6 +67,9 @@ typedef struct
 #define PYRO_SQUIB_CURRENT_TEST	1.0
 #define IS_PYRO_SQUIB_CURRENT(__CURRENT__) (((__CURRENT__) >=PYRO_SQUIB_CURRENT_MIN) && ((__CURRENT__) <= PYRO_SQUIB_CURRENT_MAX))
 
+#define PYRO_SQUIB_CURRENT_CALIBR_K_DEFAULT	(43.541)
+#define PYRO_SQUIB_CURRENT_CALIBR_B_DEFAULT	(-0.043541)
+
 
 void 		 					PyroSquib_Init(void);
 enPyroSquibError 	PyroSquib_SetKeysState(enPyroSquibKeysState state);

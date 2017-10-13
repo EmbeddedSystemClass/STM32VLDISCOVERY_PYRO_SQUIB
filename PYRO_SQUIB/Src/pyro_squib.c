@@ -3,23 +3,21 @@
 #include "dig_pot.h"
 #include "adc.h"
 #include "cfg_info.h"
-
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
 #include "semphr.h"
-
 #include "string.h"
 
 extern TIM_HandleTypeDef htim2;
 extern sConfigInfo configInfo;	
 extern uint32_t SystemCoreClock; 
 
-uint8_t PyroSquibStatus;
-uint8_t	pulse_time_expired=0;
-uint16_t ADC_value_temp[ADC_CHN_NUM];
+uint8_t 	pyroSquibStatus=0;
+uint8_t		pulseTimeExpired=0;
+uint16_t 	ADC_value_temp[ADC_CHN_NUM]={0};
 extern uint16_t ADC_value[ADC_CHN_NUM];
-enPyroSquibError			PyroSquibError;  
+enPyroSquibError			PyroSquibError=PYRO_SQUIB_OK;  
 
 SemaphoreHandle_t xPyroSquib_Semaphore=NULL;
 
@@ -45,27 +43,27 @@ void 		 PyroSquib_Init(void)
 
 uint8_t PyroSquib_CurrentToPotVal(enPyroSquibNums PyroSquib, float current)//0..127
 {
-		uint8_t pot_val=0;
+		uint8_t potVal=0;
 		
 		if(IS_PYRO_SQUIB_CURRENT(current))
 		{
-				pot_val= (uint8_t)(PyroSquibParam->PyroSquibCurrentCalibr[PyroSquib].k*current + PyroSquibParam->PyroSquibCurrentCalibr[PyroSquib].b);
+				potVal= (uint8_t)(PyroSquibParam->PyroSquibCurrentCalibr[PyroSquib].k*current + PyroSquibParam->PyroSquibCurrentCalibr[PyroSquib].b);
 		}
 
-		return pot_val; 
+		return potVal; 
 }
 
 enPyroSquibError PyroSquib_SetCurrent_All(float current)
 {
 		enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
-		enPyroSquibError err=PYRO_SQUIB_OK, err_temp=PYRO_SQUIB_OK;
+		enPyroSquibError err=PYRO_SQUIB_OK, errTemp=PYRO_SQUIB_OK;
 	
 		for(PyroSquib=PYRO_SQUIB_1;PyroSquib<=PYRO_SQUIB_4;PyroSquib++)
 		{
-				err_temp=PyroSquib_SetCurrent(PyroSquib,current);
-				if(err_temp!=PYRO_SQUIB_OK)
+				errTemp=PyroSquib_SetCurrent(PyroSquib,current);
+				if(errTemp!=PYRO_SQUIB_OK)
 				{
-						 err=err_temp;
+						 err=errTemp;
 				}
 		}
 		return err;
@@ -77,12 +75,12 @@ enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 
 	if(IS_PYRO_SQUIB_CURRENT(current))
 	{
-		uint8_t pot_val=0;
-		uint8_t pyro_squib_cnt=0;
+		uint8_t potVal=0;
+		uint8_t pyroSquibCnt=0;
 		
-		pot_val=PyroSquib_CurrentToPotVal(PyroSquib, current);
+		potVal=PyroSquib_CurrentToPotVal(PyroSquib, current);
 		
-		hal_err=DigPot_SetValue((uint8_t)PyroSquib, pot_val);
+		hal_err=DigPot_SetValue((uint8_t)PyroSquib, potVal);
 		if(hal_err!=HAL_OK)
 		{
 				return PYRO_SQUIB_I2C_ERR;
@@ -148,14 +146,13 @@ enPyroSquibError PyroSquib_SetKeysState(enPyroSquibKeysState state)
 		}
 }
 
-#define PYRO_SQUIB_DELAY_START_MS	10
 enPyroSquibError PyroSquib_Start(void)
 {
 	enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
 	enPyroSquibError err=PYRO_SQUIB_OK;
-	pulse_time_expired=0;
-	//set current
-	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<=PYRO_SQUIB_4;PyroSquib++)
+	pulseTimeExpired=0;
+	
+	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<=PYRO_SQUIB_4;PyroSquib++)//set current
 	{
 			err=PyroSquib_SetCurrent(PyroSquib,PyroSquibParam->current[PyroSquib]);
 			if(err!=PYRO_SQUIB_OK)
@@ -176,7 +173,7 @@ enPyroSquibError PyroSquib_Start(void)
 	HAL_TIM_Base_Start_IT(&htim2);
 
 	
-	while(pulse_time_expired==0)
+	while(pulseTimeExpired==0)
 	{
 			//taskYIELD();
 		vTaskDelay(50);
@@ -190,7 +187,7 @@ void PyroSquib_TimerExpired(void)
 	memcpy(ADC_value_temp, ADC_value,sizeof(uint16_t)*ADC_CHN_POT_NUM);
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);	//disable current keys
 	PyroSquibParam->state=PYRO_SQUIB_STOP;
-	pulse_time_expired=1;
+	pulseTimeExpired=1;
 }
 
 
@@ -206,7 +203,7 @@ static void PyroSquib_Task(void *pvParameters)
 				}
 				else
 				{
-						PyroSquibStatus=PyroSquib_Test();
+						pyroSquibStatus=PyroSquib_Test();
 				}
 		}
 }
@@ -215,8 +212,8 @@ static void PyroSquib_Task(void *pvParameters)
 uint8_t  PyroSquib_Test(void)
 {
 		uint8_t i=0;
-		uint8_t stat_temp=0;
-		pulse_time_expired=0;
+		uint8_t pyroSquibInLine=0;
+		pulseTimeExpired=0;
 		PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON_ALL);
 		__HAL_TIM_SET_AUTORELOAD(&htim2, PYRO_SQUIB_TEST_TIME);
 		__HAL_TIM_SET_PRESCALER(&htim2,SystemCoreClock/10000);
@@ -224,7 +221,7 @@ uint8_t  PyroSquib_Test(void)
 		htim2.Instance->EGR = TIM_EGR_UG;
 		HAL_TIM_Base_Start_IT(&htim2);	
 		
-		while(pulse_time_expired==0)
+		while(pulseTimeExpired==0)
 		{
 				taskYIELD();
 		}
@@ -233,10 +230,10 @@ uint8_t  PyroSquib_Test(void)
 		{
 				if(ADC_toCurrent(ADC_value_temp[i])>PYRO_SQUIB_MIN_TEST_CURRENT)
 				{
-						stat_temp|=(1<<i);
+						pyroSquibInLine|=(1<<i);
 				}
 		}
-		return stat_temp;
+		return pyroSquibInLine;
 }
 
 

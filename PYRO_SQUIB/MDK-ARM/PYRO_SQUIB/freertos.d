@@ -1,7 +1,7 @@
 pyro_squib\freertos.o: ../Src/freertos.c
 pyro_squib\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
-pyro_squib\freertos.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stddef.h
-pyro_squib\freertos.o: C:\Program Files\Keil\ARM\ARMCC\Bin\..\include\stdint.h
+pyro_squib\freertos.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stddef.h
+pyro_squib\freertos.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\stdint.h
 pyro_squib\freertos.o: ../Inc/FreeRTOSConfig.h
 pyro_squib\freertos.o: ../Inc/main.h
 pyro_squib\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
