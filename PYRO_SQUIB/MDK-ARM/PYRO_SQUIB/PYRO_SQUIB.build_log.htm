@@ -27,7 +27,20 @@ Project File Date:  09/30/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 1 (build 61)', folder: 'D:\Programs\Keil\ARM\ARMCC\Bin'
 Build target 'PYRO_SQUIB'
-"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 0 Warning(s).
+compiling mbport.c...
+../Inc/adc.h(17): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/dig_pot.h(24): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/pyro_squib.h(79): warning:  #1-D: last line of file ends without a newline
+  #endif
+../Inc/utilities.h(25): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\modbus\port\mbport.c: 4 warnings, 0 errors
+linking...
+Program Size: Code=28036 RO-data=932 RW-data=472 ZI-data=6352  
+FromELF: creating hex file...
+"PYRO_SQUIB\PYRO_SQUIB.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -45,7 +58,7 @@ Package Vendor: ARM
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:4.3.0
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

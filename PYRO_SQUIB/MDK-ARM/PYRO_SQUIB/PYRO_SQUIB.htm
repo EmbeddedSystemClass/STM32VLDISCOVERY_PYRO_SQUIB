@@ -3,7 +3,7 @@
 <title>Static Call Graph - [PYRO_SQUIB\PYRO_SQUIB.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image PYRO_SQUIB\PYRO_SQUIB.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Fri Oct 13 23:10:20 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060061: Last Updated: Sun Oct 15 22:45:48 2017
 <BR><P>
 <H3>Maximum Stack Usage =        232 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -622,7 +622,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[7e]"></a>DigPot_SetValue</STRONG> (Thumb, 76 bytes, Stack size 32 bytes, dig_pot.o(i.DigPot_SetValue))
+<P><STRONG><a name="[7e]"></a>DigPot_SetValue</STRONG> (Thumb, 60 bytes, Stack size 32 bytes, dig_pot.o(i.DigPot_SetValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = DigPot_SetValue &rArr; HAL_I2C_Master_Transmit &rArr; I2C_MasterRequestWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_I2C_Master_Transmit
@@ -1239,7 +1239,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[e5]"></a>PyroSquib_SetCurrent</STRONG> (Thumb, 74 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_SetCurrent))
+<P><STRONG><a name="[e5]"></a>PyroSquib_SetCurrent</STRONG> (Thumb, 70 bytes, Stack size 24 bytes, pyro_squib.o(i.PyroSquib_SetCurrent))
 <BR><BR>[Stack]<UL><LI>Max Depth = 128<LI>Call Chain = PyroSquib_SetCurrent &rArr; DigPot_SetValue &rArr; HAL_I2C_Master_Transmit &rArr; I2C_MasterRequestWrite &rArr; I2C_WaitOnMasterAddressFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple

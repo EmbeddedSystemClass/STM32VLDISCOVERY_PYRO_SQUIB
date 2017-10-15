@@ -47,3 +47,4 @@ pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 pyro_squib\pyro_squib.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 pyro_squib\pyro_squib.o: D:\Programs\Keil\ARM\ARMCC\Bin\..\include\string.h
+pyro_squib\pyro_squib.o: ../Inc/utilities.h

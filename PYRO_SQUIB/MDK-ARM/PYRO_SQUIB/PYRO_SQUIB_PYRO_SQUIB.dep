@@ -48,7 +48,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71
 I (../Inc/mbinit.h)(0x58E8D67E)
 I (../Inc/adc.h)(0x59CFA48F)
 I (../Inc/dig_pot.h)(0x59CFBA20)
-I (../Inc/pyro_squib.h)(0x59E11549)
+I (../Inc/pyro_squib.h)(0x59E3B978)
 I (../Inc/cfg_info.h)(0x59BABB6C)
 F (../Src/stm32f1xx_it.c)(0x59CFA48F)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_it.o --omf_browse pyro_squib\stm32f1xx_it.crf --depend pyro_squib\stm32f1xx_it.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
@@ -101,7 +101,7 @@ I (..\modbus\include\mbport.h)(0x59B95EBE)
 I (..\modbus\port\port.h)(0x59B95EBE)
 I (D:\Programs\Keil\ARM\ARMCC\include\inttypes.h)(0x55DB71CE)
 I (../Inc/adc.h)(0x59CFA48F)
-I (../Inc/pyro_squib.h)(0x59E11549)
+I (../Inc/pyro_squib.h)(0x59E3B978)
 I (../Inc/dig_pot.h)(0x59CFBA20)
 F (../Src/stm32f1xx_hal_msp.c)(0x59B968F9)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\stm32f1xx_hal_msp.o --omf_browse pyro_squib\stm32f1xx_hal_msp.crf --depend pyro_squib\stm32f1xx_hal_msp.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
@@ -244,7 +244,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
-F (..\Src\dig_pot.c)(0x59E111C5)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\dig_pot.o --omf_browse pyro_squib\dig_pot.crf --depend pyro_squib\dig_pot.d)
+F (..\Src\dig_pot.c)(0x59E3B547)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\dig_pot.o --omf_browse pyro_squib\dig_pot.crf --depend pyro_squib\dig_pot.d)
 I (../Inc/dig_pot.h)(0x59CFBA20)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
 I (../Inc/stm32f1xx_hal_conf.h)(0x59B968F9)
@@ -325,8 +325,8 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
 I (..\modbus\port\port.h)(0x59B95EBE)
 I (D:\Programs\Keil\ARM\ARMCC\include\inttypes.h)(0x55DB71CE)
-F (..\Src\pyro_squib.c)(0x59E11438)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\pyro_squib.o --omf_browse pyro_squib\pyro_squib.crf --depend pyro_squib\pyro_squib.d)
-I (../Inc/pyro_squib.h)(0x59E11549)
+F (..\Src\pyro_squib.c)(0x59E3B96D)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\pyro_squib.o --omf_browse pyro_squib\pyro_squib.crf --depend pyro_squib\pyro_squib.d)
+I (../Inc/pyro_squib.h)(0x59E3B978)
 I (D:\Programs\Keil\ARM\ARMCC\include\stdint.h)(0x55DB71D0)
 I (../Inc/dig_pot.h)(0x59CFBA20)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
@@ -373,6 +373,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (D:\Programs\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
+I (../Inc/utilities.h)(0x59E12139)
 F (..\Src\cfg_info.c)(0x59E11576)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\cfg_info.o --omf_browse pyro_squib\cfg_info.crf --depend pyro_squib\cfg_info.d)
 I (D:\Programs\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (D:\Programs\Keil\ARM\ARMCC\include\stdio.h)(0x55DB71C6)
@@ -406,7 +407,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x58440A70)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x58440A70)
 I (../Inc/cfg_info.h)(0x59BABB6C)
-I (../Inc/pyro_squib.h)(0x59E11549)
+I (../Inc/pyro_squib.h)(0x59E3B978)
 I (../Inc/dig_pot.h)(0x59CFBA20)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x58440A71)
 I (D:\Programs\Keil\ARM\ARMCC\include\stddef.h)(0x55DB71CE)
@@ -419,7 +420,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x58440A71
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x58440A71)
 F (..\Src\utilities.c)(0x59E1117A)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\utilities.o --omf_browse pyro_squib\utilities.crf --depend pyro_squib\utilities.d)
-I (../Inc/utilities.h)(0x59E1116F)
+I (../Inc/utilities.h)(0x59E12139)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x58440A70)
 I (../Inc/stm32f1xx_hal_conf.h)(0x59B968F9)
 I (../Inc/main.h)(0x59B968F9)
@@ -830,7 +831,7 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x58440A71)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x58440A71)
 I (..\modbus\include\mb.h)(0x58E8D67E)
 I (..\modbus\include\mbproto.h)(0x58E8D67E)
-F (..\modbus\port\mbport.c)(0x59E11DA9)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbport.o --omf_browse pyro_squib\mbport.crf --depend pyro_squib\mbport.d)
+F (..\modbus\port\mbport.c)(0x59E3BACC)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\mbport.o --omf_browse pyro_squib\mbport.crf --depend pyro_squib\mbport.d)
 I (..\modbus\include\mb.h)(0x58E8D67E)
 I (..\modbus\include\mbport.h)(0x59B95EBE)
 I (..\modbus\port\port.h)(0x59B95EBE)
@@ -884,9 +885,9 @@ I (..\modbus\include\mbproto.h)(0x58E8D67E)
 I (../Inc/adc.h)(0x59CFA48F)
 I (D:\Programs\Keil\ARM\ARMCC\include\string.h)(0x55DB71C8)
 I (../Inc/dig_pot.h)(0x59CFBA20)
-I (../Inc/pyro_squib.h)(0x59E11549)
+I (../Inc/pyro_squib.h)(0x59E3B978)
 I (../Inc/cfg_info.h)(0x59BABB6C)
-I (../Inc/utilities.h)(0x59E1116F)
+I (../Inc/utilities.h)(0x59E12139)
 F (..\modbus\port\portevent.c)(0x58E8D67E)(-c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I..\modbus\include -I..\modbus\rtu -I..\modbus\port -I../Drivers/CMSIS/Include -I..\Drivers\CMSIS\Device\ST\STM32F1xx\Include -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include --C99-I D:\PROJECTS\STM32VLDISCOVERY_PYRO_SQUIB\STM32VLDISCOVERY_PYRO_SQUIB\PYRO_SQUIB\MDK-ARM\RTE-I D:\Programs\Keil\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-I D:\Programs\Keil\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include-D__UVISION_VERSION="517" -D_RTE_ -DSTM32F10X_MD_VL -DUSE_HAL_DRIVER -DSTM32F100xB-o pyro_squib\portevent.o --omf_browse pyro_squib\portevent.crf --depend pyro_squib\portevent.d)
 I (..\modbus\include\mb.h)(0x58E8D67E)
 I (..\modbus\include\mbport.h)(0x59B95EBE)

@@ -8,13 +8,14 @@
 #include "queue.h"
 #include "semphr.h"
 #include "string.h"
+#include "utilities.h"
 
 extern TIM_HandleTypeDef htim2;
 extern sConfigInfo configInfo;	
 extern uint32_t SystemCoreClock; 
 
 uint8_t 	pyroSquibStatus=0;
-uint8_t		pulseTimeExpired=0;
+uint8_t		pulseTimeExpired=FALSE;
 uint16_t 	ADC_value_temp[ADC_CHN_NUM]={0};
 extern uint16_t ADC_value[ADC_CHN_NUM];
 enPyroSquibError			PyroSquibError=PYRO_SQUIB_OK;  
@@ -23,10 +24,10 @@ SemaphoreHandle_t xPyroSquib_Semaphore=NULL;
 
 stPyroSquib *PyroSquibParam=&configInfo.PyroSquibParams;
 
-uint8_t  PyroSquib_Test(void);
-enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib,float current);
-enPyroSquibError PyroSquib_SetCurrent_All(float current);
-uint8_t PyroSquib_CurrentToPotVal(enPyroSquibNums PyroSquib, float current);
+uint8_t  					PyroSquib_Test(void);
+enPyroSquibError 	PyroSquib_SetCurrent(enPyroSquibNums PyroSquib,float current);
+enPyroSquibError 	PyroSquib_SetCurrent_All(float current);
+uint8_t 					PyroSquib_CurrentToPotVal(enPyroSquibNums PyroSquib, float current);
 
 #define PYRO_SQUIB_TASK_STACK_SIZE	128
 static void PyroSquib_Task(void *pvParameters);
@@ -38,7 +39,6 @@ void 		 PyroSquib_Init(void)
 		PyroSquibError=PyroSquib_SetCurrent_All(PYRO_SQUIB_CURRENT_TEST);		
 		xTaskCreate(PyroSquib_Task,"Pyro squib task",PYRO_SQUIB_TASK_STACK_SIZE,NULL, tskIDLE_PRIORITY + 2, NULL);
 }
-
 
 
 uint8_t PyroSquib_CurrentToPotVal(enPyroSquibNums PyroSquib, float current)//0..127
@@ -76,11 +76,10 @@ enPyroSquibError PyroSquib_SetCurrent(enPyroSquibNums PyroSquib, float current)
 	if(IS_PYRO_SQUIB_CURRENT(current))
 	{
 		uint8_t potVal=0;
-		uint8_t pyroSquibCnt=0;
 		
-		potVal=PyroSquib_CurrentToPotVal(PyroSquib, current);
-		
+		potVal=PyroSquib_CurrentToPotVal(PyroSquib, current);		
 		hal_err=DigPot_SetValue((uint8_t)PyroSquib, potVal);
+		
 		if(hal_err!=HAL_OK)
 		{
 				return PYRO_SQUIB_I2C_ERR;
@@ -150,7 +149,7 @@ enPyroSquibError PyroSquib_Start(void)
 {
 	enPyroSquibNums PyroSquib=PYRO_SQUIB_1; 
 	enPyroSquibError err=PYRO_SQUIB_OK;
-	pulseTimeExpired=0;
+	pulseTimeExpired=FALSE;
 	
 	for(PyroSquib=PYRO_SQUIB_1;PyroSquib<=PYRO_SQUIB_4;PyroSquib++)//set current
 	{
@@ -173,7 +172,7 @@ enPyroSquibError PyroSquib_Start(void)
 	HAL_TIM_Base_Start_IT(&htim2);
 
 	
-	while(pulseTimeExpired==0)
+	while(pulseTimeExpired==FALSE)
 	{
 			//taskYIELD();
 		vTaskDelay(50);
@@ -187,7 +186,7 @@ void PyroSquib_TimerExpired(void)
 	memcpy(ADC_value_temp, ADC_value,sizeof(uint16_t)*ADC_CHN_POT_NUM);
 	PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_OFF);	//disable current keys
 	PyroSquibParam->state=PYRO_SQUIB_STOP;
-	pulseTimeExpired=1;
+	pulseTimeExpired=TRUE;
 }
 
 
@@ -213,7 +212,7 @@ uint8_t  PyroSquib_Test(void)
 {
 		uint8_t i=0;
 		uint8_t pyroSquibInLine=0;
-		pulseTimeExpired=0;
+		pulseTimeExpired=FALSE;
 		PyroSquib_SetKeysState(PYRO_SQUIB_KEYS_ON_ALL);
 		__HAL_TIM_SET_AUTORELOAD(&htim2, PYRO_SQUIB_TEST_TIME);
 		__HAL_TIM_SET_PRESCALER(&htim2,SystemCoreClock/10000);
@@ -221,7 +220,7 @@ uint8_t  PyroSquib_Test(void)
 		htim2.Instance->EGR = TIM_EGR_UG;
 		HAL_TIM_Base_Start_IT(&htim2);	
 		
-		while(pulseTimeExpired==0)
+		while(pulseTimeExpired==FALSE)
 		{
 				taskYIELD();
 		}
